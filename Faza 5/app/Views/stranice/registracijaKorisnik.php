@@ -4,32 +4,33 @@
 <div class="regKorisnik" id="regKorisnik">
     <div class="forma">
       <h1>Registracija korisnika</h1>
-      <span class="greskaRegKor" ><?php if(!empty($greskaRegKor))echo $greskaRegKor  ?></span> 
+      <span class="greskaprijava" ><?php if(isset($validation)) echo $validation->listErrors() ?></span> 
 
       
       <form action= "<?= site_url('Gost/proveraRegKor')?>" method="post">
       
-                <table width="70%"  align="center">
+                <table class="masinaUplata" width="70%"  align="center">
                     <tr>
-                    <td align="center" colspan="2" >Pol:</td>
+                    <td>Pol:</td><td>Ime:</td>
                     </tr>
                     <tr>
-                    <td ><input type="radio" name="pol" value="<?=set_value('musko')?>" >Muško</td>
-                    <td><input type="radio" name="pol" value="<?=set_value('zensko')?>" >Žensko</td>
+                    <td align="justify"><input type="radio" name="pol" value="musko" >Muško &nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="pol" value="zensko" >&nbsp;&nbsp;Žensko</td>
+                    <td><input type="text" name="ime" value="<?=set_value('ime')?>"> </td></td>
                     </tr>
 
                     <tr>
-                        <td > Ime i prezime: </td>
+                        <td >Prezime: </td>
                         <td> Adresa: </td>
                     </tr>
                     <tr>
-                    <td > <input type="text" name="imePrez" value="<?=set_value('imePrezime')?>"> </td>
-                    <td> <input type="text" name="adr" value="<?=set_value('adresa')?>"> </td>
+                    <td > <input type="text" name="prez" value="<?=set_value('prez')?>"> </td>
+                    <td> <input type="text" name="adr" value="<?=set_value('adr')?>"> </td>
                     </tr>
 
                     <tr><td >Telefon:</td><td>Grad:</td></tr>
                     <tr>
-                    <td> <input type="text" name="fon" value="<?=set_value('telefon')?>"> </td>
+                    <td> <input type="text" name="fon" value="<?=set_value('fon')?>"> </td>
                     <td> <input type="text" name="grad" value="<?=set_value('grad')?>"> </td>
                     </tr>
 
@@ -38,13 +39,13 @@
                     </tr>
 
                     <tr>
-                        <td><input type="text"name="korime" value="<?=set_value('korisnickoIme')?>">
-                        <td><input type="password"name="lozinkaprijava" value="<?=set_value('lozinkaprijava')?>" placeholder="Unesite lozinku"></td>
+                        <td><input type="text"name="korime" value="<?=set_value('korime')?>">
+                        <td><input type="password"name="lozinkareg" value="<?=set_value('lozinkareg')?>" placeholder="Unesite lozinku"></td>
                     </tr>
 
                         
                     <tr>
-                        <td align="center" colspan="2" ><button class="btn btn-dark" type="submit">Prijavi se</button></td>
+                        <td align="center" colspan="2"><button class="btn btn-dark" style="margin-top:25px" type="submit" >Registruj se</button></td>
                     </tr>
 
                 </table>

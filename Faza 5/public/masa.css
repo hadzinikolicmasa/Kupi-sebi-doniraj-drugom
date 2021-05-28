@@ -207,7 +207,7 @@ h1 {
 
 
 
-.uplata input[type=text] ,.prijava input[type=text],.prijava input[type=password]{
+.uplata input[type=text] ,.prijava input[type=text],.prijava input[type=password],.masinaUplata input[type=text],.masinaUplata input[type=password] {
  width:90%;
   padding: 8px;
   border: 3px solid #cccccc;
