@@ -47,7 +47,6 @@ class Kompanija extends BaseController
         $fondacija= $this->session->get("fondacija");
         $kompanija=$this->session->get('kompanija');
 
-        $validation =  \Config\Services::validation();
 
  
      if(!$this->validate(['iznos'=>'required'])){ return $this->prikaz("uplata",['kompanija'=>$kompanija,'fondacija'=>$fondacija,'greskauplata'=>'Iznos mora biti unet.']); }
@@ -67,7 +66,7 @@ class Kompanija extends BaseController
         "primalac"=>$this->session->get('fondacija')['idFondacija']
     ]);
 
-      //  $this->azuriraj($this->session->get('fondacija')['idFondacija'],$this->request->getVar("iznos"));    
+       $this->azuriraj($this->session->get('fondacija')['idFondacija'],$this->request->getVar("iznos"));    
         $this->session->remove("fondacija");
         $this->prikaz("uspeh",["uspeh"=>"Uspešno ste izvršili uplatu"]);
 
@@ -78,13 +77,19 @@ class Kompanija extends BaseController
    function azuriraj($id,$iznos){
 
     $fondacijaModel=new FondacijaModel();
-    $fondacija=$fondacijaModel->where("idFondacija",$id)->update("iznos","5");
+    $fondacija=$fondacijaModel->where("naziv","Adra")->first();
     $novi=$iznos+$fondacija['iznos'];
-   
-    return;
+    $data=[
+        
+        'iznos'=>$novi
+        
+            ];
+        $fondacijaModel->update($id,$data);
 
    }
 }
+
+
 
 
 

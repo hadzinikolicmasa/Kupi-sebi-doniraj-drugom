@@ -75,12 +75,13 @@ class BaseController extends Controller
 
 	  public function kategorija($naziv){
 		$kategorijamodel=new KategorijaModel();
-		$kategorija=$kategorijamodel->where('naziv',$naziv); 
+		$kategorija=$kategorijamodel->where('naziv',$naziv)->first(); 
 		$kategorije=$kategorijamodel->findAll(); 
-		
 		$licitacijamodel=new LicitacijaModel();
-        $licitacije=$licitacijamodel->where('Kategorija_idKategorije',$kategorija['idKategorije'])->findAll();
-		$this->prikaz("pregled",['kategorije'=>$kategorije,'licitacije'=>$licitacije]);
+        $licitacije=$licitacijamodel->where('Kategorija_IdKategorije',$kategorija['IdKategorije'])->findAll();
+		
+		$this->prikaz("pregled",['kategorije'=>$kategorije,'licitacije'=>$licitacije,'odabrana'=>$naziv]);
+
 
 	  }
 }
