@@ -264,10 +264,9 @@ font-style: italic;
 .proizvodi{
   background-color:#DAD6D6;
   padding: 20px;
-  height: auto;
-  min-height: 500px;
+  height: 1000px;
+  
 }
-
 
 .pocetna{
   background-color:#DAD6D6;
@@ -306,4 +305,8 @@ font-style: italic;
 
   width : "150px" ;
   height :"190px";
+}
+
+.link{
+  color:red;
 }
