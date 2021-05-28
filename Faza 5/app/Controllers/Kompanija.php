@@ -68,7 +68,7 @@ class Kompanija extends BaseController
 
        $this->azuriraj($this->session->get('fondacija')['idFondacija'],$this->request->getVar("iznos"));    
         $this->session->remove("fondacija");
-        $this->prikaz("uspeh",[]);
+        $this->prikaz("uspeh",["uspeh"=>"Uspešno ste izvršili uplatu"]);
 
         
 

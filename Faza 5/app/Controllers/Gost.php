@@ -122,70 +122,173 @@ class Gost extends BaseController
 
 
 
-  public function proveraRegKor
-  (){
-    
-     if(!$this->validate(['korisnickoime'=>'required'])){
-         
-      return $this->prikaz("prijava",['greskaprijava'=>'Korisničko ime nije uneto']);
-     }else if(!$this->validate(['lozinkaprijava'=>'required'])){
+  public function proveraRegKor (){
+    $validation=\Config\Services::validation();
+    $validation=$this->validate([
+         'pol'=>[
+          'rules'=>'required',
+          'errors'=>[
+             'required'=>'Morate izabrati pol'
+          ]
+          ],
 
-      return $this->prikaz("prijava",['greskaprijava'=>'Lozinka  nije uneta']);
+       'ime'=>[
+         'rules'=>'required|alpha_space',
+         'errors'=>[
+            'required'=>'Morate uneti ime',
+            'alpha_space'=>"Ime sadrzi samo slova i razmake"
+         ]
+         ],
 
-  }
+         'prez'=>[
+            'rules'=>'required|alpha_space',
+            'errors'=>[
+               'required'=>'Morate uneti prezime',
+               'alpha_space'=>"Prezime sadrzi samo slova i razmake"
+            ]
+            ],
 
+      'adr'=>[
+         'rules'=>'required',
+         'errors'=>[
+            'required'=>'Morate uneti adresu'
+         ]
+         ],
 
-   $korisnikmodel=new KorisnikModel();
-   $korisnik=$korisnikmodel->where('korisnickoime',$this->request->getVar("korisnickoime"))->first();
+      'fon'=>[
+         'rules'=>'required|integer',
+         'errors'=>[
+            'required'=>'Morate uneti broj telefona',
+            'integer'=>'Broj telefona treba da sadrži samo cifre'
+         ]
+         ],
 
-   if($korisnik!=null){
-      if($korisnik['lozinka']!=$this->request->getVar('lozinkaprijava')){
+      'grad'=>[
+         'rules'=>'required',
+         'errors'=>[
+            'required'=>'Morate uneti grad'
+         ]
+         ],
 
-          return $this->prikaz("prijava",['greskaprijava'=>'Nije dobra lozinka.']);
-  
-       }else{
-          $this->session->set('korisnik',$korisnik);
-          return redirect()->to(site_url('Korisnik'));
-       }
+      'korime'=>[
+         'rules'=>'required|is_unique[korisnik.korisnickoime]',
+         'errors'=>[
+            'required'=>'Morate uneti korisničko ime'
+         ]
+         ],
+
+      'lozinkareg'=>[
+         'rules'=>'required|min_length[6]|max_length[20]|regex_match[/(?=.*?[A-Z])(?=(.*[\d]){1,})/]',
+         'errors'=>[
+            'required'=>'Morate uneti lozinku',
+            'min_length'=>'Lozinka mora sadržati minimalno 6 karaktera',
+            'max_length'=>'Lozinka može sadržati maksimalno 20 karaktera',
+            'regex_match'=>'Lozinka mora sadržati barem jedno veliko slovo i barem jednu cifru'
+         ]
+      ]
+
+    ]);
+
+    if (!$validation) return $this->prikaz("registracijaKorisnik",['validation'=>$this->validator]);
+    else {
+      $korisnikmodel=new KorisnikModel();
       
-  }
-  $adminmodel=new AdminModel();
-   $admin=$adminmodel->where('korisnickoime',$this->request->getVar("korisnickoime"))->first();
-   
-   if($admin!=null){
-      if($admin['lozinka']!=$this->request->getVar('lozinkaprijava')){
+      $korisnikmodel->insert([
+         "ime"=> $this->request->getVar("ime"),
+         "prezime"=>$this->request->getVar("prez"),
+         "adresa"=>$this->request->getVar("adr"),
+         'telefon'=>$this->request->getVar("fon"),
+         "grad"=>$this->request->getVar("grad"),
+         "korisnickoime"=>$this->request->getVar("korime"),
+         "lozinka"=>$this->request->getVar("lozinkareg"),
+         "pol"=>$this->request->getVar("pol")
+     ]);
 
-          return $this->prikaz("prijava",['greskaprijava'=>'Nije dobra lozinka.']);
+
+
+      $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
+
+    }
+
+   }
+
+
+   public function proveraRegKomp (){
+      $validation=\Config\Services::validation();
+      $validation=$this->validate([
+           'nazivKomp'=>[
+            'rules'=>'required',
+            'errors'=>[
+               'required'=>'Morate uneti naziv kompanije',
+            ]
+            ],
   
-       }else{
-          $this->session->set('admin',$admin);
-          return redirect()->to(site_url('Admin'));
-       }
-      
-  }
+         'pib'=>[
+           'rules'=>'required|integer|exact_length[9]',
+           'errors'=>[
+              'required'=>'Morate uneti ime',
+              'integer'=>"PIB mora sadrzati samo cifre",
+              'exact_length'=>"PIB mora imati 9 cifara"
+           ]
+           ],
   
-  $kompanijamodel=new KompanijaModel();
-   $kompanija=$kompanijamodel->where('naziv',$this->request->getVar("korisnickoime"))->first();
-   
-   if($kompanija!=null){
-      if($kompanija['lozinka']!=$this->request->getVar('lozinkaprijava')){
-
-          return $this->prikaz("prijava",['greskaprijava'=>'Nije dobra lozinka.']);
   
-       }else{
-          $this->session->set('kompanija',$kompanija);
-          return redirect()->to(site_url('Kompanija'));
-       }
-       
-      
-  }
-
-
-  return $this->prikaz("prijava",['greskaprijava'=>'Ne postojite u bazi.']);
-
-   
-
-  }
+        'adresa'=>[
+           'rules'=>'required',
+           'errors'=>[
+              'required'=>'Morate uneti adresu'
+           ]
+           ],
+  
+        'telefon'=>[
+           'rules'=>'required|integer',
+           'errors'=>[
+              'required'=>'Morate uneti broj telefona',
+              'integer'=>'Broj telefona treba da sadrži samo cifre'
+           ]
+           ],
+  
+  
+        'regBr'=>[
+           'rules'=>'required|integer',
+           'errors'=>[
+              'required'=>'Morate uneti registarski broj'
+           ]
+           ],
+  
+        'lozinka'=>[
+           'rules'=>'required|min_length[6]|max_length[20]|regex_match[/(?=.*?[A-Z])(?=(.*[\d]){1,})/]',
+           'errors'=>[
+              'required'=>'Morate uneti lozinku',
+              'min_length'=>'Lozinka mora sadržati minimalno 6 karaktera',
+              'max_length'=>'Lozinka može sadržati maksimalno 20 karaktera',
+              'regex_match'=>'Lozinka mora sadržati barem jedno veliko slovo i barem jednu cifru'
+           ]
+        ]
+  
+      ]);
+  
+      if (!$validation) return $this->prikaz("registracijaKompanija",['validation'=>$this->validator]);
+      else {
+        $kompanijakmodel=new KompanijaModel();
+        
+        $kompanijakmodel->insert([
+           "PIB"=> $this->request->getVar("pib"),
+           "naziv"=>$this->request->getVar("nazivKomp"),
+           "registarski broj"=>$this->request->getVar("regBr"),
+           'telefon'=>$this->request->getVar("telefon"),
+           "adresa"=>$this->request->getVar("adresa"),
+           "lozinka"=>$this->request->getVar("lozinka")
+       ]);
+  
+  
+  
+        $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
+  
+      }
+  
+     }
+  
 
 
 
