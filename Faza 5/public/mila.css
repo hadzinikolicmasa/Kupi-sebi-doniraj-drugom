@@ -11,7 +11,7 @@
 
   .registracijaTip, .regKorisnik, .regKompanija{
     background-color:#DAD6D6;
-    height:500px;
+    height:auto;
     padding: 20px;
   }
 

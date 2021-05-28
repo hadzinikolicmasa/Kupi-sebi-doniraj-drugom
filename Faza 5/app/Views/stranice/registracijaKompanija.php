@@ -2,9 +2,10 @@
 
     <h1>Registracija kompanije</h1>
     <div class="forma">
-    <form method="post" action= "<?= site_url('Gost/proveraRegKomp')?>" >
+    
 
-    <span class="greskaprijava" ><?php if(!empty($greskaRegKomp))echo $greskaRegKomp  ?></span> 
+    <span class="greskaprijava" ><?php if(isset($validation)) echo $validation->listErrors() ?></span> 
+    <form method="post" action= "<?= site_url('Gost/proveraRegKomp')?>" >
 
     <table width="70%"  cellpadding="5px" align="center">
 
