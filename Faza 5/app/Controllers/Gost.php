@@ -95,7 +95,97 @@ class Gost extends BaseController
     }
 
     
+    public function registracija() {
+      $this->prikaz("registracijaTip",[]);
+   }
 
+   public function proveraTipa(){
+    
+       if (isset($_POST["Tip"])) {
+       $tip = $_POST["Tip"];
+       
+          if (!($tip != "tipKompanija")) {
+           return $this->prikaz("registracijaKompanija",[]);
+          } else {
+           $this->prikaz("registracijaKorisnik",[]);
+          } 
+             
+       }else{
+        return $this->prikaz("registracijaTip",['greskaRegTip'=>'Niste izabrali tip korisnika!']);
+            }
+     
+ 
+
+  }
+
+
+
+
+
+  public function proveraRegKor
+  (){
+    
+     if(!$this->validate(['korisnickoime'=>'required'])){
+         
+      return $this->prikaz("prijava",['greskaprijava'=>'Korisničko ime nije uneto']);
+     }else if(!$this->validate(['lozinkaprijava'=>'required'])){
+
+      return $this->prikaz("prijava",['greskaprijava'=>'Lozinka  nije uneta']);
+
+  }
+
+
+   $korisnikmodel=new KorisnikModel();
+   $korisnik=$korisnikmodel->where('korisnickoime',$this->request->getVar("korisnickoime"))->first();
+
+   if($korisnik!=null){
+      if($korisnik['lozinka']!=$this->request->getVar('lozinkaprijava')){
+
+          return $this->prikaz("prijava",['greskaprijava'=>'Nije dobra lozinka.']);
+  
+       }else{
+          $this->session->set('korisnik',$korisnik);
+          return redirect()->to(site_url('Korisnik'));
+       }
+      
+  }
+  $adminmodel=new AdminModel();
+   $admin=$adminmodel->where('korisnickoime',$this->request->getVar("korisnickoime"))->first();
+   
+   if($admin!=null){
+      if($admin['lozinka']!=$this->request->getVar('lozinkaprijava')){
+
+          return $this->prikaz("prijava",['greskaprijava'=>'Nije dobra lozinka.']);
+  
+       }else{
+          $this->session->set('admin',$admin);
+          return redirect()->to(site_url('Admin'));
+       }
+      
+  }
+  
+  $kompanijamodel=new KompanijaModel();
+   $kompanija=$kompanijamodel->where('naziv',$this->request->getVar("korisnickoime"))->first();
+   
+   if($kompanija!=null){
+      if($kompanija['lozinka']!=$this->request->getVar('lozinkaprijava')){
+
+          return $this->prikaz("prijava",['greskaprijava'=>'Nije dobra lozinka.']);
+  
+       }else{
+          $this->session->set('kompanija',$kompanija);
+          return redirect()->to(site_url('Kompanija'));
+       }
+       
+      
+  }
+
+
+  return $this->prikaz("prijava",['greskaprijava'=>'Ne postojite u bazi.']);
+
+   
+
+  }
 
 
 

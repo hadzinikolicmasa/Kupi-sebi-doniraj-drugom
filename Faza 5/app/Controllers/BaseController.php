@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\KategorijaModel;
+use App\Models\LicitacijaModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -66,11 +67,20 @@ class BaseController extends Controller
 
 	public function pregled(){
 		$kategorijamodel=new KategorijaModel();
-		$kategorije=$kategorijamodel->findAll();
-		 $this->prikaz("pregled",['kategorije'=>$kategorije]);
+		$kategorije=$kategorijamodel->findAll(); 
+        $licitacijamodel=new LicitacijaModel();
+        $licitacije=$licitacijamodel->findAll();
+		 $this->prikaz("pregled",['kategorije'=>$kategorije,'licitacije'=>$licitacije]);
 	  }
 
 	  public function kategorija($naziv){
-echo "lol";
+		$kategorijamodel=new KategorijaModel();
+		$kategorija=$kategorijamodel->where('naziv',$naziv); 
+		$kategorije=$kategorijamodel->findAll(); 
+		
+		$licitacijamodel=new LicitacijaModel();
+        $licitacije=$licitacijamodel->where('Kategorija_idKategorije',$kategorija['idKategorije'])->findAll();
+		$this->prikaz("pregled",['kategorije'=>$kategorije,'licitacije'=>$licitacije]);
+
 	  }
 }

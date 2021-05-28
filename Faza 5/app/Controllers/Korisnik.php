@@ -14,8 +14,10 @@ class Korisnik extends BaseController
         echo view("sablon/footer");
 
     }
+
 	public function index()
 	{
-		 $this->prikaz('korisnik_pocetna',[]);
+        $korisnik=$this->session->get("korisnik");
+		 $this->prikaz('korisnik_pocetna',['korisnik'=>$korisnik]);
 	}
 }

@@ -19,7 +19,8 @@ $podaci['controller']="Admin";
     }
 	public function index()
 	{
-		$this->prikaz("pocetna_admin",[]);
+        $admin=$this->session->get('admin');
+		$this->prikaz("pocetna_admin",['admin'=>$admin]);
 	}
 
 

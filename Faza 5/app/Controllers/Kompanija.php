@@ -19,7 +19,9 @@ class Kompanija extends BaseController
 	{
         $fondacijaModel=new FondacijaModel();
         $fondacije=$fondacijaModel->findAll();
-		$this->prikaz("biranje_fondacije",['fondacije'=>$fondacije]);
+        $kompanija=$this->session->get('kompanija');
+
+		$this->prikaz("biranje_fondacije",['fondacije'=>$fondacije,'kompanija'=>$kompanija]);
 	}
     
     
@@ -27,31 +29,33 @@ class Kompanija extends BaseController
 
         $fondacijaModel=new FondacijaModel();
         $fondacije=$fondacijaModel->findAll();
-        
+        $kompanija=$this->session->get('kompanija');
+
         if (!isset($_POST['radio'])){
-            $this->prikaz("biranje_fondacije",['greskabiranje'=>'Morate izabrati fondaciju.','fondacije'=>$fondacije]);
+            $this->prikaz("biranje_fondacije",['greskabiranje'=>'Morate izabrati fondaciju.','kompanija'=>$kompanija,'fondacije'=>$fondacije]);
         }
+      
         $fondacija=$fondacijaModel->where('naziv',$_POST['radio'])->first();
         $this->session->set("fondacija",$fondacija);
-       
-        $this->prikaz("uplata",["fondacija"=>$fondacija]);
+        
+        $this->prikaz("uplata",['kompanija'=>$kompanija,"fondacija"=>$fondacija]);
     }
 
 
 
     public function proverauplata(){
         $fondacija= $this->session->get("fondacija");
-
+        $kompanija=$this->session->get('kompanija');
 
         $validation =  \Config\Services::validation();
 
  
-     if(!$this->validate(['iznos'=>'required'])){ return $this->prikaz("uplata",['fondacija'=>$fondacija,'greskauplata'=>'Iznos mora biti unet.']); }
-     else if(!$this->validate(['iznos'=>'integer'])){return $this->prikaz("uplata",['fondacija'=>$fondacija,'greskauplata'=>'Iznos sme da sadrzi samo brojeve.']);}
-     else if(!$this->validate(['model'=>'required'])){return $this->prikaz("uplata",['fondacija'=>$fondacija,'greskauplata'=>'Model mora biti unet.']);}
-     else if(!$this->validate(['model'=>'integer'])){return $this->prikaz("uplata",['fondacija'=>$fondacija,'greskauplata'=>'Model sme da sadrzi samo brojeve.']);}
-     else if(!$this->validate(['poziv'=>'required'])){return $this->prikaz("uplata",['fondacija'=>$fondacija,'greskauplata'=>'Poziv mora biti unet.']);}
-     else if(!$this->validate(['poziv'=>'integer'])){return $this->prikaz("uplata",['fondacija'=>$fondacija,'greskauplata'=>'Poziv sme da sadrzi samo brojeve.']);}
+     if(!$this->validate(['iznos'=>'required'])){ return $this->prikaz("uplata",['kompanija'=>$kompanija,'fondacija'=>$fondacija,'greskauplata'=>'Iznos mora biti unet.']); }
+     else if(!$this->validate(['iznos'=>'integer'])){return $this->prikaz("uplata",['kompanija'=>$kompanija,'fondacija'=>$fondacija,'greskauplata'=>'Iznos sme da sadrzi samo brojeve.']);}
+     else if(!$this->validate(['model'=>'required'])){return $this->prikaz("uplata",['kompanija'=>$kompanija,'fondacija'=>$fondacija,'greskauplata'=>'Model mora biti unet.']);}
+     else if(!$this->validate(['model'=>'integer'])){return $this->prikaz("uplata",['kompanija'=>$kompanija,'fondacija'=>$fondacija,'greskauplata'=>'Model sme da sadrzi samo brojeve.']);}
+     else if(!$this->validate(['poziv'=>'required'])){return $this->prikaz("uplata",['kompanija'=>$kompanija,'fondacija'=>$fondacija,'greskauplata'=>'Poziv mora biti unet.']);}
+     else if(!$this->validate(['poziv'=>'integer'])){return $this->prikaz("uplata",['kompanija'=>$kompanija,'fondacija'=>$fondacija,'greskauplata'=>'Poziv sme da sadrzi samo brojeve.']);}
 
 
     $uplata=new UplataModel();

@@ -1,4 +1,4 @@
-<form action="<?php  echo site_url("$controller/brisi"); ?>" >
+<form  >
 <div class="korisnici">
 <table  class="table table-striped table-dark tabelakor">
 <tr>

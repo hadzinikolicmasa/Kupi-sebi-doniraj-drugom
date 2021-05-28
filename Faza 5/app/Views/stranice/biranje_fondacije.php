@@ -9,13 +9,13 @@
    </div>
  </div>
     
-  
+ <form action= "<?= site_url('Kompanija/proveraizbor')?>" method="post">
   <div id="odabirfondacija">
   <h3 style="margin-left: 20px;">Izaberite fondaciju</h3>
   <hr>
   <span class="greskaprijava" ><?php if(!empty($greskabiranje))echo $greskabiranje  ?></span> 
 
-  <form action= "<?= site_url('Kompanija/proveraizbor')?>" method="post">
+  
   <table cellpadding="15px">
 
 <?php 
