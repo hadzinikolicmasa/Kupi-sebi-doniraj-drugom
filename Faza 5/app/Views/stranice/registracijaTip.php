@@ -3,7 +3,7 @@
 
 <div class="registracijaTip" id="registracijaTip">
     <div class="formaprijava">
-      <h1>Registracija:</h1>
+      <h1><b>Registracija:</b></h1>
       <span class="greskaprijava" ><?php if(!empty($greskaRegTip))echo $greskaRegTip  ?></span> 
 
       

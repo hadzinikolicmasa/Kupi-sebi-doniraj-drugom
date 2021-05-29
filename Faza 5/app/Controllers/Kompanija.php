@@ -32,7 +32,7 @@ class Kompanija extends BaseController
         $kompanija=$this->session->get('kompanija');
 
         if (!isset($_POST['radio'])){
-            $this->prikaz("biranje_fondacije",['greskabiranje'=>'Morate izabrati fondaciju.','kompanija'=>$kompanija,'fondacije'=>$fondacije]);
+          return  $this->prikaz("biranje_fondacije",['greskabiranje'=>'Morate izabrati fondaciju.','kompanija'=>$kompanija,'fondacije'=>$fondacije]);
         }
       
         $fondacija=$fondacijaModel->where('naziv',$_POST['radio'])->first();

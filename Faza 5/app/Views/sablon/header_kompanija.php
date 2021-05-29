@@ -18,28 +18,28 @@
     <title>PSI</title>
 </head>
   <body>
-    <header>
-      <div class="container.fluid">
-        <div class="row">
-          <div class="col-sm-12">
-            <nav class="navbar navbar-expand ">
-              
-              <img class="navbar-brand" src="/slike/slika.png" alt="Logo" style="width:90px;">
-             
-              <h4> Kupi sebi, doniraj drugom</h4>
-          </div>
-          <div class="topnav col-sm-12">
-          <?php echo anchor('Kompanija/index','Početna');?>
-          <?php echo anchor('Kompanija/logout','Izloguj se');?>
-          
-            <div class="search-container">
-              <form action="">
-                <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-              </form>
+  <header>
+        <div class="container.fluid">
+          <div class="row">
+            <div class=" col-8 offset-1">
+              <nav class="navbar navbar-expand ">
+                
+                <img class="navbar-brand" src="/slike/slika.png" alt="Logo" style="width:90px;">
+               
+                <h4> Kupi sebi, doniraj drugom</h4>
             </div>
-          </div>
-        </div>
-      </div>
-    </header>
+            <div class="topnav col-8 offset-2">
+            <?php echo anchor('Kompanija/index','Početna');?>
+              <?php echo anchor('Kompanija/logout','Izloguj se');?>
+              <div class="search-container">
+                <form action="">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+            </div>
+            </div>
+</div>
+      </header>
+
 

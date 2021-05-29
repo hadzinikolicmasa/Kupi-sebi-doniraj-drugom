@@ -206,7 +206,7 @@ class Gost extends BaseController
 
 
 
-      $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
+      return $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
 
     }
 
@@ -283,7 +283,7 @@ class Gost extends BaseController
   
   
   
-        $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
+       return $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
   
       }
   

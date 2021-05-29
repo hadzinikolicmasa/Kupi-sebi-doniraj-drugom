@@ -1,15 +1,15 @@
 <form  >
 <div class="korisnici">
-<table  class="table table-striped table-dark tabelakor">
+<table  class="table table-striped tabelakor">
 <tr>
-<td>Ime</td>
-<td>Prezime</td>
-<td>Adresa</td>
-<td>Grad</td>
-<td>Telefon</td>
-<td>Korisničko ime</td>
-<td>Ocena</td>
-<td>Obriši</td>
+<th>Ime</th>
+<th>Prezime</th>
+<th>Adresa</th>
+<th>Grad</th>
+<th>Telefon</th>
+<th>Korisničko ime</th>
+<th>Ocena</th>
+<th>Obriši</th>
 </tr>
 
 <?php
