@@ -77,8 +77,11 @@ class Kompanija extends BaseController
    function azuriraj($id,$iznos){
 
     $fondacijaModel=new FondacijaModel();
-    $fondacija=$fondacijaModel->where("naziv","Adra")->first();
+    $fondacija=$fondacijaModel->where("idFondacija",$id)->first();
+    
     $novi=$iznos+$fondacija['iznos'];
+   
+ 
     $data=[
         
         'iznos'=>$novi
