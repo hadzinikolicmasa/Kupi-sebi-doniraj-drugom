@@ -173,7 +173,8 @@ class Gost extends BaseController
       'korime'=>[
          'rules'=>'required|is_unique[korisnik.korisnickoime]',
          'errors'=>[
-            'required'=>'Morate uneti korisničko ime'
+            'required'=>'Morate uneti korisničko ime',
+            'is_unique'=>'Korisničko ime već postoji'
          ]
          ],
 
@@ -206,7 +207,7 @@ class Gost extends BaseController
 
 
 
-      return $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
+      $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
 
     }
 
@@ -224,11 +225,12 @@ class Gost extends BaseController
             ],
   
          'pib'=>[
-           'rules'=>'required|integer|exact_length[9]',
+           'rules'=>'required|integer|exact_length[9]|is_unique[kompanija.PIB]',
            'errors'=>[
               'required'=>'Morate uneti ime',
               'integer'=>"PIB mora sadrzati samo cifre",
-              'exact_length'=>"PIB mora imati 9 cifara"
+              'exact_length'=>"PIB mora imati 9 cifara",
+              'is_unique'=>"PIB već postoji"
            ]
            ],
   
@@ -275,7 +277,7 @@ class Gost extends BaseController
         $kompanijakmodel->insert([
            "PIB"=> $this->request->getVar("pib"),
            "naziv"=>$this->request->getVar("nazivKomp"),
-           "registarski broj"=>$this->request->getVar("regBr"),
+           "registarskibroj"=>$this->request->getVar("regBr"),
            'telefon'=>$this->request->getVar("telefon"),
            "adresa"=>$this->request->getVar("adresa"),
            "lozinka"=>$this->request->getVar("lozinka")
@@ -283,7 +285,7 @@ class Gost extends BaseController
   
   
   
-       return $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
+        $this->prikaz("uspeh",["uspeh"=>"Uspešno ste se registrovali"]);
   
       }
   

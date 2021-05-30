@@ -4,12 +4,12 @@
     <h1><b>Registracija kompanije</b></h1>
 
 
+    <span class="greskaprijava" ><?php if(isset($validation)) echo $validation->listErrors() ?></span> 
     <form method="post" action= "<?= site_url('Gost/proveraRegKomp')?>" >
 
     <table width="70%"  cellpadding="5px" align="center">
 
-  <tr><td colspan="3"> <span class="greskaprijava" ><?php if(isset($validation)) 
-  if(null!==$validation->showError('nazivKomp')) echo  $validation->showError('nazivKomp') ?>
+  
   
 </span> </td></tr>
         <tr>

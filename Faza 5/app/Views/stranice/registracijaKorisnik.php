@@ -4,13 +4,12 @@
 <div class="regKorisnik" id="regKorisnik">
     <div class="forma">
       <h1 ><b>Registracija korisnika</b></h1>
+      <span class="greskaprijava" ><?php if(isset($validation)) echo $validation->listErrors() ?></span> 
       <form method="post" action= "<?= site_url('Gost/proveraRegKor')?>" >
       
                 <table class="masinaUplata" width="70%"  align="center">
 
-                <tr><td colspan="3"> <span class="greskaprijava" ><?php if(isset($validation)) 
-                 if(null!==$validation->showError('pol')) echo  $validation->showError('pol')
-                ?></span> </td></tr>
+              
                     <tr>
                     <td>Pol:</td><td>Ime:</td>
                     </tr>
