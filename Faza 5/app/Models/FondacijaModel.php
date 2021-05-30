@@ -8,6 +8,6 @@ class FondacijaModel extends Model{
 
    protected $table='fondacija';
    protected $primaryKey='idFondacija';
-   protected $allowedFields=['idFondacija','naziv','logo'];
+   protected $allowedFields=['iznos'];
 
 }

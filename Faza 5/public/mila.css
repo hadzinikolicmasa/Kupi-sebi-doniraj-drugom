@@ -1,5 +1,5 @@
 .tabla {
-    background-color: #F4AC45;
+    background-color: #FF9F1C;
     border-radius: 15px;
     padding: 20px;
     width:700px;
@@ -10,9 +10,10 @@
   }
 
   .registracijaTip, .regKorisnik, .regKompanija{
-    background-color:#DAD6D6;
+    
     height:auto;
     padding: 20px;
+    margin-bottom: 40px;
   }
 
 

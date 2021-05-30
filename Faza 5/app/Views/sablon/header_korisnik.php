@@ -20,17 +20,17 @@
     <header>
         <div class="container.fluid">
           <div class="row">
-            <div class="col-sm-12">
+          <div class=" col-8 offset-1">
               <nav class="navbar navbar-expand ">
                 
                 <img class="navbar-brand" src="/slike/slika.png" alt="Logo" style="width:90px;">
                
                 <h4> Kupi sebi, doniraj drugom</h4>
             </div>
-            <div class="topnav col-sm-12">
+            <div class="topnav col-8 offset-2">
             <?php echo anchor('Korisnik/index','Početna');?>
-              <?php echo anchor('','Postavi licitaciju');?>
-              <?php echo anchor('','Ostavi recenziju');?>
+              <?php echo anchor('','Prodaj');?>
+              <?php echo anchor('','Recenzija');?>
               <?php echo anchor('Korisnik/logout','Izloguj se');?>
 
               <div class="search-container">

@@ -1,7 +1,8 @@
 <div class="uplata" id="uplata">
 
-    <h1>Nalog za uplatu</h1>
+    
     <div class="forma">
+    <h1><b>Nalog za uplatu</b></h1>
     <form method="post" action= "<?= site_url('Kompanija/proverauplata')?>" >
 
     <span class="greskaprijava" ><?php if(!empty($greskauplata))echo $greskauplata  ?></span> 

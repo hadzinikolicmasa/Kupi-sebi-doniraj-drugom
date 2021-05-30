@@ -3,7 +3,7 @@
 
 <div class="prijava" id="prijava">
     <div class="formaprijava">
-      <h1>Prijava</h1>
+      <h1><b>Prijava</b></h1>
       <span class="greskaprijava" ><?php if(!empty($greskaprijava))echo $greskaprijava  ?></span> 
 
       

@@ -13,7 +13,7 @@
      
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/mila.css">
-    
+    <script src="/m.js"></script>
     
     <title>PSI</title>
 </head>
@@ -21,17 +21,19 @@
     <header>
         <div class="container.fluid">
           <div class="row">
-            <div class="col-sm-12">
+            <div class=" col-8 offset-1">
               <nav class="navbar navbar-expand ">
                 
                 <img class="navbar-brand" src="/slike/slika.png" alt="Logo" style="width:90px;">
                
                 <h4> Kupi sebi, doniraj drugom</h4>
-            </div>
-            <div class="topnav col-sm-12">
-            <?php echo anchor('Gost/index','Pocetna');?>
-              <?php echo anchor('Gost/prijava','Prijava');?>
+           </div></nav>
+            <div class="topnav col-8 offset-2">
+            
+            <?php echo anchor('Gost/index','Početna');?>
+             <?php echo anchor('Gost/prijava','Prijava');?>
               <?php echo anchor('Gost/registracija','Registracija');?>
+            
               <div class="search-container">
                 <form action="">
                   <input type="text" placeholder="Search.." name="search">
@@ -39,6 +41,6 @@
                 </form>
               </div>
             </div>
-          </div>
-        </div>
+            </div>
+</div>
       </header>
