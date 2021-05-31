@@ -119,9 +119,6 @@ class Gost extends BaseController
   }
 
 
-
-
-
   public function proveraRegKor (){
     $validation=\Config\Services::validation();
     $validation=$this->validate([

@@ -9,7 +9,7 @@ class RecenzijaModel extends Model{
 
    protected $table='recenzija';
    protected $primaryKey='idRecenzija';
-   protected $allowedFields=['komentar','ocena'];
+   protected $allowedFields=['Korisnik_idKorisnik','komentar','ocena'];
 
 }
 

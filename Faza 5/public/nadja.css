@@ -1,0 +1,30 @@
+.recenzija{
+    background-color:#DAD6D6;
+    height:500px;
+    padding: 20px;
+}
+
+
+.formarecenzija {
+    background-color: #F4AC45;
+    border-radius: 15px;
+    padding: 20px;
+    width:400px;
+    margin:auto;
+    height: 300px;
+  }
+
+  .formaprofil{
+
+    background-color: #F4AC45;
+    border-radius: 15px;
+    padding: 20px;
+    width:600px;
+    margin:auto;
+    height: 400px;
+  }
+  .profil{
+    background-color:#DAD6D6;
+    height:500px;
+    padding: 20px;
+}
