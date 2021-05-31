@@ -1,8 +1,6 @@
 
 
 
-
-
 <div class="korisnikpocetna">
 <div class="card "  >
          <img class="card-imgtop rounded-circle"  src="/slike/user.png" alt="Card image">
@@ -11,7 +9,7 @@
          <?php echo $korisnik['korisnickoime'];?> 
          </h4>
          <p class="cardtext">Korisnik</p>
-         <a href="" class="btn btn-dark" style="margin-bottom: 10px;">Profil</a><br>
+         <a href="Korisnik/profil" class="btn btn-dark" style="margin-bottom: 10px;">Profil</a><br>
      </div>
     </div>
     
