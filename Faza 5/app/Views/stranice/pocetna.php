@@ -26,12 +26,9 @@
 
 
         <div class="col-12" style="float:left">
-                <table class="tabela" cellpadding="30px" align="center" style="margin-bottom:50px">
-                        <tr>
-                                <td colspan="3">
-                                        <h1 style="font-family: 'Courier New', monospace;">Do sada smo postigli:</h1>
-                                </td>
-                        </tr>
+        <h1 style="font-family: 'Courier New', monospace;">Do sada smo postigli:</h1>
+                <table class="tabela" cellpadding="30px" align="center" style="margin-bottom:50px" >
+                        
                         <?php
                         $counter = 0;
                         foreach ($fondacije as $fondacija) {
