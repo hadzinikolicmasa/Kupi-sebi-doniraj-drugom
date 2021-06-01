@@ -1,0 +1,39 @@
+.recenzija {
+    height: 500px;
+    padding: 20px;
+}
+
+.formarecenzija {
+    background-color: #FF9F1C;
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    margin: auto;
+    height: auto;
+    font-family: 'Courier New', monospace;
+}
+
+.formaprofil {
+    background-color: #FF9F1C;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+    height: auto;
+    margin-bottom: 50px;
+    font-family: 'Courier New', monospace;
+}
+
+.profil {
+    height: auto;
+    padding: 20px;
+}
+
+.recenzija input[type=text],
+.recenzija select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+}

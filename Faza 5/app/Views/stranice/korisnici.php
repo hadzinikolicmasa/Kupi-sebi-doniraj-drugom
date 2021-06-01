@@ -1,30 +1,33 @@
-<form  >
-<div class="korisnici">
-<table  class="table table-striped table-dark tabelakor">
-<tr>
-<td>Ime</td>
-<td>Prezime</td>
-<td>Adresa</td>
-<td>Grad</td>
-<td>Telefon</td>
-<td>Korisničko ime</td>
-<td>Ocena</td>
-<td>Obriši</td>
-</tr>
+<form>
+   <div class="korisnici">
+      <table class="table table-striped tabelakor">
+         <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Adresa</th>
+            <th>Grad</th>
+            <th>Telefon</th>
+            <th>Korisničko ime</th>
+            <th>Ocena</th>
+            <th>Obriši</th>
+         </tr>
 
-<?php
+         <?php
 
-foreach($korisnici as $korisnik){
-   $ocena=0;
-   $count=0;
-   
-   foreach($recenzije as $recenzija){
-if($recenzija['Korisnik_idKorisnik']==$korisnik['idKorisnik']){$ocena+=$recenzija['Ocena'];$count++;}
-   }
-   $avg=0;
-   if($count!=0)$avg=$ocena/$count;
+         foreach ($korisnici as $korisnik) {
+            $ocena = 0;
+            $count = 0;
 
-   echo"<tr>
+            foreach ($recenzije as $recenzija) {
+               if ($recenzija['Korisnik_idKorisnik'] == $korisnik['idKorisnik']) {
+                  $ocena += $recenzija['Ocena'];
+                  $count++;
+               }
+            }
+            $avg = 0;
+            if ($count != 0) $avg = $ocena / $count;
+
+            echo "<tr>
    <td>{$korisnik['ime']}</td>
    <td>{$korisnik['prezime']}</td>
    <td>{$korisnik['adresa']}</td>
@@ -32,13 +35,11 @@ if($recenzija['Korisnik_idKorisnik']==$korisnik['idKorisnik']){$ocena+=$recenzij
    <td>{$korisnik['telefon']}</td>
    <td>{$korisnik['korisnickoime']}</td>
    <td>{$avg}</td>
-   <td><button class='btn btn-light '>".anchor("$controller/brisi/{$korisnik['idKorisnik']}",'Obriši')."</button> </td>
+   <td><button class='btn btn-light '>" . anchor("$controller/brisi/{$korisnik['idKorisnik']}", 'Obriši') . "</button> </td>
    </tr>";
-   
-}
+         }
 
-?>
-</table>
-</div>
+         ?>
+      </table>
+   </div>
 </form>
-

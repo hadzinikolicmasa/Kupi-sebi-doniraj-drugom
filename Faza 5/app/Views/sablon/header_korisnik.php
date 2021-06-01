@@ -12,7 +12,8 @@
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="/mila.css">
     <link rel="stylesheet" href="/masa.css">
-    
+    <link rel="stylesheet" href="/nadja.css">
+
     
     <title>PSI</title>
 </head>
@@ -20,17 +21,17 @@
     <header>
         <div class="container.fluid">
           <div class="row">
-            <div class="col-sm-12">
+          <div class=" col-8 offset-1">
               <nav class="navbar navbar-expand ">
                 
                 <img class="navbar-brand" src="/slike/slika.png" alt="Logo" style="width:90px;">
                
                 <h4> Kupi sebi, doniraj drugom</h4>
             </div>
-            <div class="topnav col-sm-12">
+            <div class="topnav col-8 offset-2">
             <?php echo anchor('Korisnik/index','Početna');?>
-              <?php echo anchor('','Postavi licitaciju');?>
-              <?php echo anchor('','Ostavi recenziju');?>
+              <?php echo anchor('','Prodaj');?>
+              <?php echo anchor('Korisnik/recenzija','Recenzija');?>
               <?php echo anchor('Korisnik/logout','Izloguj se');?>
 
               <div class="search-container">
