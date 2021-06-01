@@ -2,9 +2,6 @@
 
 use CodeIgniter\Model;
 
-
-
-
 class RecenzijaModel extends Model{
 
    protected $table='recenzija';

@@ -1,20 +1,19 @@
-.tabla {
-    background-color: #FF9F1C;
-    border-radius: 15px;
-    padding: 20px;
-    width:700px;
-    margin:auto;
-    margin-top: 20px;
-    align-items: center;
-    align-content: center;
-  }
-
-  .registracijaTip, .regKorisnik, .regKompanija{
-    
-    height:auto;
+.registracijaTip,
+.regKorisnik,
+.regKompanija {
+    height: auto;
     padding: 20px;
     margin-bottom: 40px;
-  }
+}
 
+.fondacijeSpisak {
+    font-family: 'Courier New', monospace;
+}
 
-  
+.dodavanjeFondacija input[type=text],
+.dodavanjeFondacija textarea {
+    width: 100%;
+    padding: 8px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+}

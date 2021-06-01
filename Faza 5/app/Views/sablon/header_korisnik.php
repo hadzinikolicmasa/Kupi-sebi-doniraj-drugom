@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/mila.css">
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/nadja.css">
-    
+
     
     <title>PSI</title>
 </head>
@@ -33,7 +33,7 @@
               <?php echo anchor('','Prodaj');?>
               <?php echo anchor('Korisnik/recenzija','Recenzija');?>
               <?php echo anchor('Korisnik/logout','Izloguj se');?>
-          
+
               <div class="search-container">
                 <form action="">
                   <input type="text" placeholder="Search.." name="search">
