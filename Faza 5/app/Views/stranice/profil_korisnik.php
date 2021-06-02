@@ -15,8 +15,6 @@
         <tr>
           <td>Prezime: </td>
           <td><?php echo $korisnik['prezime']; ?></td>
-
-
         </tr>
 
         <tr>

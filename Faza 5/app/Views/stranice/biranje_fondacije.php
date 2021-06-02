@@ -4,7 +4,9 @@
     <div class="card-body">
       <h4 class="cardtitle" style="font-family: 'Courier New', monospace;" id="nazivkompanije"><?php echo $kompanija['naziv']; ?> </h4>
       <p class="cardtext" style="font-family: 'Courier New', monospace;">Kompanija</p>
-      <a href="" class="btn btn-dark" style="margin-bottom: 10px;">Profil</a><br>
+      <form action="<?= site_url('Kompanija/profil') ?>">
+          <button class="btn btn-dark" style="margin-bottom: 10px;">Profil</button><br>
+      </form>
     </div>
   </div>
 
