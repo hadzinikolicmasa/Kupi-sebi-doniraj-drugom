@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\KorisnikModel;
 use App\Models\RecenzijaModel;
 use App\Models\FondacijaModel;
-
+use App\Models\LicitacijaModel;
 
 class Admin extends BaseController
 {
@@ -122,5 +122,27 @@ class Admin extends BaseController
 
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste dodali fondaciju"]);
       }
+   }
+   public function licitacije()
+   {
+
+      $licitacijaModel = new LicitacijaModel();
+      $licitacije = $licitacijaModel->findAll();
+
+      $this->prikaz("azuriranje_licitacija", ['licitacije' => $licitacije]);
+   }
+
+   public function brisi_licitaciju($id)
+   {
+      $licitacijaModel = new LicitacijaModel();
+      $licitacijaModel->delete($id);
+      $this->licitacije();
+   }
+
+   public function reaktiviraj_licitaciju($id,$aktivna)
+   {
+      $licitacijaModel = new LicitacijaModel();
+      $licitacijaModel->update($id,$aktivna);
+      $this->licitacije();
    }
 }

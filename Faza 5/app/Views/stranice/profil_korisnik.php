@@ -3,28 +3,39 @@
 
   <div class="formaprofil">
 
-    <form method="post">
+    <form method="post" action="<?= site_url('Korisnik/izmena') ?>">
 
-      <table width="100%" cellpadding="5px" >
+
+      <table width="100%" cellpadding="5px">
         <tr>
           <td>Ime: </td>
-          <td><?php echo $korisnik['ime']; ?></td>
+          <td><?php
+              echo $korisnik['ime'];
+
+              ?></td>
 
         </tr>
 
         <tr>
           <td>Prezime: </td>
           <td><?php echo $korisnik['prezime']; ?></td>
+
+
         </tr>
 
         <tr>
           <td>Adresa:</td>
-          <td><?php echo $korisnik['adresa']; ?></td>
+          <td><?php
+              if (isset($rezimizmena)) echo "<input type='text' >";
+              else echo $korisnik['adresa']; ?></td>
         </tr>
 
         <tr>
           <td>Grad:</td>
-          <td><?php echo $korisnik['grad']; ?></td>
+          <td><?php
+              if (isset($rezimizmena)) echo "<input type='text' >";
+              else echo $korisnik['grad'];
+              ?></td>
         </tr>
 
         <tr>
@@ -34,7 +45,9 @@
 
         <tr>
           <td>Telefon:</td>
-          <td><?php echo $korisnik['telefon']; ?></td>
+          <td><?php
+              if (isset($rezimizmena)) echo "<input type='text' >";
+              else echo $korisnik['telefon']; ?></td>
         </tr>
 
         <tr>
@@ -43,9 +56,10 @@
         </tr>
 
         <tr>
-          <td align="center"> <button class="btn btn-dark" value="Izmeni">Izmeni</button></td>
+         <?php ?> <td align="center"> <button class="btn btn-dark" value="Izmeni">Izmeni</button></td>
     </form>
-    <form action= "<?= site_url('Korisnik/index')?>">
+     
+    <form action="<?= site_url('Korisnik/index') ?>">
       <td align="center"> <button class="btn btn-dark" value="Nazad">Nazad</button></td>
     </form>
     </tr>

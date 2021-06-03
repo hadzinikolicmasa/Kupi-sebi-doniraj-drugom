@@ -5,7 +5,7 @@
 
     <form method="post" >
 
-      <table width="100%" cellpadding="5px" >
+      <table width="100%" cellpadding="5px">
 
         <tr>
           <td>Naziv: </td>
@@ -36,7 +36,7 @@
           <td align="center"> <button class="btn btn-dark" value="Izmeni">Izmeni</button></td>
     </form>
     <form action= "<?= site_url('Kompanija/index')?>">
-      <td align="center"> <button class="btn btn-dark" value="Nazad">Nazad</button></td>
+      <td align="left"> <button class="btn btn-dark" value="Nazad">Nazad</button></td>
     </form>
     </tr>
     </table>
