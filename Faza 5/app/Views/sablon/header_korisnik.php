@@ -10,7 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-    <link rel="stylesheet" href="/mila.css">
+     <script src="/m.js"></script>
+     <link rel="stylesheet" href="/mila.css">
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/nadja.css">
     <link rel="stylesheet" href="/nina.css">
@@ -18,7 +19,7 @@
     
     <title>PSI</title>
 </head>
-  <body>
+  <body onload="vreme()">
     <header>
         <div class="container.fluid">
           <div class="row">

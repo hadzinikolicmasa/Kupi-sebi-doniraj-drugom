@@ -46,7 +46,7 @@
                 <?php 
                   foreach($fondacije as $fondacija)
                   {
-                    echo '<option value="' . $fondacija['naziv'] . '">' . $fondacija['naziv'];
+                    echo '<option value="' . $fondacija['idFondacija'] . '">' . $fondacija['naziv'];
                   }
                 ?>
 
@@ -59,7 +59,7 @@
                 <?php 
                   foreach($kategorije as $kategorija)
                   {
-                    echo '<option value="' . $kategorija['naziv'] . '">' . $kategorija['naziv'];
+                    echo '<option value="' . $kategorija['IdKategorije'] . '">' . $kategorija['naziv'];
                   }
                 ?>
 
@@ -98,8 +98,3 @@
 
   </div>
 </div>
-
-
-
-
-         

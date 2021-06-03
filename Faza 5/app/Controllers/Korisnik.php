@@ -122,6 +122,14 @@ class Korisnik extends BaseController
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
     }
 
+    public function izmena()
+    {
+        $korisnik = $this->session->get('korisnik');
+        $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,'rezimizmena'=>true]);
+
+    }
+
+
     public function kreiranje_licitacije()
     {
         $fondacijamodel=new FondacijaModel();
@@ -174,15 +182,27 @@ class Korisnik extends BaseController
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste kreirali licitaciju"]);
          
         }
-        
-
-        
+   
     }
 
-   
-   
+    public function proveraIzmena(){
+
+        
+        $korisnik = $this->session->get('korisnik');
+
+        if (!$this->validate(['adresa' => 'required'])) {
+            return $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,  'greskaiznos' => 'Adresa mora biti uneta.','rezimizmena'=>true]);
+        } else if (!$this->validate(['telefon' => 'required'])) {
+            return $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,  'greskaiznos' => 'Telefon mora biti unet.','rezimizmena'=>true]);
+        } else if (!$this->validate(['grad' => 'required'])) {
+            return $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,  'greskaiznos' => 'Grad mora biti unet.','rezimizmena'=>true]);
+        } else if (!$this->validate(['telefon' => 'integer'])) {
+            return $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,  'greskaiznos' => 'Telefon mora da ima samo cifre .','rezimizmena'=>true]);
+        } 
+
+   //$this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
+
+    }
 }
-
-
 
 

@@ -93,4 +93,10 @@ class Kompanija extends BaseController
         ];
         $fondacijaModel->update($id, $data);
     }
+
+    public function profil()
+    {
+        $kompanija = $this->session->get('kompanija');
+        $this->prikaz("profil_kompanija", ['kompanija' => $kompanija]);
+    }
 }
