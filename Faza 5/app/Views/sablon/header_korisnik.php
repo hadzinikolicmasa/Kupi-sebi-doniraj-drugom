@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/mila.css">
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/nadja.css">
+    <link rel="stylesheet" href="/nina.css">
 
     
     <title>PSI</title>
@@ -30,7 +31,7 @@
             </div>
             <div class="topnav col-8 offset-2">
             <?php echo anchor('Korisnik/index','Početna');?>
-              <?php echo anchor('','Prodaj');?>
+              <?php echo anchor('Korisnik/kreiranje_licitacije','Prodaj');?>
               <?php echo anchor('Korisnik/recenzija','Recenzija');?>
               <?php echo anchor('Korisnik/logout','Izloguj se');?>
 

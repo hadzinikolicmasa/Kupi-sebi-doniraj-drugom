@@ -122,5 +122,67 @@ class Korisnik extends BaseController
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
     }
 
+    public function kreiranje_licitacije()
+    {
+        $fondacijamodel=new FondacijaModel();
+        $kategorijamodel=new KategorijaModel();
+        $fondacije=$fondacijamodel->findAll();
+        $kategorije=$kategorijamodel->findAll();
+        $this->prikaz("kreiranje_licitacije", ['fondacije'=>$fondacije,'kategorije'=>$kategorije]);
+    }
+
+
+    public function proveraLicitacije()
+    {
+        
+        $fondacijamodel=new FondacijaModel();
+        $kategorijamodel=new KategorijaModel();
+        $fondacije=$fondacijamodel->findAll();
+        $kategorije=$kategorijamodel->findAll();
+        
+
+        $validation = \Config\Services::validation();
+
+        $validation = $this->validate(['nazivProizvoda' => ['rules' => 'required','errors' => ['required' => 'Nije unet naziv proizvoda!'  ] ], 
+        'trajanje' => ['rules' => 'required', 'errors' => ['required' => 'Nije uneto trajanje licitacije!' ]  ],
+        'opis' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije unet opis proizvoda!'  ] ],
+        'pocetnaCena' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije uneta pocetna cena proizvoda!'  ] ],
+        'fondacija' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije izabrana fondacija!'  ] ],
+        'kategorija' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije izabrana kategorija!'  ] ],
+        'slika' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije uneta slika proizvoda!'  ] ],]);
+
+        if (!$validation) 
+        {
+            return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator,'fondacije'=>$fondacije,'kategorije'=>$kategorije]);
+          
+        }
+       else
+        {
+         $licitacijamodel = new LicitacijaModel();
+
+         $licitacijamodel->insert([
+            "naziv_stvari" => $this->request->getVar("nazivProizvoda"),
+            "opis" => $this->request->getVar("opis"),
+            "pocetna_cena" => $this->request->getVar("pocetnaCena"),
+            "trajanje" => $this->request->getVar("trajanje"),
+            "slika" => base64_decode($this->request->getVar("slika")),
+            "aktivna"=> "1",
+            "Kategorija_IdKategorije"=> $this->request->getVar("kategorija"),
+            "Fondacija_idFondacija"=> $this->request->getVar("fondacija")
+         ]);
+       
+         $this->prikaz("uspeh", ["uspeh" => "Uspešno ste kreirali licitaciju"]);
+         
+        }
+        
+
+        
+    }
+
+   
    
 }
+
+
+
+

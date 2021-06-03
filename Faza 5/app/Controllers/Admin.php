@@ -44,6 +44,15 @@ class Admin extends BaseController
       $this->prikaz("korisnici", ['korisnici' => $korisnici, 'recenzije' => $recenzije]);
    }
 
+   public function licitacije()
+   {
+
+      $licitacijaModel = new LicitacijaModel();
+      $licitacije = $licitacijaModel->findAll();
+
+      $this->prikaz("azuriranje_licitacija", ['licitacije' => $licitacije]);
+   }
+
 
 
    public function brisi($id)
@@ -53,8 +62,21 @@ class Admin extends BaseController
       $recenzijaModel->where(['Korisnik_idKorisnik' => $id])->delete();
       $korisnikModel = new KorisnikModel();
       $korisnikModel->delete($id);
-
       $this->korisnici();
+   }
+
+   public function brisi_licitaciju($id)
+   {
+      $licitacijaModel = new LicitacijaModel();
+      $licitacijaModel->delete($id);
+      $this->licitacije();
+   }
+
+   public function reaktiviraj_licitaciju($id,$aktivna)
+   {
+      $licitacijaModel = new LicitacijaModel();
+      $licitacijaModel->update($id,$aktivna);
+      $this->licitacije();
    }
 
    public function  dodavanjeFond()
