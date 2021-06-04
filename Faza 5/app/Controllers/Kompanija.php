@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\FondacijaModel;
 use App\Models\UplataModel;
-use App\Models\AdminModel;
+use App\Models\KompanijaModel;
 
 
 
@@ -39,8 +39,10 @@ class Kompanija extends BaseController
         $kompanija = $this->session->get('kompanija');
 
         if (!isset($_POST['radio'])) {
+
             return  $this->prikaz("biranje_fondacije", ['greskabiranje' => 'Morate izabrati fondaciju.', 'kompanija' => $kompanija, 'fondacije' => $fondacije]);
         }
+
 
         $fondacija = $fondacijaModel->where('naziv', $_POST['radio'])->first();
         $this->session->set("fondacija", $fondacija);
@@ -91,12 +93,15 @@ class Kompanija extends BaseController
         $data = [
             'iznos' => $novi
         ];
+        
         $fondacijaModel->update($id, $data);
     }
 
     public function profil()
     {
         $kompanija = $this->session->get('kompanija');
+        $kompanijamodel = new KompanijaModel();
+        $kompanija = $kompanijamodel->find($kompanija['PIB']);
         $this->prikaz("profil_kompanija", ['kompanija' => $kompanija]);
     }
 }

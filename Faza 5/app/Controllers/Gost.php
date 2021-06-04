@@ -280,6 +280,7 @@ class Gost extends BaseController
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste se registrovali"]);
       }
    }
+   
    public function pregled()
 	{	
 

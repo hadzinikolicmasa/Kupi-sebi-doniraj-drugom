@@ -344,8 +344,7 @@ h1 {
 }
 
 .licitacija {
-    background: linear-gradient( #0e0e0e 65%, #353434 66%) top .03em center / 100% .30em repeat-y;
-    color: white;
+    color: black;
     padding: 30px;
     height: auto;
     padding: 20px;

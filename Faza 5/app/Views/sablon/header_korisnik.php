@@ -19,7 +19,7 @@
     
     <title>PSI</title>
 </head>
-  <body onload="vreme()">
+  <body>
     <header>
         <div class="container.fluid">
           <div class="row">

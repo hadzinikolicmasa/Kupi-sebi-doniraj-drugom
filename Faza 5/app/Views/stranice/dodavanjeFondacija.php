@@ -1,7 +1,7 @@
 <div class="dodavanjeFondacija">
-
+<h1><b>Dodaj fondaciju</b></h1>
   <div class="forma">
-    <h1><b>Dodaj fondaciju</b></h1>
+    
 
 
     <span class="greskaprijava">
@@ -13,10 +13,9 @@
       else if ($validation->hasError("opisFond")) echo $validation->getError("opisFond");
 
       ?></span>
-    <form method="post" action="<?= site_url('Admin/proveraDodavanjaFondacije') ?>">
+    <form method="post" action="<?= site_url('Admin/proveraDodavanjaFondacije') ?>" enctype="multipart/form-data" >
 
       <table width="90%" cellpadding="5px" align="center">
-
 
 
         </span> </td>
@@ -47,12 +46,15 @@
 
           <td colspan="2"><input type="file" name="logoFond" value="<?= set_value('logoFond')?>"></td>
         </tr>
-
+    
         <tr>
 
           <td align="center" colspan="2">
-            <button class="btn btn-dark " style="margin-top:25px">Dodaj fondaciju</button>
-    </form>
+            <button class="btn btn-dark " style="margin-top:25px">Dodaj fondaciju</button>  
+            </form>
+           
+           
+ 
     </td>
     </tr>
     </table>
