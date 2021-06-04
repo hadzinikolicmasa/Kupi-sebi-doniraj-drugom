@@ -7,6 +7,7 @@ use App\Models\LicitacijaModel;
 use App\Models\FondacijaModel;
 use App\Models\RecenzijaModel;
 use App\Models\KorisnikModel;
+use App\Models\TrenutnaCenaModel;
 
 class Korisnik extends BaseController
 {
@@ -178,7 +179,17 @@ class Korisnik extends BaseController
             "Kategorija_IdKategorije"=> $this->request->getVar("kategorija"),
             "Fondacija_idFondacija"=> $this->request->getVar("fondacija")
          ]);
-       
+         
+            $trenutnaCenamodel = new TrenutnaCenaModel();
+            $poslednji= $licitacijaModel->where("naziv_stvari")->last();
+            $trenutnaCenamodel->insert([
+
+            "Cena"=>$this->request->getVar("pocetnaCena"),
+            "Licitacija_idLicitacija"=>$poslednji['Licitacija_idLicitacija'];
+
+            ]);
+
+
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste kreirali licitaciju"]);
          
         }
@@ -201,7 +212,7 @@ class Korisnik extends BaseController
             return $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,  'greskaiznos' => 'Telefon mora da ima samo cifre .','rezimizmena'=>true]);
         } 
 
-   //$this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
+   $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
 
     }
 }

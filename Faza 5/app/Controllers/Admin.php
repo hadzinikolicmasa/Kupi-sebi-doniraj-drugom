@@ -128,21 +128,19 @@ class Admin extends BaseController
 
       $licitacijaModel = new LicitacijaModel();
       $licitacije = $licitacijaModel->findAll();
-
-      $this->prikaz("azuriranje_licitacija", ['licitacije' => $licitacije]);
+      $trenutnaCenamodel= new TrenutnaCenaModel();
+      $trenutnecene=$trenutnaCenamodel->findAll();
+      $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije,'trenutnecene'=>$trenutnecene]);
    }
 
-   public function brisi_licitaciju($id)
+   /*public function azuriranje_licitacije($id)
    {
       $licitacijaModel = new LicitacijaModel();
       $licitacijaModel->delete($id);
       $this->licitacije();
-   }
-
-   public function reaktiviraj_licitaciju($id,$aktivna)
-   {
-      $licitacijaModel = new LicitacijaModel();
       $licitacijaModel->update($id,$aktivna);
       $this->licitacije();
-   }
+   }*/
+
+  
 }
