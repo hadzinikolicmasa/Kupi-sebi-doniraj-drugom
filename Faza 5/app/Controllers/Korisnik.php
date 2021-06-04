@@ -191,11 +191,13 @@ class Korisnik extends BaseController
          ]);
          
             $trenutnaCenamodel = new TrenutnaCenaModel();
-            $poslednji= $licitacijaModel->where("naziv_stvari")->last();
-            $trenutnaCenamodel->insert([
+            $licitacijaModel = new LicitacijaModel();
+            $poslednji= $licitacijaModel->where("naziv_stvari",$this->request->getVar("nazivProizvoda"))->first();
 
+
+            $trenutnaCenamodel->insert([
             "Cena"=>$this->request->getVar("pocetnaCena"),
-            "Licitacija_idLicitacija"=>$poslednji['Licitacija_idLicitacija'];
+            "Licitacija_idLicitacija"=>$poslednji['idLicitacija']
 
             ]);
 

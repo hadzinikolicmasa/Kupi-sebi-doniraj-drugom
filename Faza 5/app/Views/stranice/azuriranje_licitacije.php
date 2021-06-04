@@ -1,4 +1,4 @@
-<form>
+<form method='post'>
    <div class="licitacije">
       <table class="table table-striped tabelakor">
          <tr>
@@ -16,8 +16,10 @@
             foreach($licitacije as $licitacija)
             {
             echo "<tr>
-            <td>{$licitacija['idLicitacija']}</td>
-            <td>{$licitacija['aktivna']}</td>
+            <td>{$licitacija['idLicitacija']}</td>";
+            if($licitacija['aktivna']==1) echo "<td>Ne</td>";
+            else echo "<td>Da</td>";
+            echo "
             <td>{$trenutnecene[$i]['Cena']}</td>
             <td>{$licitacija['uplaceno']}</td>
             <td><input type='radio' name='Opcija' value='brisanje'>&nbsp;&nbsp;Obriši</td>

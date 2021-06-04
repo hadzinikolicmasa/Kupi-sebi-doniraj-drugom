@@ -12,6 +12,7 @@
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/mila.css">
+
     
     
     <title>PSI</title>
@@ -30,7 +31,7 @@
             <div class="topnav col-8 offset-2">
             
             <?php echo anchor('Admin/index','Početna');?>
-              <?php echo anchor('','Licitacije');?>
+              <?php echo anchor('Admin/licitacije','Licitacije');?>
               <?php echo anchor('Admin/korisnici','Korisnici');?>
               <?php echo anchor('Admin/logout','Izloguj se');?>
               

@@ -6,6 +6,7 @@ use App\Models\KorisnikModel;
 use App\Models\RecenzijaModel;
 use App\Models\FondacijaModel;
 use App\Models\LicitacijaModel;
+use App\Models\TrenutnacenaModel;
 
 class Admin extends BaseController
 {
@@ -138,20 +139,37 @@ class Admin extends BaseController
       $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije,'trenutnecene'=>$trenutnecene]);
    }
 
-   /*public function azuriranje_licitacije($id)
+   public function azuriranje_licitacije($id)
    {
-      $licitacijaModel = new LicitacijaModel();
-      $licitacijaModel->delete($id);
+      $licitacijaModel= new LicitacijaModel();
+
+      if(isset($_POST['Opcija']))
+      {
+         
+         if($_POST['Opcija'] == "brisanje")
+         {
+            
+            $trenutnaCenaModel= new TrenutnacenaModel();
+            $trenutnaCenaModel->where(['Licitacija_idLicitacija'=>$id])->delete();
+         
+            $licitacijaModel->delete($id);
+
+         }
+         else if($_POST['Opcija'] == "reaktivacija")
+         {
+           $licitacija= $licitacijaModel->find($id);
+           $tmstamp=strtotime($licitacija['trajanje'])+strtotime(date('Y-m-d'));
+           $data = [
+            'trajanje' => date("Y-m-d",$tmstamp),
+            'aktivna' => '1'
+         ];
+         $licitacijaModel->update($id, $data);
+         }
+      }
+
+
       $this->licitacije();
-      $licitacijaModel->update($id,$aktivna);
    }
-
-   public function reaktiviraj_licitaciju($id, $aktivna)
-   {
-      $licitacijaModel = new LicitacijaModel();
-      $licitacijaModel->update($id, $aktivna);
-      $this->licitacije();
-   }*/
-
   
 }
+
