@@ -132,13 +132,18 @@ class Admin extends BaseController
       if (!$validation) return $this->prikaz("dodavanjeFondacija", ['validation' => $this->validator]);
       else {
          $fondacijamodel = new FondacijaModel();
+        /* $image=$_FILES['image']['tmp_name'];
+         $imgContent=addslashes(file_get_contents($image));
+
+*/
+
 
          $fondacijamodel->insert([
             "naziv" => $this->request->getVar("nazivFond"),
             "adresa" => $this->request->getVar("adresaFond"),
             "racun" => $this->request->getVar("racunFond"),
             'opis' => $this->request->getVar("opisFond"),
-            "logo" => base64_decode($this->request->getVar("logoFond")),
+            "logo" => $this->request->getVar("logoFond"),
             "iznos" => "0"
          ]);
 
@@ -150,21 +155,25 @@ class Admin extends BaseController
 
       $licitacijaModel = new LicitacijaModel();
       $licitacije = $licitacijaModel->findAll();
-
-      $this->prikaz("azuriranje_licitacija", ['licitacije' => $licitacije]);
+      $trenutnaCenamodel= new TrenutnaCenaModel();
+      $trenutnecene=$trenutnaCenamodel->findAll();
+      $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije,'trenutnecene'=>$trenutnecene]);
    }
 
-   public function brisi_licitaciju($id)
+   /*public function azuriranje_licitacije($id)
    {
       $licitacijaModel = new LicitacijaModel();
       $licitacijaModel->delete($id);
       $this->licitacije();
+      $licitacijaModel->update($id,$aktivna);
    }
 
-   public function reaktiviraj_licitaciju($id,$aktivna)
+   public function reaktiviraj_licitaciju($id, $aktivna)
    {
       $licitacijaModel = new LicitacijaModel();
-      $licitacijaModel->update($id,$aktivna);
+      $licitacijaModel->update($id, $aktivna);
       $this->licitacije();
-   }
+   }*/
+
+  
 }

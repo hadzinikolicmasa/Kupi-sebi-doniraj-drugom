@@ -12,27 +12,20 @@
          </tr>
 
          <?php
-
-         foreach ($licitacije as $licitacija)
-          {
-
-            if($licitacija['aktivna']==0) // && //($licitacija[]) da li je uplaceno????
+            $i=0;
+            foreach($licitacije as $licitacija)
             {
-                $licitacija['aktivna']=1;
-            }
-            
-      
-            //!!!!!!!!!!!!!!!!!!!!!
             echo "<tr>
             <td>{$licitacija['idLicitacija']}</td>
             <td>{$licitacija['aktivna']}</td>
-            ??<td>{$licitacija['']}</td> trenutna cena
-            ??<td>{$licitacija['']}</td> uplaceno
+            <td>{$trenutnecene[$i]['Cena']}</td>
+            <td>{$licitacija['uplaceno']}</td>
             <td><input type='radio' name='Opcija' value='brisanje'>&nbsp;&nbsp;Obriši</td>
             <td><input type='radio' name='Opcija' value='reaktivacija'>&nbsp;&nbsp;Reaktiviraj</td>
-            ???????????????<td><button class='btn btn-light '>" . anchor("$controller/brisi_licitaciju/{$licitacija['idLicitacija']}", 'Azuriraj') . "</button> </td>
-             </tr>";
-         }
+            <td><button class='btn btn-light '>" . anchor("$controller/azuriranje_licitacije/{$licitacija['idLicitacija']}", 'Azuriraj') . "</button> </td>
+            </tr>";
+             $i++;
+            }
 
          ?>
       </table>

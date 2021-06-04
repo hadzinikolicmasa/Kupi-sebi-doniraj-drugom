@@ -10,7 +10,9 @@
                 ?>
 
             </div>
+            <form method="post" action= "<?= site_url("$controller/licitiraj/{$licitacija['idLicitacija']}")?>" >
 
+           
             <div class="licitacijatext">
             <h2 style="color:#E71D36"> <?php echo $licitacija['naziv_stvari']; ?></h2>
             <p><?php echo $licitacija['opis']; ?></p>
@@ -35,23 +37,27 @@
                     </tr>
                     <tr>
                 <td>Trenutna cena: </td>
-                <td>300 din</td>
+                <td><?php if(isset($cena))echo $cena; ?></td>
             </tr>
             <tr>
-                <td align="center" colspan="2">( masahn )</td>
+                <td align="center" colspan="2"><?php if($korisnik!=null)echo "(".$korisnik['korisnickoime'].")";
+                else echo "(anonimno)";
+                ?></td>
             </tr>
             <tr>
             <td align="left">Nova ponuda: </td>
-            <td><input type="text" placeholder="Unesite cenu"></td>
+            <td><input type="text" name='cena'  placeholder="Unesite cenu"></td>
             </tr>
             <tr>
-                <td><input type="checkbox" name="" id=""> Anonimno</td>
+                <td><input type="checkbox" name="anonimno" value="anonimno" > Anonimno</td>
             </tr>
             <tr>
-                <form action= "<?= site_url('Korisnik/index')?>">
-                <td align="right"><button class="btn btn-dark odustani">Nazad</button></td>
+                
+                <td align="right"><button class="btn btn-dark licitiraj">Licitiraj</button></td>
                 </form>
-                <td align="center"><button class="btn btn-dark licitiraj">Licitiraj</button></td>
+                <form action= "<?= site_url('Korisnik/index')?>">
+                <td align="center"><button class="btn btn-dark odustani">Nazad</button></td>
+                </form>
             </tr>
 
                 </table>
