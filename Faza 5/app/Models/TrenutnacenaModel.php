@@ -4,10 +4,12 @@ use CodeIgniter\Model;
 
 
 
-class TrenutnacenaModel extends Model{
+
+class TrenutnaCenaModel extends Model{
 
    protected $table='trenutne_cene';
    protected $primaryKey='Licitacija_idLicitacija';
    protected $allowedFields=['Cena','Korisnik_idKorisnik'];
+   
 
 }
