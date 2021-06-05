@@ -7,7 +7,8 @@
                     <?php echo $korisnik['korisnickoime']; ?>
                 </h4>
                 <p class="cardtext">Korisnik</p>
-                <form action="<?= site_url('Korisnik/profil') ?>">
+                <form action="<?= site_url('Korisnik/profil') ?>" method="post">
+                
                     <button class="btn btn-dark" style="margin-bottom: 10px;">Profil</button><br>
                 </form>
             </div>
@@ -55,7 +56,7 @@
                 if ($counter % 4 == 0) echo "<tr>";
                 $counter++;
 
-                echo '<td align="left" >' . '<img class="proizvod" src = "data:image/png;base64,' . base64_encode($licitacija['slika']) . '" width = "150px" height = "190px" "/><br>' .   anchor("$controller/proizvod/{$licitacija['idLicitacija']}", '' . $licitacija['naziv_stvari'])  . '</td>';
+                echo '<td align="left" >' . '<img class="proizvod" src = "' .$licitacija['slika'] . '" width = "150px" height = "190px" "/><br>' .   anchor("$controller/proizvod/{$licitacija['idLicitacija']}", '' . $licitacija['naziv_stvari'])  . '</td>';
 
                 if ($counter % 4 == 0) echo "<tr>";
             }

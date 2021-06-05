@@ -1,4 +1,4 @@
-<form method='post'>
+<form method='post' action="<?= site_url("$controller/azuriranje_licitacije") ?>" >
    <div class="licitacije">
       <table class="table table-striped tabelakor">
          <tr>
@@ -24,7 +24,8 @@
             <td>{$licitacija['uplaceno']}</td>
             <td><input type='radio' name='Opcija' value='brisanje'>&nbsp;&nbsp;Obriši</td>
             <td><input type='radio' name='Opcija' value='reaktivacija'>&nbsp;&nbsp;Reaktiviraj</td>
-            <td><button class='btn btn-light '>" . anchor("$controller/azuriranje_licitacije/{$licitacija['idLicitacija']}", 'Azuriraj') . "</button> </td>
+            <td><button class='btn btn-light '>Azuriraj</button> </td>
+            <input type='hidden' name='id' value=".$licitacija['idLicitacija'].">
             </tr>";
              $i++;
             }

@@ -13,7 +13,7 @@
       else if ($validation->hasError("opisFond")) echo $validation->getError("opisFond");
 
       ?></span>
-    <form method="post" action="<?= site_url('Admin/proveraDodavanjaFondacije') ?>" enctype="multipart/form-data" >
+    <form method="post" action="<?= site_url("$controller/proveraDodavanjaFondacije") ?>"  >
 
       <table width="90%" cellpadding="5px" align="center">
 
@@ -52,7 +52,9 @@
           <td align="center" colspan="2">
             <button class="btn btn-dark " style="margin-top:25px">Dodaj fondaciju</button>  
             </form>
-           
+           <form action="<?= site_url("$controller/index") ?>">
+           <button class="btn btn-dark " style="margin-top:25px">Odustani</button>  
+           </form>
            
  
     </td>

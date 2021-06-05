@@ -44,3 +44,7 @@
     border: 3px solid #cccccc;
     box-sizing: border-box;
 }
+
+.formaprofil button {
+    margin-top: 10px;
+}

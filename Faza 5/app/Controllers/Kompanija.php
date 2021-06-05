@@ -104,4 +104,38 @@ class Kompanija extends BaseController
         $kompanija = $kompanijamodel->find($kompanija['PIB']);
         $this->prikaz("profil_kompanija", ['kompanija' => $kompanija]);
     }
+
+    public function izmena()
+    {
+        $kompanija = $this->session->get('kompanija');
+        $this->prikaz("profil_kompanija", ['kompanija' => $kompanija, 'rezimizmena' => true]);
+    }
+
+
+
+    public function proveraIzmena(){
+
+        $kompanija = $this->session->get('kompanija');
+
+        if (!$this->validate(['adresa' => 'required'])) {
+            return $this->prikaz("profil_kompanija", ['kompanija' => $kompanija,  'greskaizmena' => 'Adresa mora biti uneta.', 'rezimizmena' => true]);
+        }else if (!$this->validate(['telefon' => 'required'])) {
+            return $this->prikaz("profil_kompanija", ['kompanija' => $kompanija,  'greskaizmena' => 'Telefon mora biti unet.', 'rezimizmena' => true]);
+        } else if (!$this->validate(['telefon' => 'integer'])) {
+            return $this->prikaz("profil_kompanija", ['kompanija' => $kompanija,  'greskaizmena' => 'Telefon mora da ima samo cifre .', 'rezimizmena' => true]);
+        }
+
+        
+        $kompanijamodel = new KompanijaModel();
+
+        $data = [
+            'adresa' => $this->request->getVar('adresa'),
+            'telefon' => $this->request->getVar('telefon')
+        ];
+        $kompanijamodel->update($kompanija['PIB'], $data);
+        $kompanija = $kompanijamodel->find($kompanija['PIB']);
+        $this->session->set('kompanija',$kompanija);
+
+        $this->prikaz("profil_kompanija", ['kompanija' => $kompanija]);
+    }
 }

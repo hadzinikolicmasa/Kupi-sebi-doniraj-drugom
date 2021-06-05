@@ -5,9 +5,9 @@
     <span class="greskaprijava"><?php if (!empty($greskaizmena)) echo $greskaizmena  ?></span>
 
 
-    <form method="post" action="<?= site_url('Korisnik/proveraIzmena') ?>">
+    <form method="post" action="<?= site_url("$controller/proveraIzmena") ?>">
 
-      <table width="100%" cellpadding="5px">
+      <table width="100%" cellpadding="5px" >
         <tr>
           <td>Ime: </td>
           <td><?php
@@ -66,7 +66,7 @@
       ?>
  </form>
 
-      <?php if (!isset($rezimizmena)) echo ' <td align="left"> <button class="btn btn-dark" value="Izmeni">'. anchor("Korisnik/index", 'Nazad') .'</button></td> ';
+      <?php if (!isset($rezimizmena)) echo ' <td align="left"> <button class="btn btn-dark" value="Izmeni">'.  anchor("Korisnik/index", 'Nazad') .'</button></td> ';
       else echo '  <form method="post" action=' . site_url("Korisnik/profil") . '><td align="left"> <button class="btn btn-dark" value="Izmeni">Odustani</button></td>   </form>'
 
       ?>

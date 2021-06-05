@@ -169,6 +169,7 @@ ul.social-network li {
 .adminpocetna {
     padding-top: 20px;
     height: auto;
+    padding-bottom: 100px;
 }
 
 #odabirfondacija {
@@ -344,9 +345,10 @@ h1 {
 }
 
 .licitacija {
-    color: black;
+    background: linear-gradient( #0e0e0e 65%, #1d1d1d 66%) top .03em center / 100% .30em repeat-y;
     padding: 30px;
     height: auto;
+    color: white;
     padding: 20px;
     margin-bottom: 100px;
     margin-top: 50px;

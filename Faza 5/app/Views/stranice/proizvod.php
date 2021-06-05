@@ -5,7 +5,7 @@
             <div class="licitacijaslika">
                 <?php
 
-                echo '<img class="proizvod" src = "data:image/png;base64,' . base64_encode($licitacija['slika']) . '" width = "260px" height = "350px" "/><br>';
+                echo '<img class="proizvod" src = "' .$licitacija['slika'] . '" width = "260px" height = "350px" "/><br>';
 
                 ?>
 
@@ -36,6 +36,8 @@
                         <td><p id="time"> <?php echo $licitacija['trajanje'];?></p></td>
                     </tr>
                     <tr>
+                    <span class="greskaprijava"><?php if (!empty($poruka)) echo $poruka  ?></span>
+
                 <td>Trenutna cena: </td>
                 <td><?php if(isset($cena))echo $cena; ?></td>
             </tr>

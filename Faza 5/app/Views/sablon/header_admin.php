@@ -12,7 +12,8 @@
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/mila.css">
-
+    <link rel="stylesheet" href="/nina.css">
+    <link rel="stylesheet" href="/nadja.css">
     
     
     <title>PSI</title>

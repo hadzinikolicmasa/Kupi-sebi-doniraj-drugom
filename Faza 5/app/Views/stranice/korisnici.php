@@ -1,4 +1,5 @@
-<form>
+<form method='post' action="<?= site_url("$controller/brisi") ?>" >
+
    <div class="korisnici">
       <table class="table table-striped tabelakor">
          <tr>
@@ -35,7 +36,9 @@
    <td>{$korisnik['telefon']}</td>
    <td>{$korisnik['korisnickoime']}</td>
    <td>{$avg}</td>
-   <td><button class='btn btn-light '>" . anchor("$controller/brisi/{$korisnik['idKorisnik']}", 'Obriši') . "</button> </td>
+   <td><button class='btn btn-light '>Obriši</button> 
+   <input type='hidden' name='id' value=".$korisnik['idKorisnik'].">
+   </td>
    </tr>";
          }
 

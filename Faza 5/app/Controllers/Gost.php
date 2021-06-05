@@ -323,6 +323,6 @@ class Gost extends BaseController
 		$kategorija = $kategorijamodel->where('naziv', $id)->first();
 		$licitacije = $licitacijamodel->where('Kategorija_IdKategorije', $kategorija['IdKategorije'])->findAll();
 
-		$this->prikaz("pregled", ['kategorije' => $kategorije, 'licitacije' => $licitacije, 'odabrana' => $kategorija['naziv'],'unavailable'=>"Morate se registrovati prvo."]);
+		$this->prikaz("pregled", ['kategorije' => $kategorije, 'licitacije' => $licitacije, 'odabrana' => $kategorija['naziv'],'unavailable'=>"Morate se prijaviti prvo."]);
    }
 }

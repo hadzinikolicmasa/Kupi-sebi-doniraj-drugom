@@ -56,17 +56,16 @@ class Korisnik extends BaseController
 
         $fondacija = $fondacijamodel->where('idFondacija', $licitacija['Fondacija_idFondacija'])->first();
 
-        $trenutnacena=new TrenutnacenaModel();
-        $lic=$trenutnacena->find($id);
-        $korisnikmodel=new KorisnikModel();
-        
+        $trenutnacena = new TrenutnacenaModel();
+        $lic = $trenutnacena->find($id);
+        $korisnikmodel = new KorisnikModel();
 
-       if($lic['Korisnik_idKorisnik']!=null)$korisnik=$korisnikmodel->find($lic['Korisnik_idKorisnik']);
-       else  $korisnik=null;
-        
 
-     $this->prikaz("proizvod", ['korisnik'=>$korisnik,'cena'=>$lic["Cena"],'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
+        if ($lic['Korisnik_idKorisnik'] != null) $korisnik = $korisnikmodel->find($lic['Korisnik_idKorisnik']);
+        else  $korisnik = null;
 
+
+        $this->prikaz("proizvod", ['korisnik' => $korisnik, 'cena' => $lic["Cena"], 'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
     }
 
     public function recenzija()
@@ -128,6 +127,7 @@ class Korisnik extends BaseController
 
     public function profil()
     {
+     
         $korisnik = $this->session->get('korisnik');
         $korisnikmodel = new KorisnikModel();
         $korisnik = $korisnikmodel->find($korisnik['idKorisnik']);
@@ -162,53 +162,48 @@ class Korisnik extends BaseController
 
         $validation = \Config\Services::validation();
 
-        $validation = $this->validate(['nazivProizvoda' => ['rules' => 'required','errors' => ['required' => 'Nije unet naziv proizvoda!'  ] ], 
-        'trajanje' => ['rules' => 'required', 'errors' => ['required' => 'Nije uneto trajanje licitacije!' ]  ],
-        'opis' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije unet opis proizvoda!'  ] ],
-        'pocetnaCena' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije uneta pocetna cena proizvoda!'  ] ],
-        'fondacija' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije izabrana fondacija!'  ] ],
-        'kategorija' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije izabrana kategorija!'  ] ],
-        'slika' => [ 'rules' => 'required',  'errors' => [ 'required' => 'Nije uneta slika proizvoda!'  ] ],]);
+        $validation = $this->validate([
+            'nazivProizvoda' => ['rules' => 'required', 'errors' => ['required' => 'Nije unet naziv proizvoda!']],
+            'trajanje' => ['rules' => 'required', 'errors' => ['required' => 'Nije uneto trajanje licitacije!']],
+            'opis' => ['rules' => 'required',  'errors' => ['required' => 'Nije unet opis proizvoda!']],
+            'pocetnaCena' => ['rules' => 'required',  'errors' => ['required' => 'Nije uneta pocetna cena proizvoda!']],
+            'fondacija' => ['rules' => 'required',  'errors' => ['required' => 'Nije izabrana fondacija!']],
+            'kategorija' => ['rules' => 'required',  'errors' => ['required' => 'Nije izabrana kategorija!']],
+            'slika' => ['rules' => 'required',  'errors' => ['required' => 'Nije uneta slika proizvoda!']],
+        ]);
 
-        if (!$validation) 
-        {
-            return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator,'fondacije'=>$fondacije,'kategorije'=>$kategorije]);
-          
-        }
-       else
-        {
-         $licitacijamodel = new LicitacijaModel();
+        if (!$validation) {
+            return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator, 'fondacije' => $fondacije, 'kategorije' => $kategorije]);
+        } else {
+            $licitacijamodel = new LicitacijaModel();
 
-         $licitacijamodel->insert([
-            "naziv_stvari" => $this->request->getVar("nazivProizvoda"),
-            "opis" => $this->request->getVar("opis"),
-            "pocetna_cena" => $this->request->getVar("pocetnaCena"),
-            "trajanje" => $this->request->getVar("trajanje"),
-            "slika" => base64_decode($this->request->getVar("slika")),
-            "aktivna"=> "1",
-            "Kategorija_IdKategorije"=> $this->request->getVar("kategorija"),
-            "Fondacija_idFondacija"=> $this->request->getVar("fondacija")
-         ]);
-         
+            $src='/'.'slike/'.$this->request->getVar("slika");
+
+            $licitacijamodel->insert([
+                "naziv_stvari" => $this->request->getVar("nazivProizvoda"),
+                "opis" => $this->request->getVar("opis"),
+                "pocetna_cena" => $this->request->getVar("pocetnaCena"),
+                "trajanje" => $this->request->getVar("trajanje"),
+                "slika" => $src,
+                "aktivna" => "1",
+                "Kategorija_IdKategorije" => $this->request->getVar("kategorija"),
+                "Fondacija_idFondacija" => $this->request->getVar("fondacija")
+            ]);
+
             $trenutnaCenamodel = new TrenutnaCenaModel();
             $licitacijaModel = new LicitacijaModel();
-            $poslednji= $licitacijaModel->where("naziv_stvari",$this->request->getVar("nazivProizvoda"))->first();
+            $poslednji = $licitacijaModel->where("naziv_stvari", $this->request->getVar("nazivProizvoda"))->first();
 
 
             $trenutnaCenamodel->insert([
-            "Cena"=>$this->request->getVar("pocetnaCena"),
-            "Licitacija_idLicitacija"=>$poslednji['idLicitacija']
+                "Cena" => $this->request->getVar("pocetnaCena"),
+                "Licitacija_idLicitacija" => $poslednji['idLicitacija']
 
             ]);
 
 
-         $this->prikaz("uspeh", ["uspeh" => "Uspešno ste kreirali licitaciju"]);
-         
+            $this->prikaz("uspeh", ["uspeh" => "Uspešno ste kreirali licitaciju"]);
         }
-
-        
-               
-        
     }
 
     public function proveraIzmena()
@@ -227,7 +222,7 @@ class Korisnik extends BaseController
             return $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,  'greskaizmena' => 'Telefon mora da ima samo cifre .', 'rezimizmena' => true]);
         }
 
-        $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
+        
         $korisnikmodel = new KorisnikModel();
 
         $data = [
@@ -237,35 +232,36 @@ class Korisnik extends BaseController
         ];
         $korisnikmodel->update($korisnik['idKorisnik'], $data);
         $korisnik = $korisnikmodel->find($korisnik['idKorisnik']);
+        $this->session->set('korisnik',$korisnik);
+
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
     }
 
 
-    public function licitiraj($id){
+    public function licitiraj($id)
+    {
+        $trenutnaCenamodel = new TrenutnaCenaModel();
+        $trenutna= $trenutnaCenamodel->find($id);
 
-        
-        if($this->request->getVar('cena')!=''){
-         if($this->request->getVar('anonimno')!='anonimno'){
-          
-            $data = [
-                'Cena' => $this->request->getVar('cena'),
-                'Korisnik_idKorisnik'=>$this->session->get('korisnik')['idKorisnik']
-            ];
-        }else {
-            
-            $data = [
-                'Cena' => $this->request->getVar('cena'),
-                'Korisnik_idKorisnik'=>NULL
-            ];
+        if ($this->request->getVar('cena') != '' && $this->request->getVar('cena')>($trenutna['Cena'])) {
+            if ($this->request->getVar('anonimno') != 'anonimno') {
 
-        }
-        $trenutnacenamodel=new TrenutnacenaModel();
-        $trenutnacenamodel->update($id, $data);
+                $data = [
+                    'Cena' => $this->request->getVar('cena'),
+                    'Korisnik_idKorisnik' => $this->session->get('korisnik')['idKorisnik']
+                ];
+            } else {
+
+                $data = [
+                    'Cena' => $this->request->getVar('cena'),
+                    'Korisnik_idKorisnik' => NULL
+                ];
             }
-        
+            $trenutnacenamodel = new TrenutnacenaModel();
+            $trenutnacenamodel->update($id, $data);
+        }
 
-       $this->proizvod($id);
+
+        $this->proizvod($id);
     }
 }
-
-

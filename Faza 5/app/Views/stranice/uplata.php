@@ -52,10 +52,10 @@
 
           <td colspan="4" align="center">
             <button class="btn btn-dark ">Uplati</button>
-    </form>
-    <form action="<?= site_url('Kompanija/index') ?>">
+    </form> <form action="<?= site_url('Kompanija/index') ?>">
       <button class="btn btn-dark " style="margin: 10px;">Odustani</button>
     </form>
+   
     </td>
     </tr>
     </table>

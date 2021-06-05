@@ -47,9 +47,9 @@ class Admin extends BaseController
 
 
 
-   public function brisi($id)
+   public function brisi()
    {
-
+      $id=$this->request->getVar('id');
       $recenzijaModel = new RecenzijaModel();
       $recenzijaModel->where(['Korisnik_idKorisnik' => $id])->delete();
       $korisnikModel = new KorisnikModel();
@@ -110,19 +110,17 @@ class Admin extends BaseController
 
       if (!$validation) return $this->prikaz("dodavanjeFondacija", ['validation' => $this->validator]);
       else {
-         $fondacijamodel = new FondacijaModel();
-        /* $image=$_FILES['image']['tmp_name'];
-         $imgContent=addslashes(file_get_contents($image));
 
-*/
-
+      $fondacijamodel = new FondacijaModel();
+      echo $src='/'.'slike/'.$this->request->getVar("logoFond");
+   
 
          $fondacijamodel->insert([
             "naziv" => $this->request->getVar("nazivFond"),
             "adresa" => $this->request->getVar("adresaFond"),
             "racun" => $this->request->getVar("racunFond"),
             'opis' => $this->request->getVar("opisFond"),
-            "logo" => $this->request->getVar("logoFond"),
+            "logo" => $src,
             "iznos" => "0"
          ]);
 
@@ -139,8 +137,9 @@ class Admin extends BaseController
       $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije,'trenutnecene'=>$trenutnecene]);
    }
 
-   public function azuriranje_licitacije($id)
+   public function azuriranje_licitacije()
    {
+      $id=$this->request->getVar('id');
       $licitacijaModel= new LicitacijaModel();
 
       if(isset($_POST['Opcija']))
@@ -158,9 +157,12 @@ class Admin extends BaseController
          else if($_POST['Opcija'] == "reaktivacija")
          {
            $licitacija= $licitacijaModel->find($id);
-           $tmstamp=strtotime($licitacija['trajanje'])+strtotime(date('Y-m-d'));
+
+         
+
+           $tmstamp=Date('y:m:d', strtotime('+3 days'));
            $data = [
-            'trajanje' => date("Y-m-d",$tmstamp),
+            'trajanje' => $tmstamp,
             'aktivna' => '1'
          ];
          $licitacijaModel->update($id, $data);
