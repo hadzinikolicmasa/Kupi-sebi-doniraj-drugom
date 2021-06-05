@@ -8,6 +8,8 @@ use App\Models\FondacijaModel;
 use App\Models\RecenzijaModel;
 use App\Models\KorisnikModel;
 use App\Models\TrenutnaCenaModel;
+use App\Models\UplataModel;
+
 
 class Korisnik extends BaseController
 {
@@ -57,15 +59,36 @@ class Korisnik extends BaseController
         $fondacija = $fondacijamodel->where('idFondacija', $licitacija['Fondacija_idFondacija'])->first();
 
         $trenutnacena = new TrenutnacenaModel();
-        $lic = $trenutnacena->find($id);
         $korisnikmodel = new KorisnikModel();
+        $recenzijamodel = new RecenzijaModel();
 
+        $lic = $trenutnacena->find($id);
+
+        $korisnik = $korisnikmodel->where('korisnickoime', $licitacija['korisnik'])->first();
+
+        $ocene = $recenzijamodel->where('Korisnik_idKorisnik', $korisnik['idKorisnik'])->findAll();
+
+        $ocena = 0;
+        $count = 0;
+
+        foreach ($ocene as $zbir) {
+            $count++;
+            $ocena += $zbir['Ocena'];
+        }
+
+        if ($count != 0) $ocena = $ocena / $count;
 
         if ($lic['Korisnik_idKorisnik'] != null) $korisnik = $korisnikmodel->find($lic['Korisnik_idKorisnik']);
         else  $korisnik = null;
 
+        $trenutni = $this->session->get("korisnik");
 
-        $this->prikaz("proizvod", ['korisnik' => $korisnik, 'cena' => $lic["Cena"], 'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
+        $tmp = $trenutnacena->where("Licitacija_idLicitacija", $id)->first();
+        $pobednik = NULL;
+        if ($tmp['Korisnik_idKorisnik'] != NULL)
+            $pobednik = $korisnikmodel->find($tmp["Korisnik_idKorisnik"]);
+
+        $this->prikaz("proizvod", ['pobednik' => $pobednik, 'trenutni' => $trenutni, 'ocena' => $ocena, 'korisnik' => $korisnik, 'cena' => $lic["Cena"], 'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
     }
 
     public function recenzija()
@@ -127,7 +150,7 @@ class Korisnik extends BaseController
 
     public function profil()
     {
-     
+
         $korisnik = $this->session->get('korisnik');
         $korisnikmodel = new KorisnikModel();
         $korisnik = $korisnikmodel->find($korisnik['idKorisnik']);
@@ -177,7 +200,7 @@ class Korisnik extends BaseController
         } else {
             $licitacijamodel = new LicitacijaModel();
 
-            $src='/'.'slike/'.$this->request->getVar("slika");
+            $src = '/' . 'slike/' . $this->request->getVar("slika");
 
             $licitacijamodel->insert([
                 "naziv_stvari" => $this->request->getVar("nazivProizvoda"),
@@ -185,14 +208,14 @@ class Korisnik extends BaseController
                 "pocetna_cena" => $this->request->getVar("pocetnaCena"),
                 "trajanje" => $this->request->getVar("trajanje"),
                 "slika" => $src,
-                "aktivna" => "1",
                 "Kategorija_IdKategorije" => $this->request->getVar("kategorija"),
-                "Fondacija_idFondacija" => $this->request->getVar("fondacija")
+                "Fondacija_idFondacija" => $this->request->getVar("fondacija"),
+                "korisnik" => $this->session->get("korisnik")['korisnickoime']
             ]);
 
             $trenutnaCenamodel = new TrenutnaCenaModel();
             $licitacijaModel = new LicitacijaModel();
-            $poslednji = $licitacijaModel->where("naziv_stvari", $this->request->getVar("nazivProizvoda"))->first();
+            $poslednji = $licitacijaModel->where("naziv_stvari", $this->request->getVar("nazivProizvoda"))->orderby('idLicitacija', 'desc')->first();
 
 
             $trenutnaCenamodel->insert([
@@ -222,7 +245,7 @@ class Korisnik extends BaseController
             return $this->prikaz("profil_korisnik", ['korisnik' => $korisnik,  'greskaizmena' => 'Telefon mora da ima samo cifre .', 'rezimizmena' => true]);
         }
 
-        
+
         $korisnikmodel = new KorisnikModel();
 
         $data = [
@@ -232,7 +255,7 @@ class Korisnik extends BaseController
         ];
         $korisnikmodel->update($korisnik['idKorisnik'], $data);
         $korisnik = $korisnikmodel->find($korisnik['idKorisnik']);
-        $this->session->set('korisnik',$korisnik);
+        $this->session->set('korisnik', $korisnik);
 
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
     }
@@ -241,9 +264,9 @@ class Korisnik extends BaseController
     public function licitiraj($id)
     {
         $trenutnaCenamodel = new TrenutnaCenaModel();
-        $trenutna= $trenutnaCenamodel->find($id);
+        $trenutna = $trenutnaCenamodel->find($id);
 
-        if ($this->request->getVar('cena') != '' && $this->request->getVar('cena')>($trenutna['Cena'])) {
+        if ($this->request->getVar('cena') != '' && $this->request->getVar('cena') > ($trenutna['Cena'])) {
             if ($this->request->getVar('anonimno') != 'anonimno') {
 
                 $data = [
@@ -254,7 +277,7 @@ class Korisnik extends BaseController
 
                 $data = [
                     'Cena' => $this->request->getVar('cena'),
-                    'Korisnik_idKorisnik' => NULL
+                    'Korisnik_idKorisnik' => $this->session->get('korisnik')['idKorisnik']
                 ];
             }
             $trenutnacenamodel = new TrenutnacenaModel();
@@ -263,5 +286,63 @@ class Korisnik extends BaseController
 
 
         $this->proizvod($id);
+    }
+
+
+    function uplata($id)
+    {
+        $korisnik = $this->session->get('korisnik');
+        $licitacijaModel = new LicitacijaModel();
+        $licitacija = $licitacijaModel->find($id);
+        $fondacijamodel = new FondacijaModel();
+        $fondacija = $fondacijamodel->find($licitacija['Fondacija_idFondacija']);
+
+        $trenutnacenamodel = new TrenutnaCenaModel();
+        $cena = $trenutnacenamodel->find($id);
+
+        $this->prikaz("uplata_korisnik", ['cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+    }
+
+    function proverauplata($id){
+        $korisnik = $this->session->get('korisnik');
+        $licitacijaModel = new LicitacijaModel();
+        $licitacija = $licitacijaModel->find($id);
+        $fondacijamodel = new FondacijaModel();
+        $fondacija = $fondacijamodel->find($licitacija['Fondacija_idFondacija']);
+
+        $trenutnacenamodel = new TrenutnaCenaModel();
+        $cena = $trenutnacenamodel->find($id);
+
+
+         if (!$this->validate(['model' => 'required'])) {
+            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Morate uneti model','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+
+        } else if (!$this->validate(['model' => 'integer'])) {
+            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Model mora biti unet kao broj','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+        } else if (!$this->validate(['poziv' => 'required'])) {
+            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Poziv na broj je obavezan','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+        } else if (!$this->validate(['poziv' => 'integer'])) {
+            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Poziv na broj mora biti unet kao broj','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+        }
+
+
+        $uplata = new UplataModel();
+        $uplata->insert([
+            "uplatilac" => $this->session->get('korisnik')['korisnickoime'],
+            "valuta" => $this->request->getVar("valuta"),
+            "iznos" => $cena['Cena'],
+            'racunprimaoca' =>$fondacija['racun'],
+            "primalac" => $fondacija['idFondacija'],
+            'svrhauplate'=>$id
+        ]);
+
+        $data = [
+            'uplaceno' => $cena['Cena']
+        ];
+        $licitacijaModel->update($id, $data);
+
+        $this->azuriraj($fondacija['idFondacija'], $cena['Cena']);
+        
+        return $this->prikaz("uspeh", ["uspeh" => "Uspešno ste izvršili uplatu"]);
     }
 }

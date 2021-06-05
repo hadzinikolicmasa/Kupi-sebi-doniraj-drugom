@@ -6,7 +6,7 @@
     </h1>
     <?php
 
-    header("Refresh:2; url=index");
+    header("Refresh:2; ");
     ?>
 
 </div>

@@ -22,11 +22,11 @@
 
         <tr>
           <td>Naziv prozivoda:</td>
-          <td colspan="2">Trajanje:</td>
+          <td>Trajanje:</td>
         </tr>
 
         <tr>
-          <td> <input type="text" name="nazivProizvoda"  value="<?= set_value('nazivProizvoda') ?>" placeholder="Unesite naziv proizvoda"></td>
+          <td> <input  style="width: 200px" type="text" name="nazivProizvoda"  value="<?= set_value('nazivProizvoda') ?>" placeholder="Unesite naziv proizvoda"></td>
           <td colspan="2"><input type="date" name="trajanje"  value="<?= set_value('trajanje') ?>" placeholder="Unesite trajanje licitacije"></td>
         </tr>
 
@@ -38,7 +38,7 @@
 
         <tr>
             <td>
-                <textarea type="text" cols="30" rows="3" name="opis" value="<?=set_value('opis')?>"  placeholder="Unesite opis proizvoda"></textarea>
+                <textarea type="text" cols="10" rows="3" name="opis" value="<?=set_value('opis')?>"  placeholder="Unesite opis proizvoda"></textarea>
             </td>
             <td>
             <select name="fondacija" value="<?=set_value('fondacija')?>">
@@ -73,7 +73,7 @@
         </tr>
         <tr>
         <td>
-          <input type="text" name="pocetnaCena"  value="<?= set_value('pocetnaCena') ?>" placeholder="Unesite pocetnu cenu">
+          <input type="text" id="text" name="pocetnaCena"  value="<?= set_value('pocetnaCena') ?>" placeholder="Unesite pocetnu cenu">
         </td>
 
         <td colspan="2">
@@ -82,11 +82,11 @@
         </tr>
 
         <tr>
-         <td colspan="2" align="center">
+         <td align="right">
          <button class="btn btn-dark" type="submit">Postavi</button>
          </form> 
         </td>
-         <td>
+         <td align="right">
          <form action= "<?= site_url('Korisnik/index')?>" ><button class="btn btn-dark">Odustani</button></form>
         </td>
          </tr>
