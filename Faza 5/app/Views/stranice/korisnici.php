@@ -1,30 +1,34 @@
-<form  >
-<div class="korisnici">
-<table  class="table table-striped tabelakor">
-<tr>
-<th>Ime</th>
-<th>Prezime</th>
-<th>Adresa</th>
-<th>Grad</th>
-<th>Telefon</th>
-<th>Korisničko ime</th>
-<th>Ocena</th>
-<th>Obriši</th>
-</tr>
+<form method='post' action="<?= site_url("$controller/brisi") ?>" >
 
-<?php
+   <div class="korisnici">
+      <table class="table table-striped tabelakor">
+         <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Adresa</th>
+            <th>Grad</th>
+            <th>Telefon</th>
+            <th>Korisničko ime</th>
+            <th>Ocena</th>
+            <th>Obriši</th>
+         </tr>
 
-foreach($korisnici as $korisnik){
-   $ocena=0;
-   $count=0;
-   
-   foreach($recenzije as $recenzija){
-if($recenzija['Korisnik_idKorisnik']==$korisnik['idKorisnik']){$ocena+=$recenzija['Ocena'];$count++;}
-   }
-   $avg=0;
-   if($count!=0)$avg=$ocena/$count;
+         <?php
 
-   echo"<tr>
+         foreach ($korisnici as $korisnik) {
+            $ocena = 0;
+            $count = 0;
+
+            foreach ($recenzije as $recenzija) {
+               if ($recenzija['Korisnik_idKorisnik'] == $korisnik['idKorisnik']) {
+                  $ocena += $recenzija['Ocena'];
+                  $count++;
+               }
+            }
+            $avg = 0;
+            if ($count != 0) $avg = $ocena / $count;
+
+            echo "<tr>
    <td>{$korisnik['ime']}</td>
    <td>{$korisnik['prezime']}</td>
    <td>{$korisnik['adresa']}</td>
@@ -32,13 +36,13 @@ if($recenzija['Korisnik_idKorisnik']==$korisnik['idKorisnik']){$ocena+=$recenzij
    <td>{$korisnik['telefon']}</td>
    <td>{$korisnik['korisnickoime']}</td>
    <td>{$avg}</td>
-   <td><button class='btn btn-light '>".anchor("$controller/brisi/{$korisnik['idKorisnik']}",'Obriši')."</button> </td>
+   <td><button class='btn btn-light '>Obriši</button> 
+   <input type='hidden' name='id' value=".$korisnik['idKorisnik'].">
+   </td>
    </tr>";
-   
-}
+         }
 
-?>
-</table>
-</div>
+         ?>
+      </table>
+   </div>
 </form>
-

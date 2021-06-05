@@ -9,6 +9,6 @@ class KompanijaModel extends Model{
 
    protected $table='kompanija';
    protected $primaryKey='PIB';
-   protected $allowedFields=['PIB','naziv','adresa','telefon','lozinka'];
+   protected $allowedFields=['PIB','registarskibroj','naziv','adresa','telefon','lozinka'];
 
 }
