@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\FondacijaModel;
 
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
@@ -68,5 +69,19 @@ class BaseController extends Controller
 		$this->session->destroy;
 		return redirect()->to(site_url("/Gost"));
 	}
+
+	function azuriraj($id, $iznos)
+    {
+
+        $fondacijaModel = new FondacijaModel();
+        $fondacija = $fondacijaModel->where("idFondacija", $id)->first();
+        $novi = $iznos + $fondacija['iznos'];
+
+        $data = [
+            'iznos' => $novi
+        ];
+        
+        $fondacijaModel->update($id, $data);
+    }
 
 }

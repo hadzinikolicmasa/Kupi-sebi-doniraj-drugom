@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `kupi_sebi_doniraj_drugom`.`Licitacija` (
   `pocetna_cena` INT NOT NULL,
   `trajanje` DATE NOT NULL,
   `slika` VARCHAR(100) NOT NULL,
-  `aktivna` BIT(1) NOT NULL DEFAULT 1,
+  `korisnik` VARCHAR(50) NOT NULL ,
   `Kategorija_IdKategorije` INT NOT NULL,
   `Fondacija_idFondacija` INT NOT NULL,
   `uplaceno` INT NULL,

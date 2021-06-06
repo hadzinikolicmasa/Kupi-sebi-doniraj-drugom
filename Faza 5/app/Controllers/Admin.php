@@ -49,7 +49,7 @@ class Admin extends BaseController
 
    public function brisi()
    {
-      $id=$this->request->getVar('id');
+      $id = $this->request->getVar('id');
       $recenzijaModel = new RecenzijaModel();
       $recenzijaModel->where(['Korisnik_idKorisnik' => $id])->delete();
       $korisnikModel = new KorisnikModel();
@@ -111,9 +111,9 @@ class Admin extends BaseController
       if (!$validation) return $this->prikaz("dodavanjeFondacija", ['validation' => $this->validator]);
       else {
 
-      $fondacijamodel = new FondacijaModel();
-      echo $src='/'.'slike/'.$this->request->getVar("logoFond");
-   
+         $fondacijamodel = new FondacijaModel();
+         $src = '/' . 'slike/' . $this->request->getVar("logoFond");
+
 
          $fondacijamodel->insert([
             "naziv" => $this->request->getVar("nazivFond"),
@@ -132,46 +132,38 @@ class Admin extends BaseController
 
       $licitacijaModel = new LicitacijaModel();
       $licitacije = $licitacijaModel->findAll();
-      $trenutnaCenamodel= new TrenutnaCenaModel();
-      $trenutnecene=$trenutnaCenamodel->findAll();
-      $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije,'trenutnecene'=>$trenutnecene]);
+      $trenutnaCenamodel = new TrenutnaCenaModel();
+      $trenutnecene = $trenutnaCenamodel->findAll();
+      $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije, 'trenutnecene' => $trenutnecene]);
    }
 
    public function azuriranje_licitacije()
    {
-      $id=$this->request->getVar('id');
-      $licitacijaModel= new LicitacijaModel();
+      $id = $this->request->getVar('id');
+      $licitacijaModel = new LicitacijaModel();
 
-      if(isset($_POST['Opcija']))
-      {
-         
-         if($_POST['Opcija'] == "brisanje")
-         {
-            
-            $trenutnaCenaModel= new TrenutnacenaModel();
-            $trenutnaCenaModel->where(['Licitacija_idLicitacija'=>$id])->delete();
-         
+      if (isset($_POST['Opcija'])) {
+
+         if ($_POST['Opcija'] == "brisanje") {
+
+            $trenutnaCenaModel = new TrenutnacenaModel();
+            $trenutnaCenaModel->where(['Licitacija_idLicitacija' => $id])->delete();
+
             $licitacijaModel->delete($id);
+         } else if ($_POST['Opcija'] == "reaktivacija") {
+            $licitacija = $licitacijaModel->find($id);
 
-         }
-         else if($_POST['Opcija'] == "reaktivacija")
-         {
-           $licitacija= $licitacijaModel->find($id);
 
-         
 
-           $tmstamp=Date('y:m:d', strtotime('+3 days'));
-           $data = [
-            'trajanje' => $tmstamp,
-            'aktivna' => '1'
-         ];
-         $licitacijaModel->update($id, $data);
+            $tmstamp = Date('y:m:d', strtotime('+3 days'));
+            $data = [
+               'trajanje' => $tmstamp
+            ];
+            $licitacijaModel->update($id, $data);
          }
       }
 
 
       $this->licitacije();
    }
-  
 }
-

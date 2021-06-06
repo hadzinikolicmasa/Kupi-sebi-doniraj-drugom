@@ -83,19 +83,7 @@ class Kompanija extends BaseController
         $this->prikaz("uspeh", ["uspeh" => "Uspešno ste izvršili uplatu"]);
     }
 
-    function azuriraj($id, $iznos)
-    {
-
-        $fondacijaModel = new FondacijaModel();
-        $fondacija = $fondacijaModel->where("idFondacija", $id)->first();
-        $novi = $iznos + $fondacija['iznos'];
-
-        $data = [
-            'iznos' => $novi
-        ];
-        
-        $fondacijaModel->update($id, $data);
-    }
+   
 
     public function profil()
     {
