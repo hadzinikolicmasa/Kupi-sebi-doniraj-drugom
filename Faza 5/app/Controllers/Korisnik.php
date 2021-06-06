@@ -22,6 +22,8 @@ class Korisnik extends BaseController
 * 
 * 
 *@author Nina Savkic 18/0692
+*@param String $strana
+*@param Steing $podaci
 */
 
     protected function prikaz($strana, $podaci)
@@ -75,7 +77,7 @@ class Korisnik extends BaseController
 
     /**
 * Funkcija koja prikazuje proizvod  koji korisnik trenutno gleda
-*
+*@param int $id
 *@author Masa Hadzi-Nikolic 18/0271
 *
 */
@@ -119,12 +121,24 @@ class Korisnik extends BaseController
 
         $this->prikaz("proizvod", ['pobednik' => $pobednik, 'trenutni' => $trenutni, 'ocena' => $ocena, 'korisnik' => $korisnik, 'cena' => $lic["Cena"], 'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
     }
-
+/** 
+    *Ova funkcija vraca prikaz recenzije, odnosno stranicu na kojoj se upisuju potrebni
+    *podaci za davanje ocene.
+    *
+    * @author Nadja Milojkovic 18/0269
+    *
+*/ 
     public function recenzija()
     {
         $this->prikaz("recenzija", []);
     }
+/** 
+       *Funkcija u kojoj se vrsi provera svih podataka koje je korisnik uneo kako bi dao ocenu izabranom
+       *korisniku. Podaci kao sto su korisnicko ime,ocena i komentar moraju biti uneti u suprotnom se ispisuje greska.
+       *
+       *@author Nadja Milojkovic 18/0269
 
+*/ 
     public function proveraRecenzije()
     {
         $validation = \Config\Services::validation();
@@ -176,6 +190,13 @@ class Korisnik extends BaseController
             return $this->prikaz("recenzija", ['greskarecenzija2' => 'Korisnik ne postoji u bazi.']);
         }
     }
+    /** 
+    *Sledeca funkcija dohvata korisnika koji je trenutno prijavljen na sistem 
+    *i prikazuje njegov profil, odnosno ispisuje sve njegove podatke.
+    *
+    *@author Nadja Milojkovic 18/0269
+    *
+    */ 
 
     public function profil()
     {
@@ -188,18 +209,23 @@ class Korisnik extends BaseController
 
      /**
 
-*  Funckija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
-* 
-*@author Masa Hadzi-Nikolic 18/0271
-*@author  Nadja Milojkovic 18/0269
-*/
+    *  Funkcija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
+    * 
+    *@author Masa Hadzi-Nikolic 18/0271
+    *@author  Nadja Milojkovic 18/0269
+    */
     public function izmena()
     {
         $korisnik = $this->session->get('korisnik');
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik, 'rezimizmena' => true]);
     }
 
+/**
 
+*  Funkcija koja se poziva kada korisnik zeli da kreira licitaciju
+* 
+*@author Nina Savkic 18/0692
+*/
     public function kreiranje_licitacije()
     {
         $fondacijamodel = new FondacijaModel();
@@ -209,7 +235,15 @@ class Korisnik extends BaseController
         $this->prikaz("kreiranje_licitacije", ['fondacije' => $fondacije, 'kategorije' => $kategorije]);
     }
 
+/**
 
+*  Funkcija koja se poziva nakon sto korisnik klikne dugme "Postavi". Nakon toga se vrsi provera unetih podataka.
+*  Ukoliko korisnik ne popuni sva obavezna polja ispisuje mu se odgovarajuca poruka. U suprotnom se prelazi na stranicu
+*  uspeh.php i ispisuje mu se poruka "Uspesno ste kreirali licitaciju" gde dolazi do promene u bazi tako sto se dodaje kreirana licitacija.
+*
+* 
+*@author Nina Savkic 18/0692
+*/
     public function proveraLicitacije()
     {
 
@@ -370,7 +404,7 @@ class Korisnik extends BaseController
 
     * Funkcija koja proverava unete podatke o uplati
     * 
-    *
+    *@param int $id
     *@author Masa Hadzi-Nikolic 18/0271
     *
     */

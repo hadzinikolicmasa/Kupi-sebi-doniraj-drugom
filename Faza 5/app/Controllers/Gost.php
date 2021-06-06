@@ -23,6 +23,10 @@ class Gost extends BaseController
 * 
 * 
 *@author Milanka Labovic 18/0689
+*@param String $strana
+*@param String $podaci
+*
+
 */
    
    protected function prikaz($strana, $podaci)
@@ -381,6 +385,7 @@ class Gost extends BaseController
 * 
 * 
 *@author Masa Hadzi-Nikolic 18/0271
+* @param int $id
 */
 
    public function unavailable($id)

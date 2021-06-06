@@ -25,6 +25,9 @@ class Admin extends BaseController
 * 
 * 
 *@author Nadja Milojkovic 18/0269
+*@param String $strana
+*@param String $podaci
+
 */
    protected function prikaz($strana, $podaci)
    {
@@ -35,8 +38,8 @@ class Admin extends BaseController
       echo view("stranice/$strana", $podaci);
       echo view("sablon/footer");
    }
-/**
-     * Funkcija koja poziva pocetnu stranu konrolera
+   /**
+     * Funkcija koja poziva pocetnu stranu kontrolera
      * @author Nadja Milojkovic 18/0269
      */
    public function index()
@@ -66,15 +69,6 @@ class Admin extends BaseController
       $recenzije = $recenzijaModel->findAll();
 
       $this->prikaz("korisnici", ['korisnici' => $korisnici, 'recenzije' => $recenzije]);
-   }
-
-   public function licitacije()
-   {
-
-      $licitacijaModel = new LicitacijaModel();
-      $licitacije = $licitacijaModel->findAll();
-
-      $this->prikaz("azuriranje_licitacija", ['licitacije' => $licitacije]);
    }
 
 /**
@@ -176,7 +170,12 @@ class Admin extends BaseController
       }
    }
 
-  
+  /**
+* Funkcija koja sluzi da prikaze sve licitacije koje postoje u bazi podataka, odnosno koje su do sada kreirane.
+* 
+* 
+*@author Nina Savkic 18/0692
+*/
    public function licitacije()
    {
 
@@ -186,7 +185,14 @@ class Admin extends BaseController
       $trenutnecene = $trenutnaCenamodel->findAll();
       $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije, 'trenutnecene' => $trenutnecene]);
    }
-
+/**
+* Funkcija koja sluzi da azurira licitacije. Ako je licitacija zavrsena i novac je uplacen, admin brise licitaciju.
+* Ukoliko je licitacija zavrsena, a novac nije uplacen licitacija se reaktivira i njeno trajanje se produzava za 3 dana.
+* 
+* 
+* 
+*@author Nina Savkic 18/0692
+*/
    public function azuriranje_licitacije()
    {
       $id = $this->request->getVar('id');

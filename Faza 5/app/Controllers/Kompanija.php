@@ -19,6 +19,8 @@ class Kompanija extends BaseController
 * 
 * 
 *@author Nina Savkic 18/0692
+*@param String $strana
+*@param String $podaci
 */
 
     protected function prikaz($strana, $podaci)
@@ -30,7 +32,11 @@ class Kompanija extends BaseController
         echo view("stranice/$strana", $podaci);
         echo view("sablon/footer");
     }
-    
+    /**
+     * Funkcija koja poziva pocetnu stranu kompanije koja sadrzi spisak svih fondacija kojima kompanija
+     * moze da uplati novac 
+     * @author Nina Savkic 18/0692
+     */
     public function index()
     {
         $fondacijaModel = new FondacijaModel();
@@ -42,7 +48,7 @@ class Kompanija extends BaseController
 
     /**
 * Funkcija koja proverava da li je kompanija izabrala fondaciju kojoj zeli da uplati novac. Ukoliko nije, prosledjuje poruku o gresci a  
-* ukoliko jeste poziva formu za uplatu tj uplata.php
+* ukoliko jeste poziva formu za uplatu, odnosno uplata.php
 * 
 *@author Masa Hadzi-Nikolic 18/0271
 *@author Nina Savkic 18/0692
@@ -109,7 +115,12 @@ class Kompanija extends BaseController
     }
 
    
-
+    /**
+      *Profil je funkcija koja dohvata trenutno prijavljenu kompaniju i 
+      *pritiskom na dugme Profil na pocetnoj strani prikazuje sve podatke o kompaniji.
+      *
+      *@author Nadja Milojkovic 18/0269
+    */
     public function profil()
     {
         $kompanija = $this->session->get('kompanija');
@@ -120,11 +131,11 @@ class Kompanija extends BaseController
 
       /**
 
-*  Funckija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
-* 
-*@author Masa Hadzi-Nikolic 18/0271
-*@author  Nadja Milojkovic 18/0269
-*/
+    *  Funkcija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
+    * 
+    *@author Masa Hadzi-Nikolic 18/0271
+    *@author  Nadja Milojkovic 18/0269
+    */
 
     public function izmena()
     {
