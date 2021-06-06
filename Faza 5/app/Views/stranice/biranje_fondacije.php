@@ -1,3 +1,9 @@
+<?php
+    /**
+     * @author Masa Hadzi-Nikolic  18/0271
+     * @coauthor Nina Savkic 18/0692
+     */
+?>
 <div class="odabir">
   <div class="cardd ">
     <img class="card-imgtop rounded-circle" src="/slike/company.png" alt="Card image">

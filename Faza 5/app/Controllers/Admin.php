@@ -8,9 +8,24 @@ use App\Models\FondacijaModel;
 use App\Models\LicitacijaModel;
 use App\Models\TrenutnacenaModel;
 
+
+
+/**
+* AdminController – klasa za оpis svih funkcionalnosti admina
+*
+* @version 1.0
+*/
+
+
+
 class Admin extends BaseController
 {
-
+ /**
+* Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header admina i footer kao i promenljivog dela stranica 
+* 
+* 
+*@author Nadja Milojkovic 18/0269
+*/
    protected function prikaz($strana, $podaci)
    {
 
@@ -20,7 +35,10 @@ class Admin extends BaseController
       echo view("stranice/$strana", $podaci);
       echo view("sablon/footer");
    }
-
+/**
+     * Funkcija koja poziva pocetnu stranu konrolera
+     * @author Nadja Milojkovic 18/0269
+     */
    public function index()
    {
 
@@ -31,7 +49,12 @@ class Admin extends BaseController
       $this->prikaz("pocetna_admin", ['admin' => $admin, 'fondacije' => $fondacije]);
    }
 
-
+/**
+* Funkcija koja prikazuje spisak svih registrovanih korisnika pozivajuci korisnici.php. Poziva se nakon sto admin izabere korisnici iz menija 
+* 
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*/
 
    public function korisnici()
    {
@@ -45,7 +68,12 @@ class Admin extends BaseController
       $this->prikaz("korisnici", ['korisnici' => $korisnici, 'recenzije' => $recenzije]);
    }
 
-
+/**
+* Funkcija koja brise odgovarajuceg korisnika iz baze nakon cega se ponovo prikazuje stranica bez tog korisnika 
+* 
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*/
 
    public function brisi()
    {
@@ -57,12 +85,24 @@ class Admin extends BaseController
 
       $this->korisnici();
    }
-
+/**
+* Funkcija koja prikazuje formu za dodavanje fondacija 
+* 
+* 
+*@author Milanka Labovic 18/0689
+*/
    public function  dodavanjeFond()
    {
 
       $this->prikaz("dodavanjeFondacija", []);
    }
+
+   /**
+* Funkcija koja se poziva nakon sto admin pritisne dodajFondaciju i sluzi da proveri unete podatke o fondaciji. Vraca poruku u slucaju greske,
+* a u slucaju uspeha poziva uspeh.php sa odgovarajucom porukom
+* 
+*@author Milanka Labovic 18/0689
+*/
 
    public function proveraDodavanjaFondacije()
    {
@@ -127,6 +167,8 @@ class Admin extends BaseController
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste dodali fondaciju"]);
       }
    }
+
+  
    public function licitacije()
    {
 

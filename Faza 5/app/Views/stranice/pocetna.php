@@ -1,3 +1,11 @@
+
+<?php
+    /**
+     * 
+     * @author Nina Savkic 18/0692
+     * coauthor Masa Hadzi-Nikolic 18/0271
+     */
+?>
 <div class="pocetna " id="pocetna">
 
         <div class="col-2 offset-1 one">

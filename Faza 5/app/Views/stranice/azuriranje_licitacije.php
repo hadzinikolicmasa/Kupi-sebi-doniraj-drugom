@@ -1,3 +1,10 @@
+<?php
+    /**
+     * 
+     * @author Nina Savkic 18/0692
+     */
+?>
+
 <form method='post' action="<?= site_url("$controller/azuriranje_licitacije") ?>" >
    <div class="licitacije">
       <table class="table table-striped tabelakor">
