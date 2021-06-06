@@ -1,3 +1,9 @@
+<?php
+    /**
+     * @author Masa Hadzi-Nikolic  18/0271
+     * @coauthor Nina Savkic 18/0692
+     */
+?>
 <div class="odabir">
   <div class="cardd ">
     <img class="card-imgtop rounded-circle" src="/slike/company.png" alt="Card image">
@@ -24,7 +30,7 @@
           if ($counter % 3 == 0) echo "<tr>";
           $counter++;
           echo '<td>' . '<input type="radio" name="radio" id="" value="' . $fondacija['naziv'] . '">' . '</td>';
-          echo '<td class="firsttd">' . '<img class="firsticon" src = "data:image/png;base64,' . base64_encode($fondacija['logo']) . '" width = "150px" height = "150px"/>' . '</td>';
+          echo '<td class="firsttd">' . '<img class="firsticon" src = "' . $fondacija['logo'] . '" width = "150px" height = "150px"/>' . '</td>';
 
           if ($counter % 3 == 0) echo "</tr>";
         }

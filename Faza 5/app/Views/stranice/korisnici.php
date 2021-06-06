@@ -1,3 +1,10 @@
+
+<?php
+    /**
+     * @author Masa Hadzi-Nikolic  18/0271
+     *
+     */
+?>
 <form method='post' action="<?= site_url("$controller/brisi") ?>" >
 
    <div class="korisnici">

@@ -1,3 +1,11 @@
+<?php
+    /**
+     * 
+     * @author Masa Hadzi-Nikolic 18/0271
+     * @coauthor Milanka Labovic 18/0689
+     */
+?>
+
 <div class="prijava" id="prijava">
 <h1><b>Prijava</b></h1>
   <div class="formaprijava">

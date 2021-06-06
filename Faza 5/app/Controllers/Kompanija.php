@@ -6,10 +6,20 @@ use App\Models\FondacijaModel;
 use App\Models\UplataModel;
 use App\Models\KompanijaModel;
 
-
+/**
+* KompanijaController – klasa za opis svih funkcionalnosti  kompanije
+*
+* @version 1.0
+*/
 
 class Kompanija extends BaseController
 {
+    /**
+* Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header admina i footer kao i promenljivog dela stranica 
+* 
+* 
+*@author Nina Savkic 18/0692
+*/
 
     protected function prikaz($strana, $podaci)
     {
@@ -20,7 +30,7 @@ class Kompanija extends BaseController
         echo view("stranice/$strana", $podaci);
         echo view("sablon/footer");
     }
-
+    
     public function index()
     {
         $fondacijaModel = new FondacijaModel();
@@ -30,6 +40,13 @@ class Kompanija extends BaseController
         $this->prikaz("biranje_fondacije", ['fondacije' => $fondacije, 'kompanija' => $kompanija]);
     }
 
+    /**
+* Funkcija koja proverava da li je kompanija izabrala fondaciju kojoj zeli da uplati novac. Ukoliko nije, prosledjuje poruku o gresci a  
+* ukoliko jeste poziva formu za uplatu tj uplata.php
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*@author Nina Savkic 18/0692
+*/
 
     public function proveraizbor()
     {
@@ -48,6 +65,14 @@ class Kompanija extends BaseController
         $this->session->set("fondacija", $fondacija);
         $this->prikaz("uplata", ['kompanija' => $kompanija, "fondacija" => $fondacija]);
     }
+
+  /**
+*Funkcija koja se poziva nakon sto kompanija pokusa da uplati novac i proverava unete podatke. Ukoliko postoji greska, prosledjuje
+* poruku o gresci , a ukoliko ne postoji onda poziva uspeh.php sa odgovarajucom porukom
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*@author Nina Savkic 18/0692
+*/
 
     public function proverauplata()
     {
@@ -83,19 +108,7 @@ class Kompanija extends BaseController
         $this->prikaz("uspeh", ["uspeh" => "Uspešno ste izvršili uplatu"]);
     }
 
-    function azuriraj($id, $iznos)
-    {
-
-        $fondacijaModel = new FondacijaModel();
-        $fondacija = $fondacijaModel->where("idFondacija", $id)->first();
-        $novi = $iznos + $fondacija['iznos'];
-
-        $data = [
-            'iznos' => $novi
-        ];
-        
-        $fondacijaModel->update($id, $data);
-    }
+   
 
     public function profil()
     {
@@ -105,13 +118,28 @@ class Kompanija extends BaseController
         $this->prikaz("profil_kompanija", ['kompanija' => $kompanija]);
     }
 
+      /**
+
+*  Funckija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*@author  Nadja Milojkovic 18/0269
+*/
+
     public function izmena()
     {
         $kompanija = $this->session->get('kompanija');
         $this->prikaz("profil_kompanija", ['kompanija' => $kompanija, 'rezimizmena' => true]);
     }
 
+ /**
 
+*  Funkcija koja proverava unete podatke o izmeni profila. Ukoliko postoji greska, prosledjuje poruku o istoj a ukoliko ne postoji
+* prikazuju kompaniji ponovo njegov profil
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*@author  Nadja Milojkovic 18/0269
+*/
 
     public function proveraIzmena(){
 

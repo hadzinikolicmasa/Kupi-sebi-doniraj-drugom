@@ -1,3 +1,9 @@
+<?php
+    /**
+     * 
+     * @author Milanka Labovic 18/0689
+     */
+?>
 <div class="regKorisnik" id="regKorisnik">
 <h1><b>Registracija korisnika</b></h1>
 

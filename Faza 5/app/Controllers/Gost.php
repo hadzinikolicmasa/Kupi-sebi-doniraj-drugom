@@ -9,9 +9,22 @@ use App\Models\FondacijaModel;
 use App\Models\KategorijaModel;
 use App\Models\LicitacijaModel;
 
+/**
+* GostController – klasa za opis svih funkcionalnosti gosta 
+*
+* @version 1.0
+*/
+
 class Gost extends BaseController
 {
 
+   /**
+* Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header gosta i footer kao i promenljivog dela stranica 
+* 
+* 
+*@author Milanka Labovic 18/0689
+*/
+   
    protected function prikaz($strana, $podaci)
    {
 
@@ -20,6 +33,10 @@ class Gost extends BaseController
       echo view("stranice/$strana", $podaci);
       echo view("sablon/footer");
    }
+   /**
+     * Funkcija koja poziva pocetnu stranu konrolera
+     * @author Milanka Labovic 18/0689
+     */
 
    public function index()
    {
@@ -30,12 +47,30 @@ class Gost extends BaseController
       $this->prikaz("pocetna", ['fondacije' => $fondacije]);
    }
 
+   /**
+     * Funckija koja poziva view prijava.php
+     * 
+     * 
+     * @author Masa Hadzi-Nikolic 18/0271
+     */
+
    public function prijava()
    {
 
       $this->prikaz("prijava", []);
       
    }
+
+/**
+* Funkcija koja se poziva nakon sto korisnik aplikacije pokusa da se prijavi i koja zatim proverava da li je korisnik
+* uneo postojece korisnicko ime i odgovarajucu lozinku. Ukoliko nije, prosledjuje poruku o gresci a ukoliko jeste, pokrece se
+* sesija za odgovarajuceg tipa korisnika
+*
+* 
+*
+* @author Masa Hadzi-Nikolic 18/0271
+*
+*/
 
    public function proveraprijave()
    {
@@ -88,11 +123,23 @@ class Gost extends BaseController
       return $this->prikaz("prijava", ['greskaprijava' => 'Ne postojite u bazi.']);
    }
 
-
+/**
+* Funkcija koja prikazuje pocetnu registracionu formu a poziva se kada gost izabere opciju registracije iz menija
+* 
+* 
+*@author Milanka Labovic 18/0689
+*/
    public function registracija()
    {
       $this->prikaz("registracijaTip", []);
    }
+
+   /**
+* Funkcija koja proverava da li je korisnik koji pokusava da se registruje izabrao neki tip. Ukoliko nije, poziva ponovo istu stranu
+* sa greskom a ukoliko jeste, preusmerava ga na sledecu registracionu formu u zavisnosti od izabranog tipa
+* 
+*@author Milanka Labovic 18/0689
+*/
 
    public function proveraTipa()
    {
@@ -111,7 +158,12 @@ class Gost extends BaseController
    }
 
 
-
+/**
+* Funkcija koja proverava unete podatke od strane korisnika. Ukoliko korisnik nije uneo odgovarajuce podatke, prikazuje poruku o gresci
+* a ukoliko jeste onda poziva uspeh.php gde ce biti prikazana odgovarajuca poruka o uspehu
+* 
+*@author Milanka Labovic 18/0689
+*/
 
 
    public function proveraRegKor()
@@ -203,7 +255,12 @@ class Gost extends BaseController
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste se registrovali"]);
       }
    }
-
+/**
+* Funkcija koja proverava unete podatke od strane kompanije. Ukoliko kompanije nije unela odgovarajuce podatke, prikazuje poruku o gresci
+* a ukoliko jeste onda poziva uspeh.php gde ce biti prikazana odgovarajuca poruka o uspehu
+* 
+*@author Milanka Labovic 18/0689
+*/
 
    public function proveraRegKomp()
    {
@@ -280,7 +337,13 @@ class Gost extends BaseController
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste se registrovali"]);
       }
    }
-   
+
+   /**
+* Funkcija koja vrsi pregled svih dostupnih proizvoda na aplikaciji, iz svih kategorija. Takodje, prikazuje i sve kategorije
+* koje se mogu izabrati 
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*/
    public function pregled()
 	{	
 
@@ -292,6 +355,13 @@ class Gost extends BaseController
 
 		$this->prikaz("pregled", ['kategorije' => $kategorije, 'licitacije' => $licitacije]);
 	}
+
+     /**
+* Funkcija koja vrsi pregled svih dostupnih proizvoda izabrane kategorije koja se dobija kao parametar ove funkcije
+* @param String $naziv
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*/
 
 	public function kategorija($naziv)
 	{
@@ -305,6 +375,13 @@ class Gost extends BaseController
 
 		$this->prikaz("pregled", ['kategorije' => $kategorije, 'licitacije' => $licitacije, 'odabrana' => $naziv]);
 	}
+
+     /**
+* Funkcija koja  se poziva ukoliko gost pokusa da pristupi nekom proizvodu i ispisuje poruku o gresci
+* 
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*/
 
    public function unavailable($id)
    {

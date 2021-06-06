@@ -1,3 +1,10 @@
+
+<?php
+    /**
+     * 
+     * @author Nina Savkic 18/0692
+     */
+?>
 <div class="kreiranjeLicit" id="kreiranjeLicit">
 <h1><b>Kreiraj licitaciju</b></h1>
 
@@ -73,7 +80,7 @@
         </tr>
         <tr>
         <td>
-          <input type="text" name="pocetnaCena"  value="<?= set_value('pocetnaCena') ?>" placeholder="Unesite pocetnu cenu">
+          <input type="text" id="text" name="pocetnaCena"  value="<?= set_value('pocetnaCena') ?>" placeholder="Unesite pocetnu cenu">
         </td>
 
         <td colspan="2">
