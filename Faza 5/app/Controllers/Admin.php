@@ -6,10 +6,26 @@ use App\Models\KorisnikModel;
 use App\Models\RecenzijaModel;
 use App\Models\FondacijaModel;
 use App\Models\LicitacijaModel;
+use App\Models\TrenutnacenaModel;
+
+
+
+/**
+* AdminController – klasa za оpis svih funkcionalnosti admina
+*
+* @version 1.0
+*/
+
+
 
 class Admin extends BaseController
 {
-
+ /**
+* Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header admina i footer kao i promenljivog dela stranica 
+* 
+* 
+*@author Nadja Milojkovic 18/0269
+*/
    protected function prikaz($strana, $podaci)
    {
 
@@ -19,7 +35,10 @@ class Admin extends BaseController
       echo view("stranice/$strana", $podaci);
       echo view("sablon/footer");
    }
-
+/**
+     * Funkcija koja poziva pocetnu stranu konrolera
+     * @author Nadja Milojkovic 18/0269
+     */
    public function index()
    {
 
@@ -30,7 +49,12 @@ class Admin extends BaseController
       $this->prikaz("pocetna_admin", ['admin' => $admin, 'fondacije' => $fondacije]);
    }
 
-
+/**
+* Funkcija koja prikazuje spisak svih registrovanih korisnika pozivajuci korisnici.php. Poziva se nakon sto admin izabere korisnici iz menija 
+* 
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*/
 
    public function korisnici()
    {
@@ -53,37 +77,40 @@ class Admin extends BaseController
       $this->prikaz("azuriranje_licitacija", ['licitacije' => $licitacije]);
    }
 
+/**
+* Funkcija koja brise odgovarajuceg korisnika iz baze nakon cega se ponovo prikazuje stranica bez tog korisnika 
+* 
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*/
 
-
-   public function brisi($id)
+   public function brisi()
    {
-
+      $id = $this->request->getVar('id');
       $recenzijaModel = new RecenzijaModel();
       $recenzijaModel->where(['Korisnik_idKorisnik' => $id])->delete();
       $korisnikModel = new KorisnikModel();
       $korisnikModel->delete($id);
       $this->korisnici();
    }
-
-   public function brisi_licitaciju($id)
-   {
-      $licitacijaModel = new LicitacijaModel();
-      $licitacijaModel->delete($id);
-      $this->licitacije();
-   }
-
-   public function reaktiviraj_licitaciju($id,$aktivna)
-   {
-      $licitacijaModel = new LicitacijaModel();
-      $licitacijaModel->update($id,$aktivna);
-      $this->licitacije();
-   }
-
+/**
+* Funkcija koja prikazuje formu za dodavanje fondacija 
+* 
+* 
+*@author Milanka Labovic 18/0689
+*/
    public function  dodavanjeFond()
    {
 
       $this->prikaz("dodavanjeFondacija", []);
    }
+
+   /**
+* Funkcija koja se poziva nakon sto admin pritisne dodajFondaciju i sluzi da proveri unete podatke o fondaciji. Vraca poruku u slucaju greske,
+* a u slucaju uspeha poziva uspeh.php sa odgovarajucom porukom
+* 
+*@author Milanka Labovic 18/0689
+*/
 
    public function proveraDodavanjaFondacije()
    {
@@ -131,11 +158,9 @@ class Admin extends BaseController
 
       if (!$validation) return $this->prikaz("dodavanjeFondacija", ['validation' => $this->validator]);
       else {
-         $fondacijamodel = new FondacijaModel();
-        /* $image=$_FILES['image']['tmp_name'];
-         $imgContent=addslashes(file_get_contents($image));
 
-*/
+         $fondacijamodel = new FondacijaModel();
+         $src = '/' . 'slike/' . $this->request->getVar("logoFond");
 
 
          $fondacijamodel->insert([
@@ -143,37 +168,52 @@ class Admin extends BaseController
             "adresa" => $this->request->getVar("adresaFond"),
             "racun" => $this->request->getVar("racunFond"),
             'opis' => $this->request->getVar("opisFond"),
-            "logo" => $this->request->getVar("logoFond"),
+            "logo" => $src,
             "iznos" => "0"
          ]);
 
          $this->prikaz("uspeh", ["uspeh" => "Uspešno ste dodali fondaciju"]);
       }
    }
+
+  
    public function licitacije()
    {
 
       $licitacijaModel = new LicitacijaModel();
       $licitacije = $licitacijaModel->findAll();
-      $trenutnaCenamodel= new TrenutnaCenaModel();
-      $trenutnecene=$trenutnaCenamodel->findAll();
-      $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije,'trenutnecene'=>$trenutnecene]);
+      $trenutnaCenamodel = new TrenutnaCenaModel();
+      $trenutnecene = $trenutnaCenamodel->findAll();
+      $this->prikaz("azuriranje_licitacije", ['licitacije' => $licitacije, 'trenutnecene' => $trenutnecene]);
    }
 
-   /*public function azuriranje_licitacije($id)
+   public function azuriranje_licitacije()
    {
+      $id = $this->request->getVar('id');
       $licitacijaModel = new LicitacijaModel();
-      $licitacijaModel->delete($id);
+
+      if (isset($_POST['Opcija'])) {
+
+         if ($_POST['Opcija'] == "brisanje") {
+
+            $trenutnaCenaModel = new TrenutnacenaModel();
+            $trenutnaCenaModel->where(['Licitacija_idLicitacija' => $id])->delete();
+
+            $licitacijaModel->delete($id);
+         } else if ($_POST['Opcija'] == "reaktivacija") {
+            $licitacija = $licitacijaModel->find($id);
+
+
+
+            $tmstamp = Date('y:m:d', strtotime('+3 days'));
+            $data = [
+               'trajanje' => $tmstamp
+            ];
+            $licitacijaModel->update($id, $data);
+         }
+      }
+
+
       $this->licitacije();
-      $licitacijaModel->update($id,$aktivna);
    }
-
-   public function reaktiviraj_licitaciju($id, $aktivna)
-   {
-      $licitacijaModel = new LicitacijaModel();
-      $licitacijaModel->update($id, $aktivna);
-      $this->licitacije();
-   }*/
-
-  
 }

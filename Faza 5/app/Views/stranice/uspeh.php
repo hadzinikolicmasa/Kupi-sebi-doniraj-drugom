@@ -1,3 +1,9 @@
+<?php
+    /**
+     * 
+     * @author Nina Savkic 18/0692
+     */
+?>
 <div class="uspeh">
     <h1>
         <?php
@@ -6,7 +12,7 @@
     </h1>
     <?php
 
-    header("Refresh:2; url=index");
+    header("Refresh:2; ");
     ?>
 
 </div>

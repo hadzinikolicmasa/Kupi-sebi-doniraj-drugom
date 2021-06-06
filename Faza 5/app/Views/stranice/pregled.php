@@ -1,3 +1,9 @@
+<?php
+    /**
+     * 
+     * @author Masa Hadzi-Nikolic 18/0271
+     */
+?>
 <div class="proizvodi">
   <h1 style="margin-bottom:20px; margin:auto; font-family: 'Courier New', monospace;"><?php if (isset($odabrana)) {
                                                                                         echo $odabrana;
@@ -42,7 +48,7 @@
         if ($counter % 4 == 0) echo "<tr>";
         $counter++;
 
-        echo '<td align="left" >' . '<img class="proizvod" src = "data:image/png;base64,' . base64_encode($licitacija['slika']) . '" width = "150px" height = "190px" "/><br>' .  anchor("$controller/unavailable/{$odabrana}", '' . $licitacija['naziv_stvari']) . '</td>';
+        echo '<td align="left" >' . '<img class="proizvod" src = "' . $licitacija['slika'] . '" width = "150px" height = "190px" "/><br>' .  anchor("$controller/unavailable/{$odabrana}", '' . $licitacija['naziv_stvari']) . '</td>';
 
         if ($counter % 4 == 0) echo "<tr>";
       }

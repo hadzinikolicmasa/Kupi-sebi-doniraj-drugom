@@ -1,3 +1,11 @@
+
+<?php
+    /**
+     * 
+     * @author Nina Savkic 18/0692
+     * coauthor Masa Hadzi-Nikolic 18/0271
+     */
+?>
 <div class="pocetna " id="pocetna">
 
         <div class="col-2 offset-1 one">
@@ -35,7 +43,7 @@
 
                                 if ($counter % 3 == 0) echo "<tr>";
                                 $counter++;
-                                echo '<td class="firsttd">' . '<img class="firsticon"src = "data:image/png;base64,' . base64_encode($fondacija['logo']) . ' " width = "95%" height = "120%"/>' .
+                                echo '<td class="firsttd">' . '<img class="firsticon"src = "' .$fondacija['logo'] . ' " width = "95%" height = "120%"/>' .
                                         '<br>' . $fondacija['naziv'] . '<br><b>Donirano:</b> ' . $fondacija["iznos"] . " din" . '</td>';
 
                                 if ($counter % 3 == 0) echo "</tr>";

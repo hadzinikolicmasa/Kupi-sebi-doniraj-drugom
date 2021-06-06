@@ -1,3 +1,10 @@
+
+<?php
+    /**
+     * 
+     * @author Masa Hadzi-Nikolic 18/0271
+     */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +26,7 @@
     
     <title>PSI</title>
 </head>
-  <body>
+  <body onload="vreme()">
     <header>
         <div class="container.fluid">
           <div class="row">
