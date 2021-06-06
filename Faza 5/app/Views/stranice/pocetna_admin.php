@@ -1,3 +1,10 @@
+<?php
+    /**
+     * @author Masa Hadzi-Nikolic  18/0271
+     * @coauthor Nadja Milojkovic 18/0269
+     */
+?>
+
 <div class="adminpocetna">
     <div class="card ">
         <img class="card-imgtop rounded-circle" src="/slike/admin.png" alt="Card image">

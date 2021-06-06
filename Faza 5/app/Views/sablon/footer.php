@@ -1,5 +1,10 @@
 
-
+<?php
+    /**
+     * 
+     * @author Masa Hadzi-Nikolic 18/0271
+     */
+?>
     <footer class="mainfooter" role="contentinfo" style="width: 100%; float:left">
         <div class="footer-middle">
         <div class="container">

@@ -9,10 +9,20 @@ use App\Models\RecenzijaModel;
 use App\Models\KorisnikModel;
 use App\Models\TrenutnaCenaModel;
 use App\Models\UplataModel;
-
+/**
+*KorisnikController – klasa za opis svih funkcionalnosti korisnika
+*
+* @version 1.0
+*/
 
 class Korisnik extends BaseController
 {
+    /**
+* Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header korisnika i footer kao i promenljivog dela stranica 
+* 
+* 
+*@author Nina Savkic 18/0692
+*/
 
     protected function prikaz($strana, $podaci)
     {
@@ -23,6 +33,11 @@ class Korisnik extends BaseController
         echo view("stranice/$strana", $podaci);
         echo view("sablon/footer");
     }
+    /**
+     * Funkcija koja poziva pocetnu stranu korisnika koja sadrzi spisak svih kategorija i pregled licitacija
+     * @author Nina Savkic 18/0692
+     */
+
 
     public function index()
     {
@@ -35,6 +50,14 @@ class Korisnik extends BaseController
 
         $this->prikaz("korisnik_pocetna", ['kategorije' => $kategorije, 'licitacije' => $licitacije, 'korisnik' => $korisnik]);
     }
+
+    /**
+* Funkcija koja prikazuje listu svih stvari izabrane kategorije od strane korisnika
+*@param String $naziv
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*
+*/
 
     public function kategorija($naziv)
     {
@@ -50,6 +73,12 @@ class Korisnik extends BaseController
         $this->prikaz("korisnik_pocetna", ['kategorije' => $kategorije, 'licitacije' => $licitacije, 'odabrana' => $naziv, 'korisnik' => $korisnik]);
     }
 
+    /**
+* Funkcija koja prikazuje proizvod  koji korisnik trenutno gleda
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*
+*/
     public function proizvod($id)
     {
         $licitacijamodel = new LicitacijaModel();
@@ -157,6 +186,13 @@ class Korisnik extends BaseController
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
     }
 
+     /**
+
+*  Funckija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
+* 
+*@author Masa Hadzi-Nikolic 18/0271
+*@author  Nadja Milojkovic 18/0269
+*/
     public function izmena()
     {
         $korisnik = $this->session->get('korisnik');
@@ -228,6 +264,14 @@ class Korisnik extends BaseController
             $this->prikaz("uspeh", ["uspeh" => "Uspešno ste kreirali licitaciju"]);
         }
     }
+    /**
+
+*  Funkcija koja proverava unete podatke o izmeni profila. Ukoliko postoji greska, prosledjuje poruku o istoj a ukoliko ne postoji
+* prikazuju korisniku ponovo njegov profil
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*@author  Nadja Milojkovic 18/0269
+*/
 
     public function proveraIzmena()
     {
@@ -260,6 +304,16 @@ class Korisnik extends BaseController
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
     }
 
+    /**
+
+* Funckija koja se poziva nakon sto korisnik pokusa da licitira za trenutni proizvod ciji je id prosledjen
+* Funkcija proverava uneti iznos i opciju anonimno i na osnovu toga azurira trenutnu cenu tog proizvoda
+*
+*@param int $id
+*@author Masa Hadzi-Nikolic 18/0271
+*@author  Nina Savkic 18/0692
+*/
+
 
     public function licitiraj($id)
     {
@@ -288,6 +342,15 @@ class Korisnik extends BaseController
         $this->proizvod($id);
     }
 
+     /**
+
+    * Funkcija koja se poziva nakon sto pobednik licitacije pokusa da uplati novac za licitaciju na kojoj je pobedio
+    * 
+    *@param int $id
+    *@author Masa Hadzi-Nikolic 18/0271
+    *
+    */
+
 
     function uplata($id)
     {
@@ -302,6 +365,15 @@ class Korisnik extends BaseController
 
         $this->prikaz("uplata_korisnik", ['cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
     }
+
+/**
+
+    * Funkcija koja proverava unete podatke o uplati
+    * 
+    *
+    *@author Masa Hadzi-Nikolic 18/0271
+    *
+    */
 
     function proverauplata($id){
         $korisnik = $this->session->get('korisnik');

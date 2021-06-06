@@ -1,3 +1,9 @@
+<?php
+    /**
+     * 
+     * @author Masa Hadzi-Nikolic 18/0271
+     */
+?>
 <div class="proizvodi">
   <h1 style="margin-bottom:20px; margin:auto; font-family: 'Courier New', monospace;"><?php if (isset($odabrana)) {
                                                                                         echo $odabrana;
