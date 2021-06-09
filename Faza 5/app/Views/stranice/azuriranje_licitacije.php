@@ -7,6 +7,7 @@
 
 <form method='post' action="<?= site_url("$controller/azuriranje_licitacije") ?>" >
    <div class="licitacije">
+  <span class="greskaprijava" style="margin-left:100px"> <?php if(isset($poruka))echo $poruka;?></span>
       <table class="table table-striped tabelakor">
          <tr>
             <th>Broj licitacije</th>
@@ -32,12 +33,13 @@
            if($trenutnecene[$i]['Korisnik_idKorisnik']!=null)echo " <td>Da</td>";
            else echo "<td>Ne</td>";
 
+          
             echo "
             <td>{$licitacija['uplaceno']}</td>
             <td><input type='radio' name='Opcija' value='brisanje'>&nbsp;&nbsp;Obriši</td>
             <td><input type='radio' name='Opcija' value='reaktivacija'>&nbsp;&nbsp;Reaktiviraj</td>
-            <td><button class='btn btn-light '>Azuriraj</button> </td>
-            <input type='hidden' name='id' value=".$licitacija['idLicitacija'].">
+            <td><button class='btn btn-light ' name='dugme'value='". $licitacija['idLicitacija'] ."'>Azuriraj</button> </td>
+           
             </tr>";
              $i++;
             }

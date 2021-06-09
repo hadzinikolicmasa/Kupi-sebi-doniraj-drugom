@@ -12,12 +12,8 @@ use App\Models\KompanijaModel;
 * @version 1.0
 */
 
-
-
 class Kompanija extends BaseController
 {
-<<<<<<< HEAD
-=======
     /**
 * Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header admina i footer kao i promenljivog dela stranica 
 * 
@@ -26,7 +22,6 @@ class Kompanija extends BaseController
 *@param String $strana
 *@param String $podaci
 */
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 
     protected function prikaz($strana, $podaci)
     {
@@ -36,19 +31,6 @@ class Kompanija extends BaseController
         echo view("sablon/header_kompanija");
         echo view("stranice/$strana", $podaci);
         echo view("sablon/footer");
-<<<<<<< HEAD
-    }
-
-    public function index()
-    {
-        $fondacijaModel = new FondacijaModel();
-        $fondacije = $fondacijaModel->findAll();
-        $kompanija = $this->session->get('kompanija');
-
-        $this->prikaz("biranje_fondacije", ['fondacije' => $fondacije, 'kompanija' => $kompanija]);
-    }
-
-=======
     }
     /**
      * Funkcija koja poziva pocetnu stranu kompanije koja sadrzi spisak svih fondacija kojima kompanija
@@ -83,71 +65,8 @@ class Kompanija extends BaseController
 
             return  $this->prikaz("biranje_fondacije", ['greskabiranje' => 'Morate izabrati fondaciju.', 'kompanija' => $kompanija, 'fondacije' => $fondacije]);
         }
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 
-    public function proveraizbor()
-    {
 
-<<<<<<< HEAD
-        $fondacijaModel = new FondacijaModel();
-        $fondacije = $fondacijaModel->findAll();
-        $kompanija = $this->session->get('kompanija');
-
-        if (!isset($_POST['radio'])) {
-            return  $this->prikaz("biranje_fondacije", ['greskabiranje' => 'Morate izabrati fondaciju.', 'kompanija' => $kompanija, 'fondacije' => $fondacije]);
-        }
-
-        $fondacija = $fondacijaModel->where('naziv', $_POST['radio'])->first();
-        $this->session->set("fondacija", $fondacija);
-        $this->prikaz("uplata", ['kompanija' => $kompanija, "fondacija" => $fondacija]);
-    }
-
-    public function proverauplata()
-    {
-
-        $fondacija = $this->session->get("fondacija");
-        $kompanija = $this->session->get('kompanija');
-
-        if (!$this->validate(['iznos' => 'required'])) {
-            return $this->prikaz("uplata", ['kompanija' => $kompanija, 'fondacija' => $fondacija, 'greskauplata' => 'Iznos mora biti unet.']);
-        } else if (!$this->validate(['iznos' => 'integer'])) {
-            return $this->prikaz("uplata", ['kompanija' => $kompanija, 'fondacija' => $fondacija, 'greskauplata' => 'Iznos sme da sadrzi samo brojeve.']);
-        } else if (!$this->validate(['model' => 'required'])) {
-            return $this->prikaz("uplata", ['kompanija' => $kompanija, 'fondacija' => $fondacija, 'greskauplata' => 'Model mora biti unet.']);
-        } else if (!$this->validate(['model' => 'integer'])) {
-            return $this->prikaz("uplata", ['kompanija' => $kompanija, 'fondacija' => $fondacija, 'greskauplata' => 'Model sme da sadrzi samo brojeve.']);
-        } else if (!$this->validate(['poziv' => 'required'])) {
-            return $this->prikaz("uplata", ['kompanija' => $kompanija, 'fondacija' => $fondacija, 'greskauplata' => 'Poziv mora biti unet.']);
-        } else if (!$this->validate(['poziv' => 'integer'])) {
-            return $this->prikaz("uplata", ['kompanija' => $kompanija, 'fondacija' => $fondacija, 'greskauplata' => 'Poziv sme da sadrzi samo brojeve.']);
-        }
-
-        $uplata = new UplataModel();
-        $uplata->insert([
-            "uplatilac" => $this->session->get('kompanija')['naziv'],
-            "valuta" => $this->request->getVar("valuta"),
-            "iznos" => $this->request->getVar("iznos"),
-            'racunprimaoca' => $this->session->get('fondacija')['racun'],
-            "primalac" => $this->session->get('fondacija')['idFondacija']
-        ]);
-
-        $this->azuriraj($this->session->get('fondacija')['idFondacija'], $this->request->getVar("iznos"));
-        $this->session->remove("fondacija");
-        $this->prikaz("uspeh", ["uspeh" => "Uspešno ste izvršili uplatu"]);
-    }
-
-    function azuriraj($id, $iznos)
-    {
-
-        $fondacijaModel = new FondacijaModel();
-        $fondacija = $fondacijaModel->where("idFondacija", $id)->first();
-        $novi = $iznos + $fondacija['iznos'];
-
-        $data = [
-            'iznos' => $novi
-        ];
-        $fondacijaModel->update($id, $data);
-=======
         $fondacija = $fondacijaModel->where('naziv', $_POST['radio'])->first();
         $this->session->set("fondacija", $fondacija);
         $this->prikaz("uplata", ['kompanija' => $kompanija, "fondacija" => $fondacija]);
@@ -257,6 +176,5 @@ class Kompanija extends BaseController
         $this->session->set('kompanija',$kompanija);
 
         $this->prikaz("profil_kompanija", ['kompanija' => $kompanija]);
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     }
 }

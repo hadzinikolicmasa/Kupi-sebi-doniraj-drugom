@@ -7,8 +7,6 @@ use App\Models\LicitacijaModel;
 use App\Models\FondacijaModel;
 use App\Models\RecenzijaModel;
 use App\Models\KorisnikModel;
-<<<<<<< HEAD
-=======
 use App\Models\TrenutnaCenaModel;
 use App\Models\UplataModel;
 /**
@@ -16,7 +14,6 @@ use App\Models\UplataModel;
 *
 * @version 1.0
 */
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 
 class Korisnik extends BaseController
 {
@@ -26,33 +23,23 @@ class Korisnik extends BaseController
 * 
 *@author Nina Savkic 18/0692
 *@param String $strana
-*@param Steing $podaci
+*@param  $podaci
 */
 
     protected function prikaz($strana, $podaci)
     {
         $podaci['controller'] = "Korisnik";
 
-<<<<<<< HEAD
-    protected function prikaz($strana, $podaci)
-    {
-        $podaci['controller'] = "Korisnik";
-
-=======
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 
         echo view("sablon/header_korisnik");
         echo view("stranice/$strana", $podaci);
         echo view("sablon/footer");
     }
-<<<<<<< HEAD
-=======
     /**
      * Funkcija koja poziva pocetnu stranu korisnika koja sadrzi spisak svih kategorija i pregled licitacija
      * @author Nina Savkic 18/0692
      */
 
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 
     public function index()
     {
@@ -66,8 +53,6 @@ class Korisnik extends BaseController
         $this->prikaz("korisnik_pocetna", ['kategorije' => $kategorije, 'licitacije' => $licitacije, 'korisnik' => $korisnik]);
     }
 
-<<<<<<< HEAD
-=======
     /**
 * Funkcija koja prikazuje listu svih stvari izabrane kategorije od strane korisnika
 *@param String $naziv
@@ -76,7 +61,6 @@ class Korisnik extends BaseController
 *
 */
 
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     public function kategorija($naziv)
     {
         $korisnik = $this->session->get("korisnik");
@@ -91,29 +75,18 @@ class Korisnik extends BaseController
         $this->prikaz("korisnik_pocetna", ['kategorije' => $kategorije, 'licitacije' => $licitacije, 'odabrana' => $naziv, 'korisnik' => $korisnik]);
     }
 
-<<<<<<< HEAD
-=======
     /**
 * Funkcija koja prikazuje proizvod  koji korisnik trenutno gleda
 *@param int $id
 *@author Masa Hadzi-Nikolic 18/0271
 *
 */
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     public function proizvod($id)
     {
         $licitacijamodel = new LicitacijaModel();
         $licitacija = $licitacijamodel->where('idLicitacija', $id)->first();
         $fondacijamodel = new FondacijaModel();
 
-<<<<<<< HEAD
-
-        $fondacija = $fondacijamodel->where('idFondacija', $licitacija['Fondacija_idFondacija'])->first();
-
-        $this->prikaz("proizvod", ['licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
-    }
-
-=======
         $fondacija = $fondacijamodel->where('idFondacija', $licitacija['Fondacija_idFondacija'])->first();
 
         $trenutnacena = new TrenutnacenaModel();
@@ -155,14 +128,10 @@ class Korisnik extends BaseController
     * @author Nadja Milojkovic 18/0269
     *
 */ 
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     public function recenzija()
     {
         $this->prikaz("recenzija", []);
     }
-<<<<<<< HEAD
-
-=======
 /** 
        *Funkcija u kojoj se vrsi provera svih podataka koje je korisnik uneo kako bi dao ocenu izabranom
        *korisniku. Podaci kao sto su korisnicko ime,ocena i komentar moraju biti uneti u suprotnom se ispisuje greska.
@@ -170,7 +139,6 @@ class Korisnik extends BaseController
        *@author Nadja Milojkovic 18/0269
 
 */ 
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     public function proveraRecenzije()
     {
         $validation = \Config\Services::validation();
@@ -201,6 +169,9 @@ class Korisnik extends BaseController
         if (!$validation) {
             return $this->prikaz("recenzija", ['validation' => $this->validator]);
         }
+        if($this->request->getVar("korisnickoime")==$this->session->get("korisnik")['korisnickoime']){
+            return $this->prikaz("recenzija", ['poruka' => 'Ne mozete ostaviti recenziju za samog sebe']);
+        }
 
         $korisnikmodel = new KorisnikModel();
         $korisnik = $korisnikmodel->where('korisnickoime', $this->request->getVar("korisnickoime"))->first();
@@ -222,13 +193,6 @@ class Korisnik extends BaseController
             return $this->prikaz("recenzija", ['greskarecenzija2' => 'Korisnik ne postoji u bazi.']);
         }
     }
-<<<<<<< HEAD
-
-    public function profil()
-    {
-        $korisnik = $this->session->get('korisnik');
-        $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
-=======
     /** 
     *Sledeca funkcija dohvata korisnika koji je trenutno prijavljen na sistem 
     *i prikazuje njegov profil, odnosno ispisuje sve njegove podatke.
@@ -303,10 +267,16 @@ class Korisnik extends BaseController
             'kategorija' => ['rules' => 'required',  'errors' => ['required' => 'Nije izabrana kategorija!']],
             'slika' => ['rules' => 'required',  'errors' => ['required' => 'Nije uneta slika proizvoda!']],
         ]);
-
+        
+        $to_time = strtotime($this->request->getVar("trajanje"));
+        $from_time = strtotime(Date('y:m:d'));
         if (!$validation) {
             return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator, 'fondacije' => $fondacije, 'kategorije' => $kategorije]);
-        } else {
+        } else if($to_time - $from_time<=0){
+            return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator,'poruka' => 'Morate uneti datum u buducnosti', 'fondacije' => $fondacije, 'kategorije' => $kategorije]);
+
+
+        } {
             $licitacijamodel = new LicitacijaModel();
 
             $src = '/' . 'slike/' . $this->request->getVar("slika");
@@ -336,7 +306,6 @@ class Korisnik extends BaseController
 
             $this->prikaz("uspeh", ["uspeh" => "Uspešno ste kreirali licitaciju"]);
         }
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     }
     /**
 
@@ -389,9 +358,6 @@ class Korisnik extends BaseController
 */
 
 
-<<<<<<< HEAD
-   
-=======
     public function licitiraj($id)
     {
         $trenutnaCenamodel = new TrenutnaCenaModel();
@@ -494,5 +460,4 @@ class Korisnik extends BaseController
         
         return $this->prikaz("uspeh", ["uspeh" => "Uspešno ste izvršili uplatu"]);
     }
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 }

@@ -17,14 +17,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-     <script src="/m.js"></script>
+     <script src="/masa.js"></script>
      <link rel="stylesheet" href="/mila.css">
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/nadja.css">
-<<<<<<< HEAD
-=======
     <link rel="stylesheet" href="/nina.css">
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 
     
     <title>PSI</title>
@@ -42,11 +39,7 @@
             </div>
             <div class="topnav col-8 offset-2">
             <?php echo anchor('Korisnik/index','Početna');?>
-<<<<<<< HEAD
-              <?php echo anchor('','Prodaj');?>
-=======
               <?php echo anchor('Korisnik/kreiranje_licitacije','Prodaj');?>
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
               <?php echo anchor('Korisnik/recenzija','Recenzija');?>
               <?php echo anchor('Korisnik/logout','Izloguj se');?>
 

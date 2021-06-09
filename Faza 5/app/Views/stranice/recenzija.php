@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-=======
 <?php
     /**
      * 
      * @author Nadja Milojkovic 18/0269
      */
 ?>
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 <div class="recenzija" id="recenzija">
     <h1>Recenzija</h1>
 
@@ -21,7 +18,9 @@
       else if ($validation->hasError("komentar")) echo $validation->getError("komentar");
 
       ?>
-  
+  <?php 
+  if(isset($poruka))echo $poruka;
+  ?>
   </span>
     <span class="greskarecenzija2"style="color:red" ><?php if(!empty($greskarecenzija2))echo $greskarecenzija2  ?></span> 
 

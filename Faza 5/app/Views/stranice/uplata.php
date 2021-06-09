@@ -12,15 +12,9 @@
   <div class="forma">
     <h1><b>Nalog za uplatu</b></h1>
     <form method="post" action="<?= site_url('Kompanija/proverauplata') ?>">
-<<<<<<< HEAD
 
       <span class="greskaprijava"><?php if (!empty($greskauplata)) echo $greskauplata  ?></span>
 
-=======
-
-      <span class="greskaprijava"><?php if (!empty($greskauplata)) echo $greskauplata  ?></span>
-
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
       <table width="100%" cellpadding="5px">
         <tr>
           <td width="40%">Uplatilac:</td>
@@ -66,17 +60,10 @@
 
           <td colspan="4" align="center">
             <button class="btn btn-dark ">Uplati</button>
-<<<<<<< HEAD
-    </form>
-    <form action="<?= site_url('Kompanija/index') ?>">
-      <button class="btn btn-dark " style="margin: 10px;">Odustani</button>
-    </form>
-=======
     </form> <form action="<?= site_url('Kompanija/index') ?>">
       <button class="btn btn-dark " style="margin: 10px;">Odustani</button>
     </form>
    
->>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     </td>
     </tr>
     </table>
