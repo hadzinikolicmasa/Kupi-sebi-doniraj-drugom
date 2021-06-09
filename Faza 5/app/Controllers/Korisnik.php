@@ -113,10 +113,12 @@ class Korisnik extends BaseController
 
         $trenutni = $this->session->get("korisnik");
 
-        $poslednji = null;
-
-        if ($lic['Licitator'] != null && $lic["Korisnik_idKorisnik"] != null)
+       
+        $poslednji=null;
+        if ($lic['Licitator'] != null && $lic["Korisnik_idKorisnik"] != null){
             $poslednji = $korisnikmodel->find($lic["Korisnik_idKorisnik"]);
+            
+        }
         $pobednik = $lic['Licitator'];
 
         $this->prikaz("proizvod", ['poruka' => $poruka, 'pobednik' => $pobednik, 'poslednji' => $poslednji, 'trenutni' => $trenutni, 'ocena' => $ocena, 'cena' => $lic["Cena"], 'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
@@ -299,7 +301,8 @@ class Korisnik extends BaseController
 
             $trenutnaCenamodel->insert([
                 "Cena" => $this->request->getVar("pocetnaCena"),
-                "Licitacija_idLicitacija" => $poslednji['idLicitacija']
+                "Licitacija_idLicitacija" => $poslednji['idLicitacija'],
+                'Licitator'=>null
 
             ]);
 

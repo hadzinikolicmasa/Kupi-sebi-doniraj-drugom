@@ -81,8 +81,25 @@ class Admin extends BaseController
    public function brisi()
    {
       
+      
+
       $id = $this->request->getVar('dugme');
-      echo $id;
+      $trenutnaCenamodel=new TrenutnacenaModel();
+      $korisnikModel=new KorisnikModel();
+      $korisnik=$korisnikModel->find($id);
+      $trenutne=$trenutnaCenamodel->where("Licitator",$korisnik['korisnickoime'])->findAll();
+
+      foreach($trenutne as $trenutna){
+
+         $data = [
+            'Korisnik_idKorisnik' => null,
+            'Licitator' =>  null
+         ];
+        
+         $trenutnaCenamodel->update($trenutna['Licitacija_idLicitacija'], $data);
+
+      }
+      
       $recenzijaModel = new RecenzijaModel();
       $recenzijaModel->where('Korisnik_idKorisnik',$id)->delete();
       $korisnikModel = new KorisnikModel();

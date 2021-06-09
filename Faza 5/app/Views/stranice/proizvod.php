@@ -75,8 +75,9 @@
                         <input type="hidden" id="licitirao" value="<?php echo $pobednik; ?>">
                         
 
-                            <td align="center" colspan="2"><?php if ($poslednji!=null) echo "(" . $poslednji['korisnickoime'] . ")";
-                                                            else  echo "(anonimno)";
+                            <td align="center" colspan="2"><?php if ($poslednji) echo "(" . $pobednik . ")";
+                                                            else  if($poslednji==null && $pobednik==NULL){}
+                                                            else echo "(anonimno)";
                                                             ?></td>
                         </tr>
                         <tr>
