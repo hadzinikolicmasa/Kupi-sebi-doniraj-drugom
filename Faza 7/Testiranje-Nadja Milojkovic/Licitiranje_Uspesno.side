@@ -1,0 +1,207 @@
+{
+  "id": "d88340cf-fefb-4ce2-9893-5ac9334ef976",
+  "version": "2.0",
+  "name": "Licitiranje_anonimno",
+  "url": "http://localhost:8080/Korisnik",
+  "tests": [{
+    "id": "96d98136-ce3c-4fbb-aa02-6cd4443d3e0c",
+    "name": "Licitiranje_Anonimno",
+    "commands": [{
+      "id": "3b819320-a885-436a-963a-2c4c1ad7fb15",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02167934-3f5f-4d20-af30-193d9ed2da77",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ca087a3-e226-4dc6-b45c-eff297c62558",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Naocare",
+      "targets": [
+        ["linkText=Naocare", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Naocare')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/proizvod/2']", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Naocare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff722e76-e539-48dd-8355-db03ba8d9b50",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=cena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4640a67-fde0-47d5-b7f6-f76cedf5392d",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=cena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "cd7b4d35-f5dc-45c3-9ad6-90fcc00e17c6",
+      "comment": "",
+      "command": "click",
+      "target": "name=anonimno",
+      "targets": [
+        ["name=anonimno", "name"],
+        ["css=td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='anonimno']", "xpath:attributes"],
+        ["xpath=//tr[9]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f527c98-5a8d-49f3-93cd-31784af16368",
+      "comment": "",
+      "command": "assertChecked",
+      "target": "name=anonimno",
+      "targets": [
+        ["name=anonimno", "name"],
+        ["css=td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='anonimno']", "xpath:attributes"],
+        ["xpath=//tr[9]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "12e8f2e4-4055-4769-ba72-384e3f23757e",
+      "comment": "",
+      "command": "click",
+      "target": "id=licitiraj",
+      "targets": [
+        ["id=licitiraj", "id"],
+        ["css=#licitiraj", "css:finder"],
+        ["xpath=//button[@id='licitiraj']", "xpath:attributes"],
+        ["xpath=//tr[10]/td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Licitiraj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b67d60d3-4886-4357-bc2f-a0c90fa38b83",
+    "name": "Licitiranje_Uspesno",
+    "commands": [{
+      "id": "8a3e4808-46af-472a-ae2a-36c3b0ad86dc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8edb882-bb26-481a-a2fb-0f635f8d7cbd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03d8321e-8ae1-4f4b-9ce0-e4a02b88cb74",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Naocare",
+      "targets": [
+        ["linkText=Naocare", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Naocare')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/proizvod/2']", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Naocare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbc67581-1d04-4fb8-be0c-2ca617acff1c",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=cena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e0cef52-3364-4035-b8c5-a584847811e3",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=cena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": "1000"
+    }, {
+      "id": "0a1a7305-9621-4890-8993-6e2c934e47d1",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=licitiraj",
+      "targets": [
+        ["id=licitiraj", "id"],
+        ["css=#licitiraj", "css:finder"],
+        ["xpath=//button[@id='licitiraj']", "xpath:attributes"],
+        ["xpath=//tr[10]/td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Licitiraj')]", "xpath:innerText"]
+      ],
+      "value": "Licitiraj"
+    }, {
+      "id": "0afb28a5-f7d5-42b7-b877-68439441f7e6",
+      "comment": "",
+      "command": "click",
+      "target": "id=licitiraj",
+      "targets": [
+        ["id=licitiraj", "id"],
+        ["css=#licitiraj", "css:finder"],
+        ["xpath=//button[@id='licitiraj']", "xpath:attributes"],
+        ["xpath=//tr[10]/td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Licitiraj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "665ee31c-0a8f-4d28-8bbc-5cd58f4190a9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=table:nth-child(5) tr:nth-child(6) > td:nth-child(2)",
+      "targets": [
+        ["css=table:nth-child(5) tr:nth-child(6) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[6]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'1000')]", "xpath:innerText"]
+      ],
+      "value": "1000"
+    }]
+  }],
+  "suites": [{
+    "id": "1317f95c-3330-4afa-bb1f-0d453540456e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["96d98136-ce3c-4fbb-aa02-6cd4443d3e0c"]
+  }],
+  "urls": ["http://localhost:8080/Korisnik"],
+  "plugins": []
+}

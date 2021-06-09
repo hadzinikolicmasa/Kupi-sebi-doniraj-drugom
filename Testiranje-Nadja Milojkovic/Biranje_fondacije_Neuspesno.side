@@ -1,0 +1,59 @@
+{
+  "id": "d5e184c4-b189-42fd-967c-f0482458ec13",
+  "version": "2.0",
+  "name": "Obrisi",
+  "url": "http://localhost:8080/Kompanija",
+  "tests": [{
+    "id": "369b4c68-8edf-418f-92be-b397e01bb945",
+    "name": "Biranje_fondacije_NijeIzabrana",
+    "commands": [{
+      "id": "4af7c863-9b5f-4921-87d3-2e92862990d2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Kompanija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c3f6934f-dcd9-4ffa-babe-68ffc9243a63",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eade710f-3b71-45aa-91e2-d021ef79fa28",
+      "comment": "",
+      "command": "click",
+      "target": "css=div > .btn",
+      "targets": [
+        ["css=div > .btn", "css:finder"],
+        ["xpath=//div[@id='odabirfondacija']/div/button", "xpath:idRelative"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Uplati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e70705a3-b89f-4bfb-989e-dc5bd8295719",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='odabirfondacija']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate izabrati fondaciju.')]", "xpath:innerText"]
+      ],
+      "value": "Morate izabrati fondaciju."
+    }]
+  }],
+  "suites": [{
+    "id": "e655c63b-9bce-4598-8fc2-184fcccb7db7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/Korisnik", "http://localhost:8080/Kompanija"],
+  "plugins": []
+}

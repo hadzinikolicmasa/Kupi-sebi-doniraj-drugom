@@ -1,0 +1,2334 @@
+{
+  "id": "bbf7c9bb-d288-4ee2-985e-d19f76b6a618",
+  "version": "2.0",
+  "name": "masa_testovi",
+  "url": "http://localhost:8080/Kompanija",
+  "tests": [{
+    "id": "4cb1e27b-e89a-479b-b6b6-6264b637b1b7",
+    "name": "TP1 - Recenzija",
+    "commands": [{
+      "id": "b65676f6-9d55-4107-9ea6-f50a85d3c729",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90e0c9b6-5ed9-450a-8759-e8bf3025488a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1283x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6edf4dc7-4a27-49b9-b48f-1846e9c04935",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recenzija",
+      "targets": [
+        ["linkText=Recenzija", "linkText"],
+        ["css=.topnav > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Recenzija')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/recenzija']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5bef621-4ac7-4c72-a376-3d884337e799",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='recenzija']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": "Recenzija"
+    }, {
+      "id": "18686d2f-f0d3-45da-bb2d-254b32daa80c",
+      "comment": "",
+      "command": "click",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8851328a-7ec6-4beb-9464-e202d7a7f213",
+      "comment": "",
+      "command": "type",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "mila"
+    }, {
+      "id": "9113eca8-63d8-4c3a-943a-98406ff66a62",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f447ac2b-c805-4b5d-831c-01609ee160da",
+      "comment": "",
+      "command": "select",
+      "target": "name=ocena",
+      "targets": [],
+      "value": "label=4"
+    }, {
+      "id": "fe205878-7f46-41c6-9fa7-3c35704ad05b",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "099d2066-fcc6-4a51-9101-c835649716a7",
+      "comment": "",
+      "command": "click",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "356b29b5-9a50-4ef2-bbc7-a73537bd9cf6",
+      "comment": "",
+      "command": "type",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Odeca nije bila u opisanom stanju"
+    }, {
+      "id": "627fac67-bdb7-48d9-9a16-bfb12f0b379b",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "735ac564-419f-4773-8f68-fb129a512eb3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Uspešno ste ostavili recenziju!')]", "xpath:innerText"]
+      ],
+      "value": "Uspešno ste ostavili recenziju!"
+    }]
+  }, {
+    "id": "b1eb0dae-1aa1-4b6a-a7d5-7db3d315a226",
+    "name": "TP2 - Recenzija",
+    "commands": [{
+      "id": "6277d0e0-e80c-4ba7-b67e-74d11f3f17c2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ba12f21-b1d6-4aaa-8997-6e71cb9e8ddf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1286x753",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59c061b5-85e7-4468-a5a5-9e6de7f86910",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recenzija",
+      "targets": [
+        ["linkText=Recenzija", "linkText"],
+        ["css=.topnav > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Recenzija')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/recenzija']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9413a616-b48c-4da4-8375-e3f171a8fa9a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='recenzija']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": "Recenzija"
+    }, {
+      "id": "274790f6-7681-4c82-b65a-77fe8d738461",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b5a04f2-acd0-4d41-be4d-5dcf1868647e",
+      "comment": "",
+      "command": "select",
+      "target": "name=ocena",
+      "targets": [],
+      "value": "label=4"
+    }, {
+      "id": "9f69232d-31fe-4bab-abbd-e046fe7fd950",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3d7ea8d-d7bb-46cd-bb0d-b282cdc30b8d",
+      "comment": "",
+      "command": "click",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6474bb9a-e16a-45da-aa01-26ae3b546cdd",
+      "comment": "",
+      "command": "type",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Sve preporuke"
+    }, {
+      "id": "9143fd95-5c2f-4a15-b005-9836e3fb8cc8",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad40890f-448a-4878-9a06-e20f3dc8769c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskarecenzija",
+      "targets": [
+        ["css=.greskarecenzija", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije uneto korisničko ime!')]", "xpath:innerText"]
+      ],
+      "value": "Nije uneto korisničko ime!"
+    }]
+  }, {
+    "id": "26afd61e-dbad-4565-9f66-7c69bf5576f9",
+    "name": "TP3 - Recenzija",
+    "commands": [{
+      "id": "81c01c13-124f-4a28-9684-48b62ebe973c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8663d59b-6211-4dbe-8a18-7e96a3a8425f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x757",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0504e4f-2971-4f4c-abea-c181b931544b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recenzija",
+      "targets": [
+        ["linkText=Recenzija", "linkText"],
+        ["css=.topnav > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Recenzija')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/recenzija']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eafc24f2-b605-428b-9004-749e7b8fc594",
+      "comment": "",
+      "command": "click",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09e4dc58-3127-40ce-b9a2-84bd983515f5",
+      "comment": "",
+      "command": "type",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "mila"
+    }, {
+      "id": "12fe38f5-2d6f-40da-8c9a-7f3da2cbce6c",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2660b145-c580-489a-9174-a331d45934c4",
+      "comment": "",
+      "command": "select",
+      "target": "name=ocena",
+      "targets": [],
+      "value": "label=4"
+    }, {
+      "id": "a9bbe145-ac14-4d41-b50e-b7d803399047",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1305bb5a-da8c-43ba-a81b-99d47e6a960e",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe66753c-3707-48bc-8b3e-cdbf69e0f4f3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskarecenzija",
+      "targets": [
+        ["css=.greskarecenzija", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije unet komentar!')]", "xpath:innerText"]
+      ],
+      "value": "Nije unet komentar!"
+    }]
+  }, {
+    "id": "b7523ceb-5a44-47a9-9e14-6c2b450b3087",
+    "name": "TP4 - Recenzija",
+    "commands": [{
+      "id": "fcff83bd-8fe4-43ee-950d-887f57ec775e",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d81e816e-b590-45a3-9000-38e621cd39f2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x757",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f03bfb4-05a4-411a-a1e7-353c98c27a1d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recenzija",
+      "targets": [
+        ["linkText=Recenzija", "linkText"],
+        ["css=.topnav > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Recenzija')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/recenzija']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d623856e-b43a-493c-92f1-fb1afd3bd111",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='recenzija']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": "Recenzija"
+    }, {
+      "id": "cbf8d2a0-d98a-4011-869a-f83b66bdfe43",
+      "comment": "",
+      "command": "click",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "12027406-aa32-44a7-b1c4-4dff677cbb63",
+      "comment": "",
+      "command": "type",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "mila"
+    }, {
+      "id": "890f8387-ede1-4895-8e50-8b05e6aa4769",
+      "comment": "",
+      "command": "click",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9bd47f60-5acb-47cb-9717-cc3d53f4154e",
+      "comment": "",
+      "command": "type",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Nije lose"
+    }, {
+      "id": "36bdb45e-d338-43b4-ad33-8d2a644befad",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6a1021a-d9c1-403f-95ac-2971839da324",
+      "comment": "",
+      "command": "click",
+      "target": "css=.greskarecenzija",
+      "targets": [
+        ["css=.greskarecenzija", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije uneta ocena!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d875e13a-c032-48d9-9f4f-ebcc9ec5c888",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskarecenzija",
+      "targets": [
+        ["css=.greskarecenzija", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije uneta ocena!')]", "xpath:innerText"]
+      ],
+      "value": "Nije uneta ocena!"
+    }]
+  }, {
+    "id": "3fbb339a-be23-4f00-9b1a-3cb0030f41d7",
+    "name": "TP5 - Recenzija",
+    "commands": [{
+      "id": "549b69ce-07b5-4a22-b910-6bf45507b2e9",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "40986bb2-1217-484e-b775-a46b378f4d0d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x761",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89760fbb-5de5-4939-ab34-8ff0287143ab",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recenzija",
+      "targets": [
+        ["linkText=Recenzija", "linkText"],
+        ["css=.topnav > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Recenzija')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/recenzija']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b4b0de0c-3ebd-401d-9d2e-d43a79f10e7c",
+      "comment": "",
+      "command": "click",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c13e43cb-6fcf-48c1-b38f-d92c84de9264",
+      "comment": "",
+      "command": "type",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "mila123"
+    }, {
+      "id": "95aed69e-3963-46a4-9d5f-ebc9025de833",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0f6e170-8531-4570-92c2-a1e9d9004d01",
+      "comment": "",
+      "command": "select",
+      "target": "name=ocena",
+      "targets": [],
+      "value": "label=4"
+    }, {
+      "id": "8671fdeb-9b58-4133-a155-8dc52132e95c",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7eed863-d690-4e1b-a91f-b3ebabd86ea6",
+      "comment": "",
+      "command": "click",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb179e4c-03db-43c7-8b69-fed2fa8e3a87",
+      "comment": "",
+      "command": "type",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Ok"
+    }, {
+      "id": "467b14c2-e538-4d40-b40e-efaa0ce8bf48",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9e4950e-6ffd-4eb5-92db-25cda022f2f9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskarecenzija2",
+      "targets": [
+        ["css=.greskarecenzija2", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Korisnik ne postoji u bazi.')]", "xpath:innerText"]
+      ],
+      "value": "Korisnik ne postoji u bazi."
+    }]
+  }, {
+    "id": "ce526ab6-31bb-46c2-a1c3-aca4808dec00",
+    "name": "TP6 - Recenzija",
+    "commands": [{
+      "id": "d55cee2b-9c54-4f84-bbb7-d99e5121ef9b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5675007d-0194-46bc-9f58-d484630ad311",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1286x753",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd62f5af-d038-4136-925f-a1af52e40b57",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recenzija",
+      "targets": [
+        ["linkText=Recenzija", "linkText"],
+        ["css=.topnav > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Recenzija')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/recenzija']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd00af50-c82d-4225-b3a0-fe4987b62ddb",
+      "comment": "",
+      "command": "click",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e693be95-c9e7-44cb-9899-d1476096a685",
+      "comment": "",
+      "command": "type",
+      "target": "id=korisnickoime",
+      "targets": [
+        ["id=korisnickoime", "id"],
+        ["name=korisnickoime", "name"],
+        ["css=#korisnickoime", "css:finder"],
+        ["xpath=//input[@id='korisnickoime']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "masahn"
+    }, {
+      "id": "c9b7e359-4ecf-4286-95c7-3477e995db6a",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06ea095d-bf00-4d40-950d-1fa3a78689b8",
+      "comment": "",
+      "command": "select",
+      "target": "name=ocena",
+      "targets": [],
+      "value": "label=5"
+    }, {
+      "id": "b17d5715-8ddc-4715-9356-0fb742056933",
+      "comment": "",
+      "command": "click",
+      "target": "name=ocena",
+      "targets": [
+        ["name=ocena", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='ocena']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "993cff48-dab4-4da7-b124-f52aa519447f",
+      "comment": "",
+      "command": "click",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd9655ea-0403-43f3-80cd-1c182e5bcc95",
+      "comment": "",
+      "command": "type",
+      "target": "name=komentar",
+      "targets": [
+        ["name=komentar", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='komentar']", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Najbolja!"
+    }, {
+      "id": "4002ba9a-9f35-4395-847b-e522e961394d",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pošalji')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ceeadb0-b904-4c6a-bab7-3ede6c87d030",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskarecenzija",
+      "targets": [
+        ["css=.greskarecenzija", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Ne mozete ostaviti recenziju za samog sebe')]", "xpath:innerText"]
+      ],
+      "value": "Ne mozete ostaviti recenziju za samog sebe"
+    }]
+  }, {
+    "id": "edbdbfca-5263-42f4-a146-ac1930fab751",
+    "name": "TP7 - Recenzija",
+    "commands": [{
+      "id": "9acf9e75-fa59-4800-84b4-71cd78780856",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cce74a6e-5ba2-41e8-b844-9bf568b70911",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1286x753",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a6e4bad-c58e-4749-9bf9-d242caa43230",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Recenzija",
+      "targets": [
+        ["linkText=Recenzija", "linkText"],
+        ["css=.topnav > a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Recenzija')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/recenzija']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c296065b-b577-4752-aa08-e29c7ebf1872",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='recenzija']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Recenzija')]", "xpath:innerText"]
+      ],
+      "value": "Recenzija"
+    }, {
+      "id": "de738e8f-a135-4b42-8cb9-9f7268f641a7",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=form > .btn",
+      "targets": [
+        ["css=form > .btn", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td[2]/form/button", "xpath:idRelative"],
+        ["xpath=//td[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Odustani')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "76d23c32-964b-4081-b5fd-0c613f89fca8",
+      "comment": "",
+      "command": "click",
+      "target": "css=form > .btn",
+      "targets": [
+        ["css=form > .btn", "css:finder"],
+        ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[5]/td[2]/form/button", "xpath:idRelative"],
+        ["xpath=//td[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Odustani')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d8811c4-aa72-4004-9d60-e9bf9daebafa",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Kupi i doniraj')]", "xpath:innerText"]
+      ],
+      "value": "Kupi i doniraj"
+    }]
+  }, {
+    "id": "f78423ca-b215-40cf-b907-edf657aee51d",
+    "name": "TP1 - Brisanje i azuriranje",
+    "commands": [{
+      "id": "23abb9c2-6c0e-48df-8924-8b32af03d844",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "74d66289-febc-45b7-87e8-0122b139372a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45e8cc6a-6452-44e2-97f3-a7a16527f629",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Licitacije",
+      "targets": [
+        ["linkText=Licitacije", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Licitacije')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Admin/licitacije']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Licitacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c469ee0d-8b43-49d7-bbd4-ec8aa89d80a6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tbody:nth-child(1) > tr > th:nth-child(1)",
+      "targets": [
+        ["css=tbody:nth-child(1) > tr > th:nth-child(1)", "css:finder"],
+        ["xpath=//th", "xpath:position"],
+        ["xpath=//th[contains(.,'Broj licitacije')]", "xpath:innerText"]
+      ],
+      "value": "Broj licitacije"
+    }, {
+      "id": "eee8ca43-1322-4f80-8a9c-24f47862a630",
+      "comment": "",
+      "command": "click",
+      "target": "name=dugme",
+      "targets": [
+        ["name=dugme", "name"],
+        ["css=tr:nth-child(2) .btn", "css:finder"],
+        ["xpath=//button[@name='dugme']", "xpath:attributes"],
+        ["xpath=//td[8]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Azuriraj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "90209958-372c-481b-aa21-73eb33ce799e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate izabrati neku opciju')]", "xpath:innerText"]
+      ],
+      "value": "Morate izabrati neku opciju"
+    }]
+  }, {
+    "id": "98daecd6-675f-49a7-9911-cb76096b5586",
+    "name": "TP1 - Dodavanje fondacije",
+    "commands": [{
+      "id": "2bda30c0-4b56-4533-8f62-28537bb5a488",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e1aa3e1-30ad-4d86-82a3-43063dd29975",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x753",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f8b83189-28d2-411c-99c0-e3d495add2ce",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//td/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa72dd09-f2de-46ac-9698-6773828dff7d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": "Dodaj fondaciju"
+    }, {
+      "id": "1220d0d5-232c-4ecc-ada3-72d1e45d4266",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45575264-4b4f-41f6-b706-298afa3c1986",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Krov nad glavom"
+    }, {
+      "id": "1beb7ac1-0cdf-4f13-a9ca-faf9abcfbd37",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "341f2373-f262-4bcd-9e20-b0d38e4f63ec",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Kralja Milutina 15"
+    }, {
+      "id": "5fdce47b-47b3-4dd3-a396-78c228c60c87",
+      "comment": "",
+      "command": "click",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e882a486-1421-4295-aa2f-d516340dd39c",
+      "comment": "",
+      "command": "type",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Ok"
+    }, {
+      "id": "7c71482e-ef9f-4f65-b71e-bc54ec535cc7",
+      "comment": "",
+      "command": "click",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da892a35-1ddf-469e-a04d-d528293e4ae9",
+      "comment": "",
+      "command": "type",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\wamp64\\www\\kupisebidonirajdrugom\\public\\slike\\krov_nad_glavom.jpg"
+    }, {
+      "id": "6416e19a-302a-4439-b555-6d06802cea3f",
+      "comment": "",
+      "command": "click",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37600b11-405c-4d86-8574-9f61ddf15234",
+      "comment": "",
+      "command": "type",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "221-1234567891234-12"
+    }, {
+      "id": "4d0582f5-ad08-4220-b6fe-dbfb062635b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b0092c1-d7ba-44e8-9bd9-bc673b8f2db1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Uspešno ste dodali fondaciju')]", "xpath:innerText"]
+      ],
+      "value": "Uspešno ste dodali fondaciju"
+    }, {
+      "id": "57176acd-36ab-4ea5-8b1f-3377ff2ff370",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=ul:nth-child(1) > li:nth-child(4)",
+      "targets": [
+        ["css=ul:nth-child(1) > li:nth-child(4)", "css:finder"],
+        ["xpath=//li[4]", "xpath:position"]
+      ],
+      "value": "Krov nad glavom"
+    }]
+  }, {
+    "id": "6ddebbb5-afea-4794-a658-daa071371f2f",
+    "name": "TP2 - Dodavanje fondacije",
+    "commands": [{
+      "id": "2fa5d712-30fd-4927-90a6-42f5fe75f249",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "96f700fe-07b2-46be-8b28-e199276c7f28",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8444ad0d-0056-44f7-86b3-0f46f8a88e19",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//td/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9384a5fc-c539-45ed-9391-6a0f8e11f742",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": "Dodaj fondaciju"
+    }, {
+      "id": "bcc53fa9-ee19-4c7c-91c2-5e08cfa00921",
+      "comment": "",
+      "command": "click",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8d2cc9e-70d9-4109-900e-179c88cc2c9d",
+      "comment": "",
+      "command": "type",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Humanitarna fondacija"
+    }, {
+      "id": "274e852a-e30a-4395-bdef-8e98229d1814",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0fea6ef-df5d-4fed-9043-66d009b0379d",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Kralja Milutina 15"
+    }, {
+      "id": "0f232cdb-70cd-47dc-bbdf-e238f7853e20",
+      "comment": "",
+      "command": "click",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c48011d1-eaf5-4b00-bb75-0d0b32ad03de",
+      "comment": "",
+      "command": "type",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "123-1234567891232-57"
+    }, {
+      "id": "5b1ab32a-045b-4f8e-8824-718b0a91a9dd",
+      "comment": "",
+      "command": "click",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a585e96d-2e9d-459d-afeb-964d78921728",
+      "comment": "",
+      "command": "type",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\wamp64\\www\\kupisebidonirajdrugom\\public\\slike\\krov_nad_glavom.jpg"
+    }, {
+      "id": "a9e77514-596e-424a-8bac-fd73cd5eab7d",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fa37bf5-e9dd-4b81-889c-52a4476fc4e0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti naziv fondacije')]", "xpath:innerText"]
+      ],
+      "value": "Morate uneti naziv fondacije"
+    }]
+  }, {
+    "id": "3ea1db6c-60c0-4656-b903-a3a311f8338b",
+    "name": "TP3 - Dodavanje fondacije",
+    "commands": [{
+      "id": "42830f88-b383-4bb2-9262-91c8ea0dea70",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6175ebe1-f132-4462-9aa0-b95da0cf34ab",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "17f77783-d657-4952-aaf1-8e30f3276613",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//td/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "56a2feb2-7602-445b-9b50-dd89b7484ffa",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c506dbb0-e3ca-490a-9aed-82b09e803631",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Krov nad glavom"
+    }, {
+      "id": "f27eaf98-7bb0-47bc-bf88-4d6c24023946",
+      "comment": "",
+      "command": "click",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32ba45e8-0695-4b4d-b6db-0e7a967635aa",
+      "comment": "",
+      "command": "type",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Humanitarna fondacija"
+    }, {
+      "id": "c1f733eb-8807-416f-9cb5-eae22716c922",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3ca7144-04dd-474d-8b8a-e3ed7da816aa",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Kralja Milutina 15"
+    }, {
+      "id": "56c14230-ecfa-48fe-8aa3-dc092a20934f",
+      "comment": "",
+      "command": "click",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "36e6ca9f-cbcc-46cd-827f-689e5ffe7199",
+      "comment": "",
+      "command": "type",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\wamp64\\www\\kupisebidonirajdrugom\\public\\slike\\krov_nad_glavom.jpg"
+    }, {
+      "id": "66930d41-6d98-4207-9bb4-607c902e9672",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "518ac8c5-aa70-4b6c-87b0-f30235ace303",
+      "comment": "",
+      "command": "click",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti racun fondacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6123369b-6047-4cc8-9b1d-43b73c684f60",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti racun fondacije')]", "xpath:innerText"]
+      ],
+      "value": "Morate uneti racun fondacije"
+    }]
+  }, {
+    "id": "e1906bbf-858c-40c0-ae14-9c48f28f2e84",
+    "name": "TP4 - Dodavanje fondacije",
+    "commands": [{
+      "id": "0ede8a95-8c31-4830-9125-b7ef90f59e58",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "830d29e4-c770-4363-a176-f74ad3c8c40a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "717bb89d-f721-48aa-b314-1c94c072bee3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//td/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "315506b5-e31b-4415-a2bf-b60bd45b4ab5",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "79de341a-9dd6-4ff9-82af-868d05aa2fc7",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Budi human 2"
+    }, {
+      "id": "a8236cfd-723f-493d-93f8-6b7cbdfab7f2",
+      "comment": "",
+      "command": "click",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "309a34ea-9fb7-4707-b2a1-e4b7f0eb180b",
+      "comment": "",
+      "command": "type",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Ok"
+    }, {
+      "id": "4c7b501d-fe4e-41af-95a3-cad43d79ee50",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b3dd7a5-4fc3-4f32-97aa-2795f631c93d",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Kralja Milutina 15"
+    }, {
+      "id": "96f0d8c6-c075-429b-80fe-21b17e766931",
+      "comment": "",
+      "command": "click",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77148b9e-99fd-4f74-af84-c47a532d32bf",
+      "comment": "",
+      "command": "type",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "1548876451"
+    }, {
+      "id": "e53c98a7-7436-4624-9898-11b4f720d6b3",
+      "comment": "",
+      "command": "click",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b58b231e-ea10-4581-8b3f-844ebc07cce6",
+      "comment": "",
+      "command": "type",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\wamp64\\www\\kupisebidonirajdrugom\\public\\slike\\krov_nad_glavom.jpg"
+    }, {
+      "id": "eda07731-20ca-4bfd-b8f9-02bcf86554d3",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f91a9f97-bb4c-4787-96a6-011b2c587573",
+      "comment": "",
+      "command": "click",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti racun u ispravnom formatu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5863bbca-5608-4f32-8e9f-597fa54c772e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti racun u ispravnom formatu')]", "xpath:innerText"]
+      ],
+      "value": "Morate uneti racun u ispravnom formatu"
+    }]
+  }, {
+    "id": "c80af900-a478-471a-88d4-61a03160e78f",
+    "name": "TP5 - Dodavanje fondacije",
+    "commands": [{
+      "id": "5943f260-8a35-4294-8bcc-81680a9bbb66",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b66c5eb-9329-4a0a-a336-278b0d29f58d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04a3e860-4ae7-4418-b2c0-cd8a8aaf850d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//td/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75a2d63f-8f4a-48cc-b685-ce28a05b7dc6",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": "Dodaj fondaciju"
+    }, {
+      "id": "ca36c0dc-8137-44a3-a3f5-9213e300f2de",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f61daabc-0337-4c9a-9e21-e7672df19c72",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Krov nad glavom"
+    }, {
+      "id": "6859f75e-de16-46bd-9268-c08f0eb2d4f9",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0ccfe4b-f4c3-4207-824a-2711966fc244",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Kralja Milutina 15"
+    }, {
+      "id": "a61337b7-f82a-48fc-a770-b1e01d7d9d1a",
+      "comment": "",
+      "command": "click",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "99adcb2a-3f52-474f-9a62-064a24f3ef0e",
+      "comment": "",
+      "command": "type",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "221-1234567891234-12"
+    }, {
+      "id": "ac4050d7-2912-4bc8-8262-268f02397b74",
+      "comment": "",
+      "command": "click",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b284e54-8864-4f64-87a2-d683827da350",
+      "comment": "",
+      "command": "type",
+      "target": "name=logoFond",
+      "targets": [
+        ["name=logoFond", "name"],
+        ["css=td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='logoFond']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\wamp64\\www\\kupisebidonirajdrugom\\public\\slike\\krov_nad_glavom.jpg"
+    }, {
+      "id": "031c2aa3-e7d8-4e42-ab75-598168ef5912",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "381fc726-849c-4ad2-9ac7-7ad76fd04480",
+      "comment": "",
+      "command": "click",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti opis fondacije')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea7fc615-e11d-47b5-8e99-d5f8ef66f495",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti opis fondacije')]", "xpath:innerText"]
+      ],
+      "value": "Morate uneti opis fondacije"
+    }]
+  }, {
+    "id": "f65505a7-a5ae-47b2-8f99-0c3effb31a6d",
+    "name": "TP6 - Dodavanje fondacije",
+    "commands": [{
+      "id": "660a1361-8d8a-4161-b704-65be4c9a2ad1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "daa6014f-1b55-4e2d-9506-ee90e6936e95",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2af2dd9f-12bf-4304-a8b8-d02b300c8759",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//td/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2da49fd0-3750-4180-b415-93cd719dbc0f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": "Dodaj fondaciju"
+    }, {
+      "id": "15ccc7c5-3bb1-4e1a-9025-97cd12d90093",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44e1860e-c8d6-49a9-877e-65d18e56211d",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivFond",
+      "targets": [
+        ["name=nazivFond", "name"],
+        ["css=tr:nth-child(2) > td > input", "css:finder"],
+        ["xpath=//input[@name='nazivFond']", "xpath:attributes"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Krov nad glavom"
+    }, {
+      "id": "4ce4d25f-93de-4834-9587-2e3e38e76fed",
+      "comment": "",
+      "command": "click",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe9c171e-a688-43bd-8d00-fd4785c83642",
+      "comment": "",
+      "command": "type",
+      "target": "name=opisFond",
+      "targets": [
+        ["name=opisFond", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opisFond']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Super"
+    }, {
+      "id": "ead2eb70-2c9d-4e33-a9e2-088065e4f5ea",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a321f8f-adb8-4e5e-974f-d7d9cffa4d6a",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresaFond",
+      "targets": [
+        ["name=adresaFond", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresaFond']", "xpath:attributes"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Krunska 13"
+    }, {
+      "id": "8fbb3bc1-685d-45df-8fb1-1b9bae7c6eca",
+      "comment": "",
+      "command": "click",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b043ed5-94a2-4581-bee6-f46f78933691",
+      "comment": "",
+      "command": "type",
+      "target": "name=racunFond",
+      "targets": [
+        ["name=racunFond", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='racunFond']", "xpath:attributes"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "123-1234567891232-41"
+    }, {
+      "id": "6fdeea19-5a70-4590-8142-08479c5ca700",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "941021fa-9944-4823-b704-ae36ad7da361",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Morate uneti logo fondacije')]", "xpath:innerText"]
+      ],
+      "value": "Morate uneti logo fondacije"
+    }]
+  }, {
+    "id": "bbf3d500-3df4-4cdc-92e8-6b7589d5d45e",
+    "name": "TP7- Dodavanje fondacije",
+    "commands": [{
+      "id": "6c63e516-0cda-402f-b2fb-e84c9f1b17b5",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6759414a-0e47-456c-9f38-f7ebfcf64515",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78114f1c-d607-4019-aa06-a2cd05d516f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//td/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c2fca5e-d1d8-47e3-9f28-e733bf1606b1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dodaj fondaciju')]", "xpath:innerText"]
+      ],
+      "value": "Dodaj fondaciju"
+    }, {
+      "id": "b793b9eb-2a43-460d-abe9-427aa02aa0f5",
+      "comment": "",
+      "command": "click",
+      "target": "css=form > .btn",
+      "targets": [
+        ["css=form > .btn", "css:finder"],
+        ["xpath=//td/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Odustani')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4e7be98-4228-49c8-af3e-2b67cbd50f07",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=th > h2:nth-child(1)",
+      "targets": [
+        ["css=th > h2:nth-child(1)", "css:finder"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Fondacije:')]", "xpath:innerText"]
+      ],
+      "value": "Fondacije:"
+    }]
+  }, {
+    "id": "4d7780a4-79cd-40c3-841e-139dabcab148",
+    "name": "TP1 - Odjava",
+    "commands": [{
+      "id": "470c2370-b632-466d-9337-c12f1d72e9d6",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca72b78e-7e87-43ef-9a36-fed51ba8e21a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "277cee88-36a1-4b82-8834-6585366d4042",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardtext",
+      "targets": [
+        ["css=.cardtext", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Korisnik')]", "xpath:innerText"]
+      ],
+      "value": "Korisnik"
+    }, {
+      "id": "b906bed2-217a-4de7-a27a-8008f3247114",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Izloguj se",
+      "targets": [
+        ["linkText=Izloguj se", "linkText"],
+        ["css=a:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Izloguj se')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/logout']", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Izloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "af2722d6-3ce2-4636-b7d7-7c1b029fb49e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izloguj se",
+      "targets": [
+        ["linkText=Izloguj se", "linkText"],
+        ["css=a:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Izloguj se')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/logout']", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Izloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc87a059-ee8f-474c-9e71-cadf17da287c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1 > b",
+      "targets": [
+        ["css=h1 > b", "css:finder"],
+        ["xpath=//div[@id='pocetna']/div[2]/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dobrodošli')]", "xpath:innerText"]
+      ],
+      "value": "Dobrodošli"
+    }]
+  }, {
+    "id": "1a0de9e3-e8d9-4ae5-8edc-846e295c03d4",
+    "name": "TP2 - Odjava",
+    "commands": [{
+      "id": "63b9c348-0b68-457d-8828-3c444010249d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a42bc98f-c46d-4b22-b043-7fb0620c2bcb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1291x749",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bacc802a-e997-4ee4-8ee1-697d5e52ed8f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardtext",
+      "targets": [
+        ["css=.cardtext", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Admin')]", "xpath:innerText"]
+      ],
+      "value": "Admin"
+    }, {
+      "id": "2d9256f4-8cb9-4de4-85ca-5160a1d62d03",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Izloguj se",
+      "targets": [
+        ["linkText=Izloguj se", "linkText"],
+        ["css=a:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Izloguj se')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Admin/logout']", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Izloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6da2a22-80a1-47a7-ab2a-423bb037efa2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izloguj se",
+      "targets": [
+        ["linkText=Izloguj se", "linkText"],
+        ["css=a:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Izloguj se')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Admin/logout']", "xpath:href"],
+        ["xpath=//a[4]", "xpath:position"],
+        ["xpath=//a[contains(.,'Izloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbde5080-8003-4fce-a446-4beaabedd3a4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1 > b",
+      "targets": [
+        ["css=h1 > b", "css:finder"],
+        ["xpath=//div[@id='pocetna']/div[2]/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dobrodošli')]", "xpath:innerText"]
+      ],
+      "value": "Dobrodošli"
+    }]
+  }, {
+    "id": "d81d0a07-a383-40cc-aed3-1f21759898f7",
+    "name": "TP3 - Odjava",
+    "commands": [{
+      "id": "b16890b5-9bc9-497e-870c-37416c0a4830",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Kompanija",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e86fa87-b0a6-4804-9655-2e1e56efcb5d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1294x753",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "45e54759-4fb1-4c26-98a4-d5d3e0cd5b34",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.container\\.fluid > .row",
+      "targets": [
+        ["css=.container\\.fluid > .row", "css:finder"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": "1219,165"
+    }, {
+      "id": "731a6f0f-f346-4585-854e-70ef9cce7636",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.container\\.fluid > .row",
+      "targets": [
+        ["css=.container\\.fluid > .row", "css:finder"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": "1219,165"
+    }, {
+      "id": "64a67531-622f-410d-955e-2d06b6aa97b9",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.container\\.fluid > .row",
+      "targets": [
+        ["css=.container\\.fluid > .row", "css:finder"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": "1219,165"
+    }, {
+      "id": "f71f3c1e-6bd3-4d57-8268-88b2ef3b3214",
+      "comment": "",
+      "command": "click",
+      "target": "css=.container\\.fluid > .row",
+      "targets": [
+        ["css=.container\\.fluid > .row", "css:finder"],
+        ["xpath=//div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a59fd124-2e8b-45ea-ac7e-e635c0742c6c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardtext",
+      "targets": [
+        ["css=.cardtext", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Kompanija')]", "xpath:innerText"]
+      ],
+      "value": "Kompanija"
+    }, {
+      "id": "472394c5-6bc1-4074-80ad-8c7ee5d77059",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Izloguj se",
+      "targets": [
+        ["linkText=Izloguj se", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Izloguj se')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Kompanija/logout']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Izloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0545f502-13a8-4822-863c-55c240e820e9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izloguj se",
+      "targets": [
+        ["linkText=Izloguj se", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Izloguj se')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Kompanija/logout']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Izloguj se')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e6816a1-d280-43fe-a9e0-bf64c5a9f6e2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1 > b",
+      "targets": [
+        ["css=h1 > b", "css:finder"],
+        ["xpath=//div[@id='pocetna']/div[2]/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Dobrodošli')]", "xpath:innerText"]
+      ],
+      "value": "Dobrodošli"
+    }]
+  }],
+  "suites": [{
+    "id": "f65b7e57-cba0-443a-93d4-1d92142e85f4",
+    "name": "Ostavljanje recenzije",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["4cb1e27b-e89a-479b-b6b6-6264b637b1b7", "b1eb0dae-1aa1-4b6a-a7d5-7db3d315a226", "26afd61e-dbad-4565-9f66-7c69bf5576f9", "b7523ceb-5a44-47a9-9e14-6c2b450b3087", "3fbb339a-be23-4f00-9b1a-3cb0030f41d7", "ce526ab6-31bb-46c2-a1c3-aca4808dec00", "edbdbfca-5263-42f4-a146-ac1930fab751"]
+  }, {
+    "id": "0a734a27-1546-4bad-bf7d-e55b51ca5934",
+    "name": "Dodavanje fondacije",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }, {
+    "id": "6100d4ed-c3dd-4c9a-900a-aed6ab25ff93",
+    "name": "Brisanje i azuriranje licitacija",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f78423ca-b215-40cf-b907-edf657aee51d"]
+  }, {
+    "id": "4e4bbd90-8650-4c0b-9603-6b2a34c648aa",
+    "name": "Odjava",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/Korisnik", "http://localhost:8080/Admin", "http://localhost:8080/Kompanija"],
+  "plugins": []
+}

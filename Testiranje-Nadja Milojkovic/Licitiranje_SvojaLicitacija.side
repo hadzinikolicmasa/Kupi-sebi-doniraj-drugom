@@ -1,0 +1,99 @@
+{
+  "id": "bab1f1fb-eada-4a8b-8b0c-926d07d3ce50",
+  "version": "2.0",
+  "name": "Licitiranje",
+  "url": "http://localhost:8080/Korisnik",
+  "tests": [{
+    "id": "9efebb74-6508-40f4-a5fe-eb418b0c8638",
+    "name": "Licitiranje_svojaLicitacija",
+    "commands": [{
+      "id": "a0f356cd-9590-4b9d-af52-a107717086c7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42d464b7-799c-40cc-97fa-471dcccdea53",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fddd8652-b4a7-40c5-955b-7d832daa8b37",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=suknja",
+      "targets": [
+        ["linkText=suknja", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'suknja')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/proizvod/1']", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'suknja')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed037bc2-b41a-4afe-9719-02ae15835f62",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=cena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "303c5a36-d5f7-4881-bd67-f96129b42abe",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=cena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//tr[8]/td[2]/input", "xpath:position"]
+      ],
+      "value": "5000"
+    }, {
+      "id": "c498b314-9da3-456b-a6a7-651bd1f2a4b5",
+      "comment": "",
+      "command": "click",
+      "target": "id=licitiraj",
+      "targets": [
+        ["id=licitiraj", "id"],
+        ["css=#licitiraj", "css:finder"],
+        ["xpath=//button[@id='licitiraj']", "xpath:attributes"],
+        ["xpath=//tr[10]/td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Licitiraj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "36c9220f-f0b6-43f0-9d94-255dafafb250",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Ne mozete licitirati za svoju licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Ne mozete licitirati za svoju licitaciju"
+    }]
+  }],
+  "suites": [{
+    "id": "42244cf5-3380-416a-b9ff-d214eb4279a3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["9efebb74-6508-40f4-a5fe-eb418b0c8638"]
+  }],
+  "urls": ["http://localhost:8080/Korisnik"],
+  "plugins": []
+}
