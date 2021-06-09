@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\KategorijaModel;
-use App\Models\LicitacijaModel;
+
+use App\Models\FondacijaModel;
+
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -37,7 +38,7 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = ['form','url'];
+	protected $helpers = ['form', 'url'];
 
 	/**
 	 * Constructor.
@@ -54,34 +55,48 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
-		 $this->session = \Config\Services::session();
+		$this->session = \Config\Services::session();
 	}
-	protected function prikaz($stranica,$podaci){
+
+	protected function prikaz($stranica, $podaci)
+	{
+
 		throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 	}
 
-	public function logout(){
+/**
+* Funkcija koja unistava sesiju i vrsi logout trenutnog korisnika
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*
+*/
+	public function logout()
+	{
 		$this->session->destroy;
 		return redirect()->to(site_url("/Gost"));
 	}
 
-	public function pregled(){
-		$kategorijamodel=new KategorijaModel();
-		$kategorije=$kategorijamodel->findAll(); 
-        $licitacijamodel=new LicitacijaModel();
-        $licitacije=$licitacijamodel->findAll();
-		 $this->prikaz("pregled",['kategorije'=>$kategorije,'licitacije'=>$licitacije]);
-	  }
+	 /**
 
-	  public function kategorija($naziv){
-		$kategorijamodel=new KategorijaModel();
-		$kategorija=$kategorijamodel->where('naziv',$naziv)->first(); 
-		$kategorije=$kategorijamodel->findAll(); 
-		$licitacijamodel=new LicitacijaModel();
-        $licitacije=$licitacijamodel->where('Kategorija_IdKategorije',$kategorija['IdKategorije'])->findAll();
-		
-		$this->prikaz("pregled",['kategorije'=>$kategorije,'licitacije'=>$licitacije,'odabrana'=>$naziv]);
+* Funkcija koja azurira iznos fondacija nakon izvrsene uplate od strane kompanije ili korisnika
+* @param int $iznos
+*@param int $id
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*
+*/
+	function azuriraj($id, $iznos)
+    {
 
+        $fondacijaModel = new FondacijaModel();
+        $fondacija = $fondacijaModel->where("idFondacija", $id)->first();
+        $novi = $iznos + $fondacija['iznos'];
 
-	  }
+        $data = [
+            'iznos' => $novi
+        ];
+        
+        $fondacijaModel->update($id, $data);
+    }
+
 }

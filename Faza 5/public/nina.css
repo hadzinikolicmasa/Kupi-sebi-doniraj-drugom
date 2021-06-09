@@ -1,0 +1,40 @@
+.formaLicitacije {
+    font-family: 'Courier New', monospace;
+    background-color: #FF9F1C;
+    border-radius: 15px;
+    padding: 20px;
+    width: 700px;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.kreiranjeLicit select {
+    width: 90%;
+    padding: 8px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.kreiranjeLicit input[type=date],
+.kreiranjeLicit input[type=text] {
+    width: 90%;
+    padding: 8px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.kreiranjeLicit textarea {
+    width: 90%;
+    padding: 8px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.greskaLicitacija {
+    color: red;
+}
+
+.licitacije {
+    padding-bottom: 200px;
+    padding-top: 50px;
+}

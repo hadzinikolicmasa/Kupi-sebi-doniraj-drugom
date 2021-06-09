@@ -1,23 +1,19 @@
-
 .topnav {
     overflow: hidden;
-    width:70%;
+    width: 70%;
     font-family: 'Courier New', monospace;
     background-color: #DAD6D6;
-  }
+}
 
-  body::before {
-   background-image: url(/slike/back.jpg);
-   content: "";
-   opacity: 1;
-   height: 100%;
-   z-index: -1;   
+body::before {
+    background-image: url(/slike/back.jpg);
+    content: "";
+    opacity: 1;
+    height: 100%;
+    z-index: -1;
+}
 
-  }
- 
-
-  .topnav a {
-    
+.topnav a {
     float: left;
     display: block;
     color: white;
@@ -25,27 +21,25 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-  }
-  
-  .topnav a:hover{
-    background-color:#2EC4B6;
+}
+
+.topnav a:hover {
+    background-color: #2EC4B6;
     color: black;
-  }
-  
-  
-  
-  .topnav .search-container {
+}
+
+.topnav .search-container {
     float: right;
-  }
-  
-  .topnav input[type=text] {
+}
+
+.topnav input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
     border: none;
-  }
-  
-  .topnav .search-container button {
+}
+
+.topnav .search-container button {
     float: right;
     padding: 6px 10px;
     margin-top: 8px;
@@ -54,51 +48,49 @@
     font-size: 17px;
     border: none;
     cursor: pointer;
-  }
-  
-  
-  
-  .nav-link{
-    color:black;
-  }
-  .nav-link:hover{
-    color:grey;
-  
-  }
-  
-  footer {
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: grey;
+}
+
+footer {
     background: #c2bfbf;
     color: white;
     padding-top: 2em;
     color: white;
-  }
-  
-  footer a {
+}
+
+footer a {
     color: #fff;
     font-size: 14px;
     transition-duration: 0.2s;
-  }
-  
-  footer a:hover{
-    color:#AA4465;
-  }
-  .prava {
+}
+
+footer a:hover {
+    color: #AA4465;
+}
+
+.prava {
     font-size: 12px;
     padding: 10px;
     border-top: 1px solid #FFFFFF;
-  }
-  
-  
-  ul.social-network {
+}
+
+ul.social-network {
     padding: 0;
-  }
-  
-  ul.social-network li {
+}
+
+ul.social-network li {
     display: inline;
     margin: 0 5px;
-  }
-  
-  .social-circle li a {
+}
+
+.social-circle li a {
     display: inline-block;
     border-radius: 50%;
     text-align: center;
@@ -106,244 +98,342 @@
     height: 30px;
     font-size: 15px;
     background-color: #F9F9F9;
-  }
-  
-  .social-circle li i {
+}
+
+.social-circle li i {
     line-height: 30px;
-  }
-  
-  .social-circle i {
+}
+
+.social-circle i {
     color: #595959;
-  }
-  
-  .odabir{
-  
-  padding-top: 20px;
-  height: auto;
 }
 
-.profilkompanija{
- 
-  padding: 20px;
-  height: 500px;
+.odabir,
+.dodavanjeFondacija,
+.profilkompanija {
+    padding: 30px;
+    height: auto;
 }
-.cardtext{
-  font-style: italic;
-}
- 
-.korisnikpocetna .card,.adminpocetna .card ,.odabir .cardd{
-  background: linear-gradient( #2EC4B6 65%, white 80%) top .03em center / 100% .30em repeat-y;
-  text-align: center;
-  float:left;
-  height: 300px;
-  color:black;
- padding: 30px;
- box-shadow: 0 10px 50px #918d8d;
- margin-top: 20px;
- margin-left: 100px;
- width: 200px;
-}
-.card-imgtop{
-  box-shadow: 0 10px 50px white;
-  width:80%;
-  margin:auto; 
-}
-.korisnikpocetna,.adminpocetna{
 
-  padding-top: 20px;
-  height: 500px;
+.cardtext {
+    font-style: italic;
 }
-#odabirfondacija{
-   
-    
+
+.korisnikpocetna .card,
+.adminpocetna .card,
+.odabir .cardd {
+    background: linear-gradient( #2EC4B6 65%, white 80%) top .03em center / 100% .30em repeat-y;
+    text-align: center;
     float: left;
-margin-left: 30px;
-margin-bottom: 200px;
+    height: 300px;
+    color: black;
+    padding: 30px;
+    box-shadow: 0 10px 50px #918d8d;
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 200px;
 }
 
-.izaberiikona{
+.kategorije_korisnik {
+    background: linear-gradient( #FF9F1C 65%, #fdbe66 66%) top .03em center / 100% .30em repeat-y;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    float: left;
+    clear: left;
+    margin-left: 100px;
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+.proizvodi_korisnik {
+    height: auto;
+    width: calc( 100% - 350px);
+    margin-left: 20px;
+    float: left;
+}
+
+.card-imgtop {
+    box-shadow: 0 10px 50px white;
+    width: 80%;
+    margin: auto;
+}
+
+.korisnikpocetna {
+    padding-top: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.adminpocetna {
+    padding-top: 20px;
+    height: auto;
+    padding-bottom: 100px;
+}
+
+#odabirfondacija {
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 200px;
+}
+
+.izaberiikona {
     width: 150px;
     height: 150px;
     margin-right: 30px;
-    
 }
 
-.greska{
-  margin-left: 20px;
-  font-size: 20px;
-    color:red;
+.greska {
+    margin-left: 20px;
+    font-size: 20px;
+    color: red;
 }
 
-.greskaprijava{
-  margin-left: 3px;
-  font-size: 15px;
-    color:red;
-}
-#greskauplata{
-  margin-left: 3px;
-  font-size: 20px;
-    color:red;
+.greskaprijava {
+    margin-left: 3px;
+    font-size: 15px;
+    color: red;
 }
 
-
-.uplata{
-
-
-  padding: 20px;
-  height: 600px;
-
+#greskauplata {
+    margin-left: 3px;
+    font-size: 20px;
+    color: red;
 }
 
-.prijava{
-  
-  padding: 20px;
-  height: auto;
+.uplata {
+    padding: 20px;
+    height: 600px;
 }
 
+.prijava {
+    padding: 20px;
+    height: auto;
+}
 
 h1 {
-  text-align:center;
-  
+    text-align: center;
 }
 
 .forma {
-  font-family: 'Courier New', monospace;
-
-  background-color: #FF9F1C;
-  border-radius: 15px;
-  padding: 20px;
-  width:700px;
-  margin:auto;
-
-  
-
+    font-family: 'Courier New', monospace;
+    background-color: #FF9F1C;
+    border-radius: 15px;
+    padding: 20px;
+    width: 700px;
+    margin: auto;
 }
 
 .formaprijava {
-  background-color:#FF9F1C;
-  font-family: 'Courier New', monospace;
-
-  border-radius: 15px;
-  padding: 20px;
-  width:400px;
-  color:black;
-  margin:auto;
-  margin-top: 50px;
-  margin-bottom: 80px;
+    background-color: #FF9F1C;
+    font-family: 'Courier New', monospace;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    color: black;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 80px;
 }
 
-
-
-.regKompanija input[type=text],.regKompanija input[type=password],.uplata input[type=text] ,.prijava input[type=text],.prijava input[type=password],.masinaUplata input[type=text],.masinaUplata input[type=password] {
- width:90%;
-  padding: 8px;
-  border: 3px solid #cccccc;
-  box-sizing: border-box;
+.regKompanija input[type=text],
+.regKompanija input[type=password],
+.uplata input[type=text],
+.prijava input[type=text],
+.prijava input[type=password],
+.masinaUplata input[type=text],
+.masinaUplata input[type=password] {
+    width: 90%;
+    padding: 8px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
 }
 
- 
-
-
-.forma label{
-  margin-left: 20px;
- 
+.forma label {
+    margin-left: 20px;
 }
 
-
-
-
-.tabelakor{
-  width: 80%;
-  background-color:#FF9F1C;
-  margin:auto;
-  margin-top: 20px;
-  color:white;
-  margin-bottom: 20px;
-  text-align: center;
-  font-family: 'Courier New', monospace;
+.tabelakor {
+    width: 90%;
+    background-color: #FF9F1C;
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
 }
 
-.tabelakor td th{
-  border:1px solid white;
+.tabelakor td th {
+    border: 1px solid white;
 }
 
-
-
-.uspeh,.proizvodi,.korisnici{
-
-  padding: 20px;
-  height: 500px;
+.uspeh,
+.proizvodi,
+.korisnici {
+    padding: 20px;
+    height: 500px;
 }
 
-
-.pocetna p, .pocetna h1{
-  padding-top: 25px;
-}
-.two{
-  text-align: justify;
-  background-color:#FF9F1C;
-   height:380px;
-   float: left;
-   border-radius: 50%;
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-   
-   text-align: center;
-   align-items: center;
-   margin-top: 30px;
-}
-.one, .three{
-  text-align: justify;
-  background-color:#E71D36;
-   height:200px;
-   float: left;
-   border-radius: 50%;
-   margin-top: 60px;
-   display:flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-   vertical-align: middle;
-   align-items: center;
+.pocetna p,
+.pocetna h1 {
+    padding-top: 25px;
 }
 
-.firsttd{
-  width: 230px;
-  height: 200px;
-  
-}
-.firsticon{
-  box-shadow: 3px 3px;
-  border:1px solid black;
-  
- 
-}
-
-.tabela table td{
-  border:15px solid #DAD6D6 ;
-  
+.two {
+    text-align: justify;
+    background-color: #FF9F1C;
+    height: 380px;
+    float: left;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 30px;
 }
 
-
-.kategorije{
-  background: linear-gradient( #0e0e0e 65%, #1d1d1d 66%) top .03em center / 100% .30em repeat-y;
-  margin-top: 20px;
-  color:#E71D36;
-  text-align: center;
-  width:20%;
-  margin-left: 20px;
+.one,
+.three {
+    text-align: justify;
+    background-color: #E71D36;
+    height: 200px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
 }
 
-.odeca{
-
-  width : "150px" ;
-  height :"190px";
- 
+.firsttd {
+    width: 230px;
+    height: 200px;
 }
 
+.firsticon {
+    box-shadow: 3px 3px;
+    border: 1px solid black;
+}
 
-.proizvod{
-  box-shadow: 3px 3px grey;
+.tabela table td {
+    border: 15px solid #DAD6D6;
+}
+
+.kategorije {
+    background: linear-gradient( #FF9F1C 65%, #fdbe66 66%) top .03em center / 100% .30em repeat-y;
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+    width: 20%;
+    margin-left: 20px;
+}
+
+.odeca {
+    width: "150px";
+    height: "190px";
+}
+
+.proizvod {
+    box-shadow: 3px 3px grey;
+}
+
+.licitacija {
+    background: linear-gradient( #424040 65%, #555454 66%) top .03em center / 100% .30em repeat-y;
+    padding: 30px;
+    height: auto;
+    color: white;
+    padding: 20px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    box-shadow: 0 10px 50px #918d8d;
+}
+
+.licitacijaslika {
+    height: 100%;
+    width: 40%;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    float: left;
+}
+
+.licitacija input[type=text] {
+    width: 80%;
+    padding: 10px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+    height: 50px;
+    margin-top: 10px;
+}
+
+.licitacija h2 {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+}
+
+.licitacija p {
+    font-size: smaller;
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+}
+
+.licitacijatext {
+    margin-left: 30px;
+    width: 50%;
+    float: left;
+}
+
+.licitacija .dugme {
+    background-color: #FF9F1C;
+    margin-top: 10px;
+    border: 3px solid #FF9F1C;
+}
+
+.licitacija .dugmekor {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.pitanje {
+    margin-bottom: 50px;
+}
+
+.pitanje input[type=text] {
+    width: 100%;
+    padding: 8px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.sverecenzije {
+    padding: 30px;
+    height: auto;
+    text-align: center;
+}
+
+.komentar {
+    border: 3px solid black;
+    color: #E71D36;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.komentar img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.sverecenzije .btn {
+    margin-top: 10px;
 }

@@ -1,12 +1,18 @@
-<div class="uspeh">
-<h1>
 <?php
-    if (isset($uspeh)) echo $uspeh;
+    /**
+     * 
+     * @author Nina Savkic 18/0692
+     */
 ?>
-</h1>
-<?php 
+<div class="uspeh">
+    <h1>
+        <?php
+        if (isset($uspeh)) echo $uspeh;
+        ?>
+    </h1>
+    <?php
 
-header("Refresh:2; url=index");
-?>
+    header("Refresh:6; index ");
+    ?>
 
 </div>

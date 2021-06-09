@@ -1,3 +1,9 @@
+<?php
+    /**
+     * 
+     * @author Nadja Milojkovic 18/0269
+     */
+?>
 <div class="recenzija" id="recenzija">
     <h1>Recenzija</h1>
 
@@ -5,8 +11,18 @@
 
     
     <form method="post" action= "<?= site_url('Korisnik/proveraRecenzije')?>" >
-    <span class="greskarecenzija" ><?php if(isset($validation)) echo $validation->listErrors() ?></span>
-    <span class="greskarecenzija2" ><?php if(!empty($greskarecenzija2))echo $greskarecenzija2  ?></span> 
+    <span class="greskarecenzija" style="color:red">
+
+    <?php if (isset($validation)) if ($validation->hasError("korisnickoime")) echo $validation->getError("korisnickoime");
+      else if ($validation->hasError("ocena")) echo $validation->getError("ocena");
+      else if ($validation->hasError("komentar")) echo $validation->getError("komentar");
+
+      ?>
+  <?php 
+  if(isset($poruka))echo $poruka;
+  ?>
+  </span>
+    <span class="greskarecenzija2"style="color:red" ><?php if(!empty($greskarecenzija2))echo $greskarecenzija2  ?></span> 
 
         <table width="100%" cellpadding="5px" align="center">
     
@@ -15,33 +31,33 @@
          <td>Ocena:</td>
          </tr>
 
-         <tr><td><input type="text" id="korisnickoime" name="korisnickoime" value="<?=set_value('korisnickoime')?>"  placeholder="Unesite korisničko ime"></td>
+         <tr><td><input type="text" id="korisnickoime" name="korisnickoime" value="<?php if(isset($korisnik))echo $korisnik; echo set_value('korisnickoime')?>"  placeholder="Unesite korisničko ime"></td>
          <td>
            <select name="ocena" value="<?=set_value('ocena')?>" >
            <option style="display:none">
-           <option value="5">5</option>
-           <option value="4">4</option>
-           <option value="3">3</option>
-           <option value="2">2</option>
            <option value="1">1</option>
+           <option value="2">2</option>
+           <option value="3">3</option>
+           <option value="4">4</option>
+           <option value="5">5</option>
            </select>
          </td>
          </tr>
 
          <tr><td>Komentar:</td></tr>
-         <tr><td>
-         <textarea type="text" id="komentar" name="komentar" value="<?=set_value('komentar')?>"  placeholder="Unesite komentar"></textarea>
+         <tr><td colspan="2">
+         <textarea type="text" cols="45" name="komentar" value="<?=set_value('komentar')?>"  placeholder="Unesite komentar"></textarea>
          </td></tr>
-         <tr height="20px"></tr>
          <tr>
          <td align="center" ><button class="btn btn-dark" type="submit">Pošalji</button></td>
-         <td ><a href="/Korisnik" input="button" class="btn btn-dark" type="submit">Odustani</a></td>
+         </form> 
+         <td > <form action= "<?= site_url('Korisnik/index')?>" ><button class="btn btn-dark">Odustani</button></form></td>
          </tr>
     
     
     </table>    
 
-   </form>    
+      
     </div>
 
 
