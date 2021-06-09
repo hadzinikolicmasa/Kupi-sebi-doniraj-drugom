@@ -1,3 +1,10 @@
+<?php
+    /**
+     * 
+     * @author Nadja Milojkovic 18/0269
+     */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +19,8 @@
      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="/masa.css">
     <link rel="stylesheet" href="/mila.css">
+    <link rel="stylesheet" href="/nina.css">
+    <link rel="stylesheet" href="/nadja.css">
     
     
     <title>PSI</title>
@@ -30,7 +39,7 @@
             <div class="topnav col-8 offset-2">
             
             <?php echo anchor('Admin/index','Početna');?>
-              <?php echo anchor('','Licitacije');?>
+              <?php echo anchor('Admin/licitacije','Licitacije');?>
               <?php echo anchor('Admin/korisnici','Korisnici');?>
               <?php echo anchor('Admin/logout','Izloguj se');?>
               

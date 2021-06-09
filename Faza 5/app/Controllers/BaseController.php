@@ -2,6 +2,10 @@
 
 namespace App\Controllers;
 
+<<<<<<< HEAD
+=======
+use App\Models\FondacijaModel;
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
@@ -63,10 +67,45 @@ class BaseController extends Controller
 		throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 	}
 
+<<<<<<< HEAD
+=======
+/**
+* Funkcija koja unistava sesiju i vrsi logout trenutnog korisnika
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*
+*/
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 	public function logout()
 	{
 		$this->session->destroy;
 		return redirect()->to(site_url("/Gost"));
 	}
 
+<<<<<<< HEAD
+=======
+	 /**
+
+* Funkcija koja azurira iznos fondacija nakon izvrsene uplate od strane kompanije ili korisnika
+* @param int $iznos
+*@param int $id
+*
+*@author Masa Hadzi-Nikolic 18/0271
+*
+*/
+	function azuriraj($id, $iznos)
+    {
+
+        $fondacijaModel = new FondacijaModel();
+        $fondacija = $fondacijaModel->where("idFondacija", $id)->first();
+        $novi = $iznos + $fondacija['iznos'];
+
+        $data = [
+            'iznos' => $novi
+        ];
+        
+        $fondacijaModel->update($id, $data);
+    }
+
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 }

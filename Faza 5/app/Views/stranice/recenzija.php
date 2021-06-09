@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+<?php
+    /**
+     * 
+     * @author Nadja Milojkovic 18/0269
+     */
+?>
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 <div class="recenzija" id="recenzija">
     <h1>Recenzija</h1>
 

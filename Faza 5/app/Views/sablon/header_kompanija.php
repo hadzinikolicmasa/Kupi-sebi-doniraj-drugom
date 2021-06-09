@@ -1,3 +1,10 @@
+
+<?php
+    /**
+     * 
+     * @author Nina Savkic 18/0692
+     */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +20,7 @@
    <link rel="stylesheet" href="/m.js">
    <link rel="stylesheet" href="/masa.css">
    <link rel="stylesheet" href="/mila.css">
-   
+   <link rel="stylesheet" href="/nadja.css">
 
     <title>PSI</title>
 </head>
@@ -27,6 +34,7 @@
                 <img class="navbar-brand" src="/slike/slika.png" alt="Logo" style="width:90px;">
                
                 <h4> Kupi sebi, doniraj drugom</h4>
+<<<<<<< HEAD
             </div>
             <div class="topnav col-8 offset-2">
             <?php echo anchor('Kompanija/index','Početna');?>
@@ -38,6 +46,19 @@
                 </form>
               </div>
             </div>
+=======
+            </div>
+            <div class="topnav col-8 offset-2">
+            <?php echo anchor('Kompanija/index','Početna');?>
+              <?php echo anchor('Kompanija/logout','Izloguj se');?>
+              <div class="search-container">
+                <form action="">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+            </div>
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
             </div>
 </div>
       </header>

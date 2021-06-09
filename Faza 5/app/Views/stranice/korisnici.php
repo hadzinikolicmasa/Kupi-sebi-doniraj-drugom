@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form>
    <div class="korisnici">
       <table class="table table-striped tabelakor">
@@ -12,6 +13,30 @@
             <th>Obriši</th>
          </tr>
 
+=======
+
+<?php
+    /**
+     * @author Masa Hadzi-Nikolic  18/0271
+     *
+     */
+?>
+<form method='post' action="<?= site_url("$controller/brisi") ?>" >
+
+   <div class="korisnici">
+      <table class="table table-striped tabelakor">
+         <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Adresa</th>
+            <th>Grad</th>
+            <th>Telefon</th>
+            <th>Korisničko ime</th>
+            <th>Ocena</th>
+            <th>Obriši</th>
+         </tr>
+
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
          <?php
 
          foreach ($korisnici as $korisnik) {
@@ -35,7 +60,13 @@
    <td>{$korisnik['telefon']}</td>
    <td>{$korisnik['korisnickoime']}</td>
    <td>{$avg}</td>
+<<<<<<< HEAD
    <td><button class='btn btn-light '>" . anchor("$controller/brisi/{$korisnik['idKorisnik']}", 'Obriši') . "</button> </td>
+=======
+   <td><button class='btn btn-light '>Obriši</button> 
+   <input type='hidden' name='id' value=".$korisnik['idKorisnik'].">
+   </td>
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
    </tr>";
          }
 

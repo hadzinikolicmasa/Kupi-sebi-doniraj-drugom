@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+<?php
+    /**
+     * 
+     * @author Milanka Labovic 18/0689
+     */
+?>
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 <div class="registracijaTip" id="registracijaTip">
 <h1><b>Registracija:</b></h1>
   <div class="formaprijava">

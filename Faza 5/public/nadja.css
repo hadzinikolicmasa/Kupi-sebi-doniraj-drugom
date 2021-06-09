@@ -31,9 +31,27 @@
 
 .recenzija input[type=text],
 .recenzija select,
+<<<<<<< HEAD
 textarea {
+=======
+.recenzija textarea {
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
     width: 100%;
     padding: 8px;
     border: 3px solid #cccccc;
     box-sizing: border-box;
+<<<<<<< HEAD
+=======
+}
+
+.formaprofil input[type=text] {
+    width: 100%;
+    padding: 5px;
+    border: 3px solid #cccccc;
+    box-sizing: border-box;
+}
+
+.formaprofil button {
+    margin-top: 10px;
+>>>>>>> 8f6b11b8ea33019127f0e381b44c15ce81d3cb01
 }
