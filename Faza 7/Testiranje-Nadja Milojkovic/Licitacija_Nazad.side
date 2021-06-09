@@ -1,0 +1,60 @@
+{
+  "id": "d5e184c4-b189-42fd-967c-f0482458ec13",
+  "version": "2.0",
+  "name": "Obrisi",
+  "url": "http://localhost:8080/Korisnik",
+  "tests": [{
+    "id": "73d2bcbd-079e-4850-a296-87f1c67b8ff1",
+    "name": "Licitacija_Nazad",
+    "commands": [{
+      "id": "cfa56a22-1c18-43a6-93de-577af2f031bd",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e19add60-5a46-486b-8f5b-965582ef2acb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1290x728",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bee6926b-a7ae-4d79-964d-f339f292e141",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Naocare",
+      "targets": [
+        ["linkText=Naocare", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Naocare')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/proizvod/2']", "xpath:href"],
+        ["xpath=//td/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Naocare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d67ad390-d8e9-486a-9e9d-bce1189af5b4",
+      "comment": "",
+      "command": "click",
+      "target": "css=form > .btn",
+      "targets": [
+        ["css=form > .btn", "css:finder"],
+        ["xpath=//td[2]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Nazad')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "e655c63b-9bce-4598-8fc2-184fcccb7db7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["73d2bcbd-079e-4850-a296-87f1c67b8ff1"]
+  }],
+  "urls": ["http://localhost:8080/Korisnik"],
+  "plugins": []
+}
