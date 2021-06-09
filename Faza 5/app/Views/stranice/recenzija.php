@@ -31,7 +31,7 @@
          <td>Ocena:</td>
          </tr>
 
-         <tr><td><input type="text" id="korisnickoime" name="korisnickoime" value="<?=set_value('korisnickoime')?>"  placeholder="Unesite korisničko ime"></td>
+         <tr><td><input type="text" id="korisnickoime" name="korisnickoime" value="<?php if(isset($korisnik))echo $korisnik; echo set_value('korisnickoime')?>"  placeholder="Unesite korisničko ime"></td>
          <td>
            <select name="ocena" value="<?=set_value('ocena')?>" >
            <option style="display:none">

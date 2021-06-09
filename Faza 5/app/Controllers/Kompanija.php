@@ -20,7 +20,7 @@ class Kompanija extends BaseController
 * 
 *@author Nina Savkic 18/0692
 *@param String $strana
-*@param String $podaci
+*@param  $podaci
 */
 
     protected function prikaz($strana, $podaci)

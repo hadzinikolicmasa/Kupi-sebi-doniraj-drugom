@@ -390,10 +390,16 @@ h1 {
     float: left;
 }
 
-.licitacija .btn {
+.licitacija .dugme {
     background-color: #FF9F1C;
     margin-top: 10px;
     border: 3px solid #FF9F1C;
+}
+
+.licitacija .dugmekor {
+    padding: 0;
+    border: none;
+    background: none;
 }
 
 .pitanje {
@@ -406,4 +412,28 @@ h1 {
     border: 3px solid #cccccc;
     box-sizing: border-box;
     margin-top: 20px;
+}
+
+.sverecenzije {
+    padding: 30px;
+    height: auto;
+    text-align: center;
+}
+
+.komentar {
+    border: 3px solid black;
+    color: #E71D36;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.komentar img {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.sverecenzije .btn {
+    margin-top: 10px;
 }

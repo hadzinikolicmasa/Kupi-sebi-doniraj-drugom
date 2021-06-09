@@ -21,7 +21,6 @@
 
 
             
-            <form method="post" action="<?= site_url("$controller/licitiraj/{$licitacija['idLicitacija']}") ?>">
 
 
                 <div class="licitacijatext">
@@ -40,7 +39,18 @@
                         </tr>
                         <tr>
                             <td>Postavio: </td>
-                            <td><?php echo $licitacija['korisnik'] ?></td>
+                            <form method="post" action="<?= site_url("$controller/recenzije/{$licitacija['korisnik']}") ?>">
+
+                            <input type="hidden" name="licitacija" value=<?php echo $licitacija['idLicitacija'] ?>>
+                            <td> 
+                            
+                           <button class="btn dugmekor btn-outline-danger" ><?php echo  $licitacija['korisnik'];?> </button>
+                           
+                           
+                            </form>
+                            </td>
+                            <form method="post" action="<?= site_url("$controller/licitiraj/{$licitacija['idLicitacija']}") ?>">
+                            <input type="hidden" name="postavio" value=<?php echo  $licitacija['korisnik'];?>>
                         </tr>
                         <tr>
                             <td>Prosečna ocena: </td>
@@ -62,10 +72,11 @@
                             <td><?php if (isset($cena)) echo $cena; ?></td>
                         </tr>
                         <tr>
-                        <input type="hidden" id="licitirao" value="<?php if($pobednik!=NULL)echo $pobednik['korisnickoime'] ?>">
+                        <input type="hidden" id="licitirao" value="<?php echo $pobednik; ?>">
+                        
 
-                            <td align="center" colspan="2"><?php if ($korisnik != null) echo "(" . $korisnik['korisnickoime'] . ")";
-                                                            else if(isset($pobednik))echo "(anonimno)";
+                            <td align="center" colspan="2"><?php if ($poslednji!=null) echo "(" . $poslednji['korisnickoime'] . ")";
+                                                            else  echo "(anonimno)";
                                                             ?></td>
                         </tr>
                         <tr>
@@ -77,14 +88,14 @@
                         </tr>
                         <tr>
 
-                            <td align="right"><button id="licitiraj" class="btn btn-dark licitiraj">Licitiraj</button></td>
+                            <td align="right"><button id="licitiraj" class="btn dugme btn-dark licitiraj">Licitiraj</button></td>
             </form>
            <form action="<?= site_url("$controller/uplata/{$licitacija['idLicitacija']}") ?>">
                 <td align="center">
-                <button class="btn btn-dark odustani" id="uplatapobednik"style="display:none">Uplata</button>
+                <button class="btn dugme btn-dark odustani" id="uplatapobednik"style="display:none">Uplata</button>
             </form>
                 <form action="<?= site_url('Korisnik/index') ?>">
-                <button class="btn btn-dark odustani">Nazad</button>
+                <button class="btn dugme btn-dark odustani">Nazad</button>
                 </td>
             </form>
             </tr>

@@ -24,7 +24,7 @@ class Gost extends BaseController
 * 
 *@author Milanka Labovic 18/0689
 *@param String $strana
-*@param String $podaci
+*@param  $podaci
 *
 
 */
@@ -44,7 +44,7 @@ class Gost extends BaseController
 
    public function index()
    {
-
+      $this->session->destroy;
       $fondacijaModel = new FondacijaModel();
       $fondacije = $fondacijaModel->findAll();
 

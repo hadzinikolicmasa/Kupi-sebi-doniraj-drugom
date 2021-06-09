@@ -9,22 +9,23 @@ use App\Models\RecenzijaModel;
 use App\Models\KorisnikModel;
 use App\Models\TrenutnaCenaModel;
 use App\Models\UplataModel;
+
 /**
-*KorisnikController – klasa za opis svih funkcionalnosti korisnika
-*
-* @version 1.0
-*/
+ *KorisnikController – klasa za opis svih funkcionalnosti korisnika
+ *
+ * @version 1.0
+ */
 
 class Korisnik extends BaseController
 {
     /**
-* Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header korisnika i footer kao i promenljivog dela stranica 
-* 
-* 
-*@author Nina Savkic 18/0692
-*@param String $strana
-*@param  $podaci
-*/
+     * Funkcija koja sluzi sa prikaz delova stranica koji su uvek isti - header korisnika i footer kao i promenljivog dela stranica 
+     * 
+     * 
+     *@author Nina Savkic 18/0692
+     *@param String $strana
+     *@param  $podaci
+     */
 
     protected function prikaz($strana, $podaci)
     {
@@ -54,12 +55,12 @@ class Korisnik extends BaseController
     }
 
     /**
-* Funkcija koja prikazuje listu svih stvari izabrane kategorije od strane korisnika
-*@param String $naziv
-*
-*@author Masa Hadzi-Nikolic 18/0271
-*
-*/
+     * Funkcija koja prikazuje listu svih stvari izabrane kategorije od strane korisnika
+     *@param String $naziv
+     *
+     *@author Masa Hadzi-Nikolic 18/0271
+     *
+     */
 
     public function kategorija($naziv)
     {
@@ -76,13 +77,14 @@ class Korisnik extends BaseController
     }
 
     /**
-* Funkcija koja prikazuje proizvod  koji korisnik trenutno gleda
-*@param int $id
-*@author Masa Hadzi-Nikolic 18/0271
-*
-*/
-    public function proizvod($id)
+     * Funkcija koja prikazuje proizvod  koji korisnik trenutno gleda
+     *@param int $id
+     *@author Masa Hadzi-Nikolic 18/0271
+     *
+     */
+    public function proizvod($id, $poruka = null)
     {
+
         $licitacijamodel = new LicitacijaModel();
         $licitacija = $licitacijamodel->where('idLicitacija', $id)->first();
         $fondacijamodel = new FondacijaModel();
@@ -109,36 +111,36 @@ class Korisnik extends BaseController
 
         if ($count != 0) $ocena = $ocena / $count;
 
-        if ($lic['Korisnik_idKorisnik'] != null) $korisnik = $korisnikmodel->find($lic['Korisnik_idKorisnik']);
-        else  $korisnik = null;
-
         $trenutni = $this->session->get("korisnik");
 
-        $tmp = $trenutnacena->where("Licitacija_idLicitacija", $id)->first();
-        $pobednik = NULL;
-        if ($tmp['Korisnik_idKorisnik'] != NULL)
-            $pobednik = $korisnikmodel->find($tmp["Korisnik_idKorisnik"]);
+        $poslednji = null;
 
-        $this->prikaz("proizvod", ['pobednik' => $pobednik, 'trenutni' => $trenutni, 'ocena' => $ocena, 'korisnik' => $korisnik, 'cena' => $lic["Cena"], 'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
+        if ($lic['Licitator'] != null && $lic["Korisnik_idKorisnik"] != null)
+            $poslednji = $korisnikmodel->find($lic["Korisnik_idKorisnik"]);
+        $pobednik = $lic['Licitator'];
+
+        $this->prikaz("proizvod", ['poruka' => $poruka, 'pobednik' => $pobednik, 'poslednji' => $poslednji, 'trenutni' => $trenutni, 'ocena' => $ocena, 'cena' => $lic["Cena"], 'licitacija' => $licitacija, 'fondacija' => $fondacija['naziv']]);
     }
-/** 
-    *Ova funkcija vraca prikaz recenzije, odnosno stranicu na kojoj se upisuju potrebni
-    *podaci za davanje ocene.
-    *
-    * @author Nadja Milojkovic 18/0269
-    *
-*/ 
+    /** 
+     *Ova funkcija vraca prikaz recenzije, odnosno stranicu na kojoj se upisuju potrebni
+     *podaci za davanje ocene.
+     *@param String $korisnik
+     * @author Nadja Milojkovic 18/0269
+     *
+     */
     public function recenzija()
     {
-        $this->prikaz("recenzija", []);
-    }
-/** 
-       *Funkcija u kojoj se vrsi provera svih podataka koje je korisnik uneo kako bi dao ocenu izabranom
-       *korisniku. Podaci kao sto su korisnicko ime,ocena i komentar moraju biti uneti u suprotnom se ispisuje greska.
-       *
-       *@author Nadja Milojkovic 18/0269
+        $korisnik = $this->request->getVar("korisnik");
 
-*/ 
+        $this->prikaz("recenzija", ['korisnik' => $korisnik]);
+    }
+    /** 
+     *Funkcija u kojoj se vrsi provera svih podataka koje je korisnik uneo kako bi dao ocenu izabranom
+     *korisniku. Podaci kao sto su korisnicko ime,ocena i komentar moraju biti uneti u suprotnom se ispisuje greska.
+     *
+     *@author Nadja Milojkovic 18/0269
+
+     */
     public function proveraRecenzije()
     {
         $validation = \Config\Services::validation();
@@ -169,7 +171,7 @@ class Korisnik extends BaseController
         if (!$validation) {
             return $this->prikaz("recenzija", ['validation' => $this->validator]);
         }
-        if($this->request->getVar("korisnickoime")==$this->session->get("korisnik")['korisnickoime']){
+        if ($this->request->getVar("korisnickoime") == $this->session->get("korisnik")['korisnickoime']) {
             return $this->prikaz("recenzija", ['poruka' => 'Ne mozete ostaviti recenziju za samog sebe']);
         }
 
@@ -194,12 +196,12 @@ class Korisnik extends BaseController
         }
     }
     /** 
-    *Sledeca funkcija dohvata korisnika koji je trenutno prijavljen na sistem 
-    *i prikazuje njegov profil, odnosno ispisuje sve njegove podatke.
-    *
-    *@author Nadja Milojkovic 18/0269
-    *
-    */ 
+     *Sledeca funkcija dohvata korisnika koji je trenutno prijavljen na sistem 
+     *i prikazuje njegov profil, odnosno ispisuje sve njegove podatke.
+     *
+     *@author Nadja Milojkovic 18/0269
+     *
+     */
 
     public function profil()
     {
@@ -210,25 +212,25 @@ class Korisnik extends BaseController
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik]);
     }
 
-     /**
+    /**
 
-    *  Funkcija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
-    * 
-    *@author Masa Hadzi-Nikolic 18/0271
-    *@author  Nadja Milojkovic 18/0269
-    */
+     *  Funkcija koja se poziva ukoliko korisnik zeli da izvrsi izmenu profila
+     * 
+     *@author Masa Hadzi-Nikolic 18/0271
+     *@author  Nadja Milojkovic 18/0269
+     */
     public function izmena()
     {
         $korisnik = $this->session->get('korisnik');
         $this->prikaz("profil_korisnik", ['korisnik' => $korisnik, 'rezimizmena' => true]);
     }
 
-/**
+    /**
 
-*  Funkcija koja se poziva kada korisnik zeli da kreira licitaciju
-* 
-*@author Nina Savkic 18/0692
-*/
+     *  Funkcija koja se poziva kada korisnik zeli da kreira licitaciju
+     * 
+     *@author Nina Savkic 18/0692
+     */
     public function kreiranje_licitacije()
     {
         $fondacijamodel = new FondacijaModel();
@@ -238,15 +240,15 @@ class Korisnik extends BaseController
         $this->prikaz("kreiranje_licitacije", ['fondacije' => $fondacije, 'kategorije' => $kategorije]);
     }
 
-/**
+    /**
 
-*  Funkcija koja se poziva nakon sto korisnik klikne dugme "Postavi". Nakon toga se vrsi provera unetih podataka.
-*  Ukoliko korisnik ne popuni sva obavezna polja ispisuje mu se odgovarajuca poruka. U suprotnom se prelazi na stranicu
-*  uspeh.php i ispisuje mu se poruka "Uspesno ste kreirali licitaciju" gde dolazi do promene u bazi tako sto se dodaje kreirana licitacija.
-*
-* 
-*@author Nina Savkic 18/0692
-*/
+     *  Funkcija koja se poziva nakon sto korisnik klikne dugme "Postavi". Nakon toga se vrsi provera unetih podataka.
+     *  Ukoliko korisnik ne popuni sva obavezna polja ispisuje mu se odgovarajuca poruka. U suprotnom se prelazi na stranicu
+     *  uspeh.php i ispisuje mu se poruka "Uspesno ste kreirali licitaciju" gde dolazi do promene u bazi tako sto se dodaje kreirana licitacija.
+     *
+     * 
+     *@author Nina Savkic 18/0692
+     */
     public function proveraLicitacije()
     {
 
@@ -267,15 +269,13 @@ class Korisnik extends BaseController
             'kategorija' => ['rules' => 'required',  'errors' => ['required' => 'Nije izabrana kategorija!']],
             'slika' => ['rules' => 'required',  'errors' => ['required' => 'Nije uneta slika proizvoda!']],
         ]);
-        
+
         $to_time = strtotime($this->request->getVar("trajanje"));
         $from_time = strtotime(Date('y:m:d'));
         if (!$validation) {
             return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator, 'fondacije' => $fondacije, 'kategorije' => $kategorije]);
-        } else if($to_time - $from_time<=0){
-            return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator,'poruka' => 'Morate uneti datum u buducnosti', 'fondacije' => $fondacije, 'kategorije' => $kategorije]);
-
-
+        } else if ($to_time - $from_time <= 0) {
+            return $this->prikaz("kreiranje_licitacije", ['validation' => $this->validator, 'poruka' => 'Morate uneti datum u buducnosti', 'fondacije' => $fondacije, 'kategorije' => $kategorije]);
         } {
             $licitacijamodel = new LicitacijaModel();
 
@@ -309,12 +309,12 @@ class Korisnik extends BaseController
     }
     /**
 
-*  Funkcija koja proverava unete podatke o izmeni profila. Ukoliko postoji greska, prosledjuje poruku o istoj a ukoliko ne postoji
-* prikazuju korisniku ponovo njegov profil
-*
-*@author Masa Hadzi-Nikolic 18/0271
-*@author  Nadja Milojkovic 18/0269
-*/
+     *  Funkcija koja proverava unete podatke o izmeni profila. Ukoliko postoji greska, prosledjuje poruku o istoj a ukoliko ne postoji
+     * prikazuju korisniku ponovo njegov profil
+     *
+     *@author Masa Hadzi-Nikolic 18/0271
+     *@author  Nadja Milojkovic 18/0269
+     */
 
     public function proveraIzmena()
     {
@@ -349,32 +349,42 @@ class Korisnik extends BaseController
 
     /**
 
-* Funckija koja se poziva nakon sto korisnik pokusa da licitira za trenutni proizvod ciji je id prosledjen
-* Funkcija proverava uneti iznos i opciju anonimno i na osnovu toga azurira trenutnu cenu tog proizvoda
-*
-*@param int $id
-*@author Masa Hadzi-Nikolic 18/0271
-*@author  Nina Savkic 18/0692
-*/
+     * Funckija koja se poziva nakon sto korisnik pokusa da licitira za trenutni proizvod ciji je id prosledjen
+     * Funkcija proverava uneti iznos i opciju anonimno i na osnovu toga azurira trenutnu cenu tog proizvoda
+     *
+     *@param int $id
+     *@author Masa Hadzi-Nikolic 18/0271
+     *@author  Nina Savkic 18/0692
+     */
 
 
     public function licitiraj($id)
     {
         $trenutnaCenamodel = new TrenutnaCenaModel();
         $trenutna = $trenutnaCenamodel->find($id);
-
+       
+        if ($this->session->get('korisnik')['korisnickoime'] == $this->request->getVar("postavio")) {
+            return $this->proizvod($id, "Ne mozete licitirati za svoju licitaciju");
+        } else if ($this->request->getVar('cena') == "") {
+            return $this->proizvod($id, "Morate predložiti cenu");
+        } else if ($this->request->getVar('cena') <= ($trenutna['Cena'])) {
+            return $this->proizvod($id, "Cena mora biti veca od trenutne");
+        }
         if ($this->request->getVar('cena') != '' && $this->request->getVar('cena') > ($trenutna['Cena'])) {
             if ($this->request->getVar('anonimno') != 'anonimno') {
 
                 $data = [
                     'Cena' => $this->request->getVar('cena'),
-                    'Korisnik_idKorisnik' => $this->session->get('korisnik')['idKorisnik']
+                    'Korisnik_idKorisnik' => $this->session->get('korisnik')['idKorisnik'],
+                    'Licitator' =>  $this->session->get('korisnik')['korisnickoime']
                 ];
             } else {
 
                 $data = [
                     'Cena' => $this->request->getVar('cena'),
-                    'Korisnik_idKorisnik' => $this->session->get('korisnik')['idKorisnik']
+                    'Korisnik_idKorisnik' => null,
+                    'Licitator' =>  $this->session->get('korisnik')['korisnickoime']
+
                 ];
             }
             $trenutnacenamodel = new TrenutnacenaModel();
@@ -385,14 +395,14 @@ class Korisnik extends BaseController
         $this->proizvod($id);
     }
 
-     /**
+    /**
 
-    * Funkcija koja se poziva nakon sto pobednik licitacije pokusa da uplati novac za licitaciju na kojoj je pobedio
-    * 
-    *@param int $id
-    *@author Masa Hadzi-Nikolic 18/0271
-    *
-    */
+     * Funkcija koja se poziva nakon sto pobednik licitacije pokusa da uplati novac za licitaciju na kojoj je pobedio
+     * 
+     *@param int $id
+     *@author Masa Hadzi-Nikolic 18/0271
+     *
+     */
 
 
     function uplata($id)
@@ -409,16 +419,17 @@ class Korisnik extends BaseController
         $this->prikaz("uplata_korisnik", ['cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
     }
 
-/**
+    /**
 
-    * Funkcija koja proverava unete podatke o uplati
-    * 
-    *@param int $id
-    *@author Masa Hadzi-Nikolic 18/0271
-    *
-    */
+     * Funkcija koja proverava unete podatke o uplati
+     * 
+     *@param int $id
+     *@author Masa Hadzi-Nikolic 18/0271
+     *
+     */
 
-    function proverauplata($id){
+    function proverauplata($id)
+    {
         $korisnik = $this->session->get('korisnik');
         $licitacijaModel = new LicitacijaModel();
         $licitacija = $licitacijaModel->find($id);
@@ -429,15 +440,14 @@ class Korisnik extends BaseController
         $cena = $trenutnacenamodel->find($id);
 
 
-         if (!$this->validate(['model' => 'required'])) {
-            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Morate uneti model','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
-
+        if (!$this->validate(['model' => 'required'])) {
+            return  $this->prikaz("uplata_korisnik", ['greskauplata' => 'Morate uneti model', 'cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
         } else if (!$this->validate(['model' => 'integer'])) {
-            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Model mora biti unet kao broj','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+            return  $this->prikaz("uplata_korisnik", ['greskauplata' => 'Model mora biti unet kao broj', 'cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
         } else if (!$this->validate(['poziv' => 'required'])) {
-            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Poziv na broj je obavezan','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+            return  $this->prikaz("uplata_korisnik", ['greskauplata' => 'Poziv na broj je obavezan', 'cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
         } else if (!$this->validate(['poziv' => 'integer'])) {
-            return  $this->prikaz("uplata_korisnik", ['greskauplata'=>'Poziv na broj mora biti unet kao broj','cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
+            return  $this->prikaz("uplata_korisnik", ['greskauplata' => 'Poziv na broj mora biti unet kao broj', 'cena' => $cena['Cena'], 'korisnik' => $korisnik, 'licitacija' => $id, 'fondacija' => $fondacija]);
         }
 
 
@@ -446,9 +456,9 @@ class Korisnik extends BaseController
             "uplatilac" => $this->session->get('korisnik')['korisnickoime'],
             "valuta" => $this->request->getVar("valuta"),
             "iznos" => $cena['Cena'],
-            'racunprimaoca' =>$fondacija['racun'],
+            'racunprimaoca' => $fondacija['racun'],
             "primalac" => $fondacija['idFondacija'],
-            'svrhauplate'=>$id
+            'svrhauplate' => $id
         ]);
 
         $data = [
@@ -457,7 +467,25 @@ class Korisnik extends BaseController
         $licitacijaModel->update($id, $data);
 
         $this->azuriraj($fondacija['idFondacija'], $cena['Cena']);
-        
+
         return $this->prikaz("uspeh", ["uspeh" => "Uspešno ste izvršili uplatu"]);
+    }
+/**
+
+     * Funkcija koja prikazuje sve komentare nekog korisnika
+     * 
+     *@param int $korisnik
+     *@author Masa Hadzi-Nikolic 18/0271
+     *
+     */
+    public function recenzije($korisnik)
+    {
+        $korisnikmodel = new KorisnikModel();
+        $korisnik = $korisnikmodel->where("korisnickoime", $korisnik)->first();
+        $recenzijamodel = new RecenzijaModel();
+        $licitacija = $this->request->getVar("licitacija");
+        $recenzije = $recenzijamodel->where("Korisnik_idKorisnik", $korisnik['idKorisnik'])->findAll();
+
+        return $this->prikaz("sve_recenzije", ["recenzije" => $recenzije, "korisnik" => $korisnik, "licitacija" => $licitacija]);
     }
 }
