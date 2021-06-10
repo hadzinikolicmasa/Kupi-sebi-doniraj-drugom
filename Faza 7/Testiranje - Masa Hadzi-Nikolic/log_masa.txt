@@ -1,0 +1,668 @@
+Running 'TP1 - Brisanje i azuriranje'
+21:24:04
+1.
+open on http://localhost:8080/Admin OK
+21:24:05
+2.
+setWindowSize on 1291x749 OK
+21:24:05
+3.
+click on linkText=Licitacije OK
+21:24:05
+4.
+assertText on css=tbody:nth-child(1) > tr > th:nth-child(1) with value Broj licitacije OK
+21:24:06
+5.
+click on name=dugme OK
+21:24:06
+6.
+assertText on css=.greskaprijava with value Morate izabrati neku opciju OK
+21:24:06
+'TP1 - Brisanje i azuriranje' completed successfully
+21:24:07
+Running 'TP1 - Dodavanje fondacije'
+21:24:11
+1.
+open on http://localhost:8080/Admin/index OK
+21:24:12
+2.
+setWindowSize on 1294x753 OK
+21:24:12
+3.
+click on css=.btn OK
+21:24:12
+4.
+assertText on css=b with value Dodaj fondaciju OK
+21:24:12
+5.
+click on name=nazivFond OK
+21:24:13
+6.
+type on name=nazivFond with value Krov nad glavom OK
+21:24:13
+7.
+click on name=adresaFond OK
+21:24:14
+8.
+type on name=adresaFond with value Kralja Milutina 15 OK
+21:24:14
+9.
+click on name=opisFond OK
+21:24:14
+10.
+type on name=opisFond with value Ok OK
+21:24:14
+11.
+click on name=logoFond OK
+21:24:14
+12.
+type on name=logoFond with value C:\wamp64\www\kupisebidonirajdrugom\public\slike\krov_nad_glavom.jpg OK
+21:24:14
+13.
+click on name=racunFond OK
+21:24:15
+14.
+type on name=racunFond with value 221-1234567891234-12 OK
+21:24:15
+15.
+click on css=td > .btn OK
+21:24:15
+16.
+assertText on css=h1:nth-child(1) with value Uspešno ste dodali fondaciju OK
+21:24:15
+'TP1 - Dodavanje fondacije' completed successfully
+21:24:16
+Running 'TP1 - Odjava'
+21:24:24
+1.
+open on http://localhost:8080/Korisnik OK
+21:24:25
+2.
+setWindowSize on 1291x749 OK
+21:24:25
+3.
+assertText on css=.cardtext with value Korisnik OK
+21:24:25
+4.
+assertElementPresent on linkText=Izloguj se OK
+21:24:26
+5.
+click on linkText=Izloguj se OK
+21:24:26
+6.
+assertText on css=h1 > b with value Dobrodošli OK
+21:24:26
+'TP1 - Odjava' completed successfully
+21:24:27
+Running 'TP1 - Recenzija'
+21:24:30
+1.
+open on http://localhost:8080/Korisnik/index OK
+21:24:30
+2.
+setWindowSize on 1283x749 OK
+21:24:30
+3.
+click on linkText=Recenzija OK
+21:24:30
+4.
+assertText on css=h1:nth-child(1) with value Recenzija OK
+21:24:31
+5.
+click on id=korisnickoime OK
+21:24:32
+6.
+type on id=korisnickoime with value masahn OK
+21:24:32
+7.
+click on name=ocena OK
+21:24:32
+8.
+select on name=ocena with value label=4 OK
+21:24:32
+9.
+click on name=ocena OK
+21:24:32
+10.
+click on name=komentar OK
+21:24:33
+11.
+type on name=komentar with value Odeca nije bila u opisanom stanju OK
+21:24:33
+12.
+click on css=td > .btn OK
+21:24:33
+13.
+assertText on css=h1:nth-child(1) with value Uspešno ste ostavili recenziju! OK
+21:24:33
+'TP1 - Recenzija' completed successfully
+21:24:34
+Running 'TP2 - Dodavanje fondacije'
+21:24:55
+1.
+open on http://localhost:8080/Admin OK
+21:24:56
+2.
+setWindowSize on 1291x749 OK
+21:24:56
+3.
+click on css=.btn OK
+21:24:56
+4.
+assertText on css=b with value Dodaj fondaciju OK
+21:24:57
+5.
+click on name=opisFond OK
+21:24:57
+6.
+type on name=opisFond with value Humanitarna fondacija OK
+21:24:57
+7.
+click on name=adresaFond OK
+21:24:58
+8.
+type on name=adresaFond with value Kralja Milutina 15 OK
+21:24:58
+9.
+click on name=racunFond OK
+21:24:58
+10.
+type on name=racunFond with value 123-1234567891232-57 OK
+21:24:58
+11.
+click on name=logoFond OK
+21:24:58
+12.
+type on name=logoFond with value C:\wamp64\www\kupisebidonirajdrugom\public\slike\krov_nad_glavom.jpg OK
+21:24:59
+13.
+click on css=td > .btn OK
+21:24:59
+14.
+assertText on css=.greskaprijava with value Morate uneti naziv fondacije OK
+21:24:59
+'TP2 - Dodavanje fondacije' completed successfully
+21:25:00
+Running 'TP2 - Odjava'
+21:25:08
+1.
+open on http://localhost:8080/Admin OK
+21:25:09
+2.
+setWindowSize on 1291x749 OK
+21:25:09
+3.
+assertText on css=.cardtext with value Admin OK
+21:25:09
+4.
+assertElementPresent on linkText=Izloguj se OK
+21:25:10
+5.
+click on linkText=Izloguj se OK
+21:25:10
+6.
+assertText on css=h1 > b with value Dobrodošli OK
+21:25:10
+'TP2 - Odjava' completed successfully
+21:25:11
+Running 'TP2 - Recenzija'
+21:25:14
+1.
+open on http://localhost:8080/Korisnik OK
+21:25:14
+2.
+setWindowSize on 1286x753 OK
+21:25:14
+3.
+click on linkText=Recenzija OK
+21:25:14
+4.
+assertText on css=h1:nth-child(1) with value Recenzija OK
+21:25:15
+5.
+click on name=ocena OK
+21:25:16
+6.
+select on name=ocena with value label=4 OK
+21:25:16
+7.
+click on name=ocena OK
+21:25:16
+8.
+click on name=komentar OK
+21:25:16
+9.
+type on name=komentar with value Sve preporuke OK
+21:25:17
+10.
+click on css=td > .btn OK
+21:25:17
+11.
+assertText on css=.greskarecenzija with value Nije uneto korisničko ime! OK
+21:25:17
+'TP2 - Recenzija' completed successfully
+21:25:18
+Running 'TP3 - Dodavanje fondacije'
+21:25:26
+1.
+open on http://localhost:8080/Admin OK
+21:25:26
+2.
+setWindowSize on 1291x749 OK
+21:25:26
+3.
+click on css=.btn OK
+21:25:27
+4.
+click on name=nazivFond OK
+21:25:27
+5.
+type on name=nazivFond with value Krov nad glavom OK
+21:25:28
+6.
+click on name=opisFond OK
+21:25:28
+7.
+type on name=opisFond with value Humanitarna fondacija OK
+21:25:28
+8.
+click on name=adresaFond OK
+21:25:29
+9.
+type on name=adresaFond with value Kralja Milutina 15 OK
+21:25:29
+10.
+click on name=logoFond OK
+21:25:29
+11.
+type on name=logoFond with value C:\wamp64\www\kupisebidonirajdrugom\public\slike\krov_nad_glavom.jpg OK
+21:25:29
+12.
+click on css=td > .btn OK
+21:25:29
+13.
+click on css=.greskaprijava OK
+21:25:30
+14.
+assertText on css=.greskaprijava with value Morate uneti racun fondacije OK
+21:25:31
+'TP3 - Dodavanje fondacije' completed successfully
+21:25:31
+Running 'TP3 - Odjava'
+21:25:38
+1.
+open on http://localhost:8080/Kompanija OK
+21:25:38
+2.
+setWindowSize on 1294x753 OK
+21:25:38
+3.
+mouseDownAt on css=.container\.fluid > .row with value 1219,165 OK
+21:25:38
+4.
+mouseMoveAt on css=.container\.fluid > .row with value 1219,165 OK
+21:25:39
+5.
+mouseUpAt on css=.container\.fluid > .row with value 1219,165 OK
+21:25:39
+6.
+click on css=.container\.fluid > .row OK
+21:25:40
+7.
+assertText on css=.cardtext with value Kompanija OK
+21:25:40
+8.
+assertElementPresent on linkText=Izloguj se OK
+21:25:40
+9.
+click on linkText=Izloguj se OK
+21:25:40
+10.
+assertText on css=h1 > b with value Dobrodošli OK
+21:25:40
+'TP3 - Odjava' completed successfully
+21:25:41
+Running 'TP3 - Recenzija'
+21:25:50
+1.
+open on http://localhost:8080/Korisnik OK
+21:25:50
+2.
+setWindowSize on 1290x757 OK
+21:25:50
+3.
+click on linkText=Recenzija OK
+21:25:50
+4.
+click on id=korisnickoime OK
+21:25:51
+5.
+type on id=korisnickoime with value masahn OK
+21:25:52
+6.
+click on name=ocena OK
+21:25:52
+7.
+select on name=ocena with value label=4 OK
+21:25:52
+8.
+click on name=ocena OK
+21:25:52
+9.
+click on css=td > .btn OK
+21:25:53
+10.
+assertText on css=.greskarecenzija with value Nije unet komentar! OK
+21:25:53
+'TP3 - Recenzija' completed successfully
+21:25:54
+Running 'TP4 - Dodavanje fondacije'
+21:26:03
+1.
+open on http://localhost:8080/Admin OK
+21:26:04
+2.
+setWindowSize on 1291x749 OK
+21:26:04
+3.
+click on css=.btn OK
+21:26:04
+4.
+click on name=nazivFond OK
+21:26:05
+5.
+type on name=nazivFond with value Budi human 2 OK
+21:26:06
+6.
+click on name=opisFond OK
+21:26:06
+7.
+type on name=opisFond with value Ok OK
+21:26:06
+8.
+click on name=adresaFond OK
+21:26:06
+9.
+type on name=adresaFond with value Kralja Milutina 15 OK
+21:26:07
+10.
+click on name=racunFond OK
+21:26:07
+11.
+type on name=racunFond with value 1548876451 OK
+21:26:07
+12.
+click on name=logoFond OK
+21:26:07
+13.
+type on name=logoFond with value C:\wamp64\www\kupisebidonirajdrugom\public\slike\krov_nad_glavom.jpg OK
+21:26:07
+14.
+click on css=td > .btn OK
+21:26:08
+15.
+click on css=.greskaprijava OK
+21:26:08
+16.
+assertText on css=.greskaprijava with value Morate uneti racun u ispravnom formatu OK
+21:26:09
+'TP4 - Dodavanje fondacije' completed successfully
+21:26:09
+Running 'TP4 - Recenzija'
+21:26:35
+1.
+open on http://localhost:8080/Korisnik OK
+21:26:36
+2.
+setWindowSize on 1290x757 OK
+21:26:36
+3.
+click on linkText=Recenzija OK
+21:26:36
+4.
+assertText on css=h1:nth-child(1) with value Recenzija OK
+21:26:36
+5.
+click on id=korisnickoime OK
+21:26:37
+6.
+type on id=korisnickoime with value masahn OK
+21:26:37
+7.
+click on name=komentar OK
+21:26:37
+8.
+type on name=komentar with value Nije lose OK
+21:26:37
+9.
+click on css=td > .btn OK
+21:26:38
+10.
+click on css=.greskarecenzija OK
+21:26:38
+11.
+assertText on css=.greskarecenzija with value Nije uneta ocena! OK
+21:26:39
+'TP4 - Recenzija' completed successfully
+21:26:39
+Running 'TP5 - Dodavanje fondacije'
+21:27:10
+1.
+open on http://localhost:8080/Admin OK
+21:27:10
+2.
+setWindowSize on 1291x749 OK
+21:27:10
+3.
+click on css=.btn OK
+21:27:11
+4.
+assertText on css=b with value Dodaj fondaciju OK
+21:27:11
+5.
+click on name=nazivFond OK
+21:27:12
+6.
+type on name=nazivFond with value Krov nad glavom OK
+21:27:12
+7.
+click on name=adresaFond OK
+21:27:12
+8.
+type on name=adresaFond with value Kralja Milutina 15 OK
+21:27:13
+9.
+click on name=racunFond OK
+21:27:13
+10.
+type on name=racunFond with value 221-1234567891234-12 OK
+21:27:13
+11.
+click on name=logoFond OK
+21:27:13
+12.
+type on name=logoFond with value C:\wamp64\www\kupisebidonirajdrugom\public\slike\krov_nad_glavom.jpg OK
+21:27:13
+13.
+click on css=td > .btn OK
+21:27:14
+14.
+click on css=.greskaprijava OK
+21:27:14
+15.
+assertText on css=.greskaprijava with value Morate uneti opis fondacije OK
+21:27:15
+'TP5 - Dodavanje fondacije' completed successfully
+21:27:15
+Running 'TP5 - Recenzija'
+21:27:33
+1.
+open on http://localhost:8080/Korisnik OK
+21:27:34
+2.
+setWindowSize on 1294x761 OK
+21:27:34
+3.
+click on linkText=Recenzija OK
+21:27:34
+4.
+click on id=korisnickoime OK
+21:27:35
+5.
+type on id=korisnickoime with value mila123 OK
+21:27:35
+6.
+click on name=ocena OK
+21:27:35
+7.
+select on name=ocena with value label=4 OK
+21:27:36
+8.
+click on name=ocena OK
+21:27:36
+9.
+click on name=komentar OK
+21:27:36
+10.
+type on name=komentar with value Ok OK
+21:27:36
+11.
+click on css=td > .btn OK
+21:27:36
+12.
+assertText on css=.greskarecenzija2 with value Korisnik ne postoji u bazi. OK
+21:27:37
+'TP5 - Recenzija' completed successfully
+21:27:37
+Running 'TP6 - Dodavanje fondacije'
+21:27:47
+1.
+open on http://localhost:8080/Admin OK
+21:27:48
+2.
+setWindowSize on 1291x749 OK
+21:27:48
+3.
+click on css=.btn OK
+21:27:48
+4.
+assertText on css=b with value Dodaj fondaciju OK
+21:27:49
+5.
+click on name=nazivFond OK
+21:27:50
+6.
+type on name=nazivFond with value Krov nad glavom OK
+21:27:50
+7.
+click on name=opisFond OK
+21:27:50
+8.
+type on name=opisFond with value Super OK
+21:27:50
+9.
+click on name=adresaFond OK
+21:27:50
+10.
+type on name=adresaFond with value Krunska 13 OK
+21:27:51
+11.
+click on name=racunFond OK
+21:27:51
+12.
+type on name=racunFond with value 123-1234567891232-41 OK
+21:27:51
+13.
+click on css=td > .btn OK
+21:27:51
+14.
+assertText on css=.greskaprijava with value Morate uneti logo fondacije OK
+21:27:51
+'TP6 - Dodavanje fondacije' completed successfully
+21:27:52
+Running 'TP6 - Recenzija'
+21:29:20
+1.
+open on http://localhost:8080/Korisnik OK
+21:29:21
+2.
+setWindowSize on 1286x753 OK
+21:29:21
+3.
+click on linkText=Recenzija OK
+21:29:21
+4.
+click on id=korisnickoime OK
+21:29:22
+5.
+type on id=korisnickoime with value masahn OK
+21:29:22
+6.
+click on name=ocena OK
+21:29:22
+7.
+select on name=ocena with value label=5 OK
+21:29:23
+8.
+click on name=ocena OK
+21:29:23
+9.
+click on name=komentar OK
+21:29:23
+10.
+type on name=komentar with value Najbolja! OK
+21:29:23
+11.
+click on css=td > .btn OK
+21:29:23
+12.
+assertText on css=.greskarecenzija with value Ne mozete ostaviti recenziju za samog sebe OK
+21:29:24
+'TP6 - Recenzija' completed successfully
+21:29:24
+Running 'TP7 - Recenzija'
+21:29:46
+1.
+open on http://localhost:8080/Korisnik OK
+21:29:46
+2.
+setWindowSize on 1286x753 OK
+21:29:46
+3.
+click on linkText=Recenzija OK
+21:29:47
+4.
+assertText on css=h1:nth-child(1) with value Recenzija OK
+21:29:47
+5.
+assertElementPresent on css=form > .btn OK
+21:29:48
+6.
+click on css=form > .btn OK
+21:29:48
+7.
+assertText on css=h1:nth-child(1) with value Kupi i doniraj OK
+21:29:48
+'TP7 - Recenzija' completed successfully
+21:29:49
+Running 'TP7- Dodavanje fondacije'
+21:30:02
+1.
+open on http://localhost:8080/Admin OK
+21:30:03
+2.
+setWindowSize on 1291x749 OK
+21:30:03
+3.
+click on css=.btn OK
+21:30:03
+4.
+assertText on css=b with value Dodaj fondaciju OK
+21:30:04
+5.
+click on css=form > .btn OK
+21:30:05
+6.
+assertText on css=th > h2:nth-child(1) with value Fondacije: OK
+21:30:05
+'TP7- Dodavanje fondacije' completed successfully
