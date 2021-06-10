@@ -1,0 +1,3133 @@
+{
+  "id": "7417d691-ba2b-4722-8856-162cbea77c08",
+  "version": "2.0",
+  "name": "milanka_testiranje",
+  "url": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+  "tests": [{
+    "id": "953ba26c-d029-4927-bd0a-4874def1dbd0",
+    "name": "uspesanPregledProfila_korisnik",
+    "commands": [{
+      "id": "d3fac09c-ead2-40e1-ad63-f7f1972171aa",
+      "comment": "",
+      "command": "open",
+      "target": "/Korisnik/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6bac42fd-73d1-4a28-9574-ef7555ba12ef",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b5d2297-635b-4049-84ce-e632b2552c02",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardtext",
+      "targets": [
+        ["css=.cardtext", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Korisnik')]", "xpath:innerText"]
+      ],
+      "value": "Korisnik"
+    }, {
+      "id": "e6be516b-c74f-46c7-8ab8-1419d93c2e55",
+      "comment": "",
+      "command": "click",
+      "target": "css=form > .btn",
+      "targets": [
+        ["css=form > .btn", "css:finder"],
+        ["xpath=//body/div/div/div/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "17027c99-ad3e-4424-a212-7fa39862534f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil korisnika')]", "xpath:innerText"]
+      ],
+      "value": "Profil korisnika"
+    }, {
+      "id": "5c02e3c9-1edd-48a0-baab-09a462ccf140",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Nazad",
+      "targets": [
+        ["linkText=Nazad", "linkText"],
+        ["css=td:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Nazad')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td[2]/button/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://localhost:8080/Korisnik/index'])[2]", "xpath:href"],
+        ["xpath=//td[2]/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Nazad')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf8f0b8f-9c40-41bb-9a06-c50517ad7798",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardtext",
+      "targets": [
+        ["css=.cardtext", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Korisnik')]", "xpath:innerText"]
+      ],
+      "value": "Korisnik"
+    }]
+  }, {
+    "id": "52926e08-8c5f-40d3-b2c5-06faf15721f1",
+    "name": "uspesanPregledProfila_kompanija",
+    "commands": [{
+      "id": "348b95af-bdd3-46f3-a27b-86e346b513d6",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Kompanija/index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a7328f7f-7d33-4b28-af3d-77836f1f09e9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "792x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ae846ed-ccd4-4387-92d6-766f946d5da3",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardtext",
+      "targets": [
+        ["css=.cardtext", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Kompanija')]", "xpath:innerText"]
+      ],
+      "value": "Kompanija"
+    }, {
+      "id": "92418b17-5da9-4125-ae9e-273e74a28cf1",
+      "comment": "",
+      "command": "click",
+      "target": "css=form > .btn",
+      "targets": [
+        ["css=form > .btn", "css:finder"],
+        ["xpath=//body/div/div/div/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Profil')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d30a702f-bb08-4a15-936f-12c63eca7083",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil kompanije')]", "xpath:innerText"]
+      ],
+      "value": "Profil kompanije"
+    }, {
+      "id": "365d7fa2-5870-4a18-ba6e-a51f86c0a33b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Nazad",
+      "targets": [
+        ["linkText=Nazad", "linkText"],
+        ["css=td:nth-child(2) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Nazad')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td[2]/button/a", "xpath:idRelative"],
+        ["xpath=(//a[@href='http://localhost:8080/Kompanija/index'])[2]", "xpath:href"],
+        ["xpath=//td[2]/button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Nazad')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d9816268-7212-4282-94bf-d2747df183c8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.cardtext",
+      "targets": [
+        ["css=.cardtext", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Kompanija')]", "xpath:innerText"]
+      ],
+      "value": "Kompanija"
+    }]
+  }, {
+    "id": "3d3fdcbb-dca3-4f4f-99b1-295f83d46a2f",
+    "name": "uspesnaIzmenaProfila_kompanija",
+    "commands": [{
+      "id": "4f4e59ce-fd5c-4cb7-bd62-f369a13e8ecd",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Kompanija/profil",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "702059a9-012c-4a28-b4ac-a3f87bf11669",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "796x825",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9dec1cc8-eb13-4508-a135-5d79518d1de1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil kompanije')]", "xpath:innerText"]
+      ],
+      "value": "Profil kompanije"
+    }, {
+      "id": "c49f9577-3b36-40fb-ab37-5a7633374b8f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0e072be-1e3f-401a-8c86-ae9900975c2e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Kompanija/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f25f0d9-3316-4669-8df1-8df1bdd44cb3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "08837e49-dfc2-4852-b108-37eaf121a78f",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20d4bb02-5108-4b10-8e4f-950742978fdc",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Nemanjina 8"
+    }, {
+      "id": "063604fc-5eee-4366-9a45-ac0d5b859034",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[5]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e357a14-a442-408a-89fe-cbdc76af3f09",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[5]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": "0653347896"
+    }, {
+      "id": "a9cd2c6a-5618-4649-893b-dc159e68044d",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8c7f8aa-ed42-4ae0-b859-b554c1783111",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Kompanija/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "aaf20e90-b11d-4fe8-a204-8f37c25dbe4f",
+    "name": "neuspesnaIzmenaprofila_adresa_kompanija",
+    "commands": [{
+      "id": "1366f212-c000-49c8-8716-f0b9cd02b958",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Kompanija/profil?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0295195-5cd8-42d0-9083-33faf8f6b2ac",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c720aa5e-846b-4c7f-8452-ab69e5851bb0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil kompanije')]", "xpath:innerText"]
+      ],
+      "value": "Profil kompanije"
+    }, {
+      "id": "5c89bf7b-6c07-4076-84b8-7457668c6cdd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Kompanija/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a7802e6-e2bb-4374-8f3e-3b54b5966cd1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5106a5aa-9b23-48b1-9ad1-0a7bd0128f59",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[5]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f3fc631-6947-4a91-a089-881e94d0ac81",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[5]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": "0653345678"
+    }, {
+      "id": "5d083e83-6f8a-4a63-8720-6d497084853a",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4ed75e0-d55c-4a32-94fb-ae12ad0e6462",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='profil']/div/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Adresa mora biti uneta.')]", "xpath:innerText"]
+      ],
+      "value": "Adresa mora biti uneta."
+    }]
+  }, {
+    "id": "5b54d288-4e1e-49c8-8f19-e56e6cd7b83d",
+    "name": "neuspesnaIzmenaprofila_telefonNijeUnet_kompanija",
+    "commands": [{
+      "id": "8ba1cbbc-11e1-42f9-8929-d16c3049b003",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Kompanija/profil?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bc87f71a-1e6b-44ef-951f-05e1995e9df9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "58d8635c-8e90-4673-bb1c-7b7ead277c89",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil kompanije')]", "xpath:innerText"]
+      ],
+      "value": "Profil kompanije"
+    }, {
+      "id": "6897024c-2afb-474e-8e29-269361d565f9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Kompanija/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8628b578-2808-4dbd-8bb5-7354852101fa",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4601d5fa-33f2-40d5-bd0e-bb4d00fa1b39",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4a707c6-e722-406b-9548-df5887ed1b6d",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "nemanjina 8"
+    }, {
+      "id": "7233645b-ce19-418a-b084-330134e06491",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1f25780-76eb-4486-8c87-f153f4bb6d61",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='profil']/div/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Telefon mora biti unet.')]", "xpath:innerText"]
+      ],
+      "value": "Telefon mora biti unet."
+    }]
+  }, {
+    "id": "858f6265-bfa6-4550-96f1-0b95c3075015",
+    "name": "neuspesnaIzmenaprofila_telefonNeispravan_kompanija",
+    "commands": [{
+      "id": "1acadc88-5933-49be-ab44-6443b8041302",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Kompanija/profil",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "013f202d-e2c9-4aae-baf6-b2e588c03960",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9264fe01-90dc-4eb3-baa3-c80352408925",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil kompanije')]", "xpath:innerText"]
+      ],
+      "value": "Profil kompanije"
+    }, {
+      "id": "83bf5396-5026-4066-a2e3-62846f89b55c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Kompanija/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "78ac922a-54e5-48b9-8982-747e2dc5b030",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7487247-3358-4adf-b4cf-867e4f5975a7",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Nemanjina 9"
+    }, {
+      "id": "ddd9b29a-21bc-41fd-ac1a-65b802c50ae4",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[5]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4dfdc89c-6bd1-4475-8bde-a3ffbeba29d3",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(5) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[5]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[2]/input", "xpath:position"]
+      ],
+      "value": "06b7565432"
+    }, {
+      "id": "37eb8388-8c12-4472-9bd1-31de3f596a1b",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ed16c7a-9279-4558-b0c8-1e158bf532f2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='profil']/div/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Telefon mora da ima samo cifre .')]", "xpath:innerText"]
+      ],
+      "value": "Telefon mora da ima samo cifre ."
+    }]
+  }, {
+    "id": "bcea6633-b9c7-4a75-bd1c-957030f5dc5c",
+    "name": "neuspesnaIzmenaprofila_adresa_korisnik",
+    "commands": [{
+      "id": "1cf4c67a-0a61-41d4-913c-a25896bfde6b",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/profil",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "575eab29-34eb-4964-9745-04c10d849168",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "60b91d65-c99c-4491-9692-b0f8c355660a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil korisnika')]", "xpath:innerText"]
+      ],
+      "value": "Profil korisnika"
+    }, {
+      "id": "6c183fe1-f9a0-48e1-9360-427821bb51e6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fad0ca8-c9d9-4efe-aca8-e6a2660e2104",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6af07b75-ab90-4b5b-be90-cc19c2362412",
+      "comment": "",
+      "command": "click",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56dd7e40-d9c6-4f16-b7ec-7229bc6595f2",
+      "comment": "",
+      "command": "type",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": "Novi Sad"
+    }, {
+      "id": "25f684e3-1d6a-44df-8e1f-1a8b41998306",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e5e7671-4a92-4cc1-9cd3-193d0f8dc0a2",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "0675543234"
+    }, {
+      "id": "06c90b1c-3bd1-489b-b08d-aa7cb1837f58",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a32df888-f970-4794-b388-eadd26568947",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='profil']/div/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Adresa mora biti uneta.')]", "xpath:innerText"]
+      ],
+      "value": "Adresa mora biti uneta."
+    }]
+  }, {
+    "id": "26a4047b-0c4e-4acd-b0c7-0f866cd6841c",
+    "name": "neuspesnaIzmenaprofila_grad_korisnik",
+    "commands": [{
+      "id": "3f7bc443-c98e-4044-b572-c0a0472e1528",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/profil",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a6c0049-4a28-4e7a-a37d-9cea20521064",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ee081bf-3048-4a82-bc00-addcd2c2c284",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil korisnika')]", "xpath:innerText"]
+      ],
+      "value": "Profil korisnika"
+    }, {
+      "id": "28c46ab2-dc24-459e-a78e-a77a1debcaeb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "286f1f24-388e-4cc8-bda3-29faa74950c5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02673aa7-4e94-479b-af90-7670115cf276",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c88810a0-3a33-45ec-b341-01d6a0c469db",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Kragujevacka 11"
+    }, {
+      "id": "382aead0-ef73-4384-a8a3-acbfe29971aa",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb46a7b6-4b89-4dfa-8ffd-ce69b4c479d9",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "0645541287"
+    }, {
+      "id": "3860fbf0-5a76-4e19-85d4-baf8d97e6338",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ed68157-b84b-4797-ae8c-9eb71bc5f672",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='profil']/div/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Grad mora biti unet.')]", "xpath:innerText"]
+      ],
+      "value": "Grad mora biti unet."
+    }]
+  }, {
+    "id": "f780a5d0-acea-47e6-9b61-53a5fcbe3431",
+    "name": "neuspesnaIzmenaprofila_telefonNeispravan_korisnik",
+    "commands": [{
+      "id": "df5e9526-49c0-49b4-b31c-aa5c745f5974",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/profil",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6925871-5837-4d0c-8cbd-98dabc503bd2",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e9361dd1-4f01-4051-985b-d38ec6ed9fa1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil korisnika')]", "xpath:innerText"]
+      ],
+      "value": "Profil korisnika"
+    }, {
+      "id": "a6dc6164-30a9-4b4a-a89c-9680df4b100d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ed087bb-884f-4810-b4d6-1eb9b202cd52",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04cd41b6-fc8e-49ee-a0c1-f0e6fe3f54e1",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca573893-af2e-4c4d-9965-39070554099c",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Nemanjina 12"
+    }, {
+      "id": "dfd2df59-d151-4bbb-af3f-3503fad6f6a1",
+      "comment": "",
+      "command": "click",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cbfbd69-9b5b-4ff2-9227-176dbebd7723",
+      "comment": "",
+      "command": "type",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": "Beograd"
+    }, {
+      "id": "4d76a69a-6605-4eed-a022-4f61074b7a9b",
+      "comment": "",
+      "command": "click",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96deb8fe-1364-4955-bd0c-2a56519caf10",
+      "comment": "",
+      "command": "type",
+      "target": "name=telefon",
+      "targets": [
+        ["name=telefon", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='telefon']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "06#4458976"
+    }, {
+      "id": "1c141c52-5a62-44b6-8a65-ecc2f2af1436",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb8906b4-8d44-41f4-8225-c902d7291c57",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='profil']/div/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Telefon mora da ima samo cifre .')]", "xpath:innerText"]
+      ],
+      "value": "Telefon mora da ima samo cifre ."
+    }]
+  }, {
+    "id": "90392203-cf03-41e2-a7f4-d07210551098",
+    "name": "neuspesnaIzmenaprofila_telefonNijeUnet_korisnik",
+    "commands": [{
+      "id": "0834345a-6592-4012-b69d-a12563fbeeaf",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/profil",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e467cf7a-23ca-4531-acc3-4ab6cc1157b4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3161d8a-5988-4030-87f1-b18a6b1cfd44",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='profil']/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Profil korisnika')]", "xpath:innerText"]
+      ],
+      "value": "Profil korisnika"
+    }, {
+      "id": "f68effeb-dd4a-469d-b2c6-c5624769cc8c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Izmeni",
+      "targets": [
+        ["linkText=Izmeni", "linkText"],
+        ["css=td:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Izmeni')]", "xpath:link"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Korisnik/izmena']", "xpath:href"],
+        ["xpath=//button/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Izmeni')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff405e4f-ce05-43de-a1b8-2694ebae5588",
+      "comment": "",
+      "command": "click",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ff2a0a0-e910-4bf4-a633-7b9325cca8ca",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a4996e8-45f8-44f6-9eac-4b6ed6917f19",
+      "comment": "",
+      "command": "click",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5c79d46-e70b-47e4-b509-e3748fbeff14",
+      "comment": "",
+      "command": "type",
+      "target": "name=adresa",
+      "targets": [
+        ["name=adresa", "name"],
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@name='adresa']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[3]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "Beogradska"
+    }, {
+      "id": "120bde05-acfb-40b1-891b-a9ddb5844142",
+      "comment": "",
+      "command": "click",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "637b6d38-ac2e-4a06-a53e-e8bb6a4de2dc",
+      "comment": "",
+      "command": "type",
+      "target": "name=grad",
+      "targets": [
+        ["name=grad", "name"],
+        ["css=tr:nth-child(4) input", "css:finder"],
+        ["xpath=//input[@name='grad']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[4]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[2]/input", "xpath:position"]
+      ],
+      "value": "Beograd"
+    }, {
+      "id": "b9460073-35ef-4c87-a75d-61dc7701d28a",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > .btn",
+      "targets": [
+        ["css=td:nth-child(1) > .btn", "css:finder"],
+        ["xpath=//button[@value='Izmeni']", "xpath:attributes"],
+        ["xpath=//div[@id='profil']/div/form/table/tbody/tr[8]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sačuvaj')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "499005ca-69d0-46df-8975-d7d480f2b87a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaprijava",
+      "targets": [
+        ["css=.greskaprijava", "css:finder"],
+        ["xpath=//div[@id='profil']/div/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Telefon mora biti unet.')]", "xpath:innerText"]
+      ],
+      "value": "Telefon mora biti unet."
+    }]
+  }, {
+    "id": "c06edbed-af52-4f3c-888c-b291f5d81cba",
+    "name": "uspesnoBrisanjeKorisnika_admin",
+    "commands": [{
+      "id": "416e06a3-db30-4746-b052-fd535960989d",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Admin/korisnici",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14845bde-10c1-43c0-8ce3-440f228c6494",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1054x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eaaae686-ad0d-4e6f-aea7-015eac0c5cd7",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tbody th:nth-child(6)",
+      "targets": [
+        ["css=tbody th:nth-child(6)", "css:finder"],
+        ["xpath=//th[6]", "xpath:position"],
+        ["xpath=//th[contains(.,'Korisničko ime')]", "xpath:innerText"]
+      ],
+      "value": "Korisničko ime"
+    }, {
+      "id": "b5e6a377-d168-4bd9-b379-4c172372aff1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=tbody:nth-child(1) td:nth-child(6)",
+      "targets": [
+        ["css=tbody:nth-child(1) td:nth-child(6)", "css:finder"],
+        ["xpath=//td[6]", "xpath:position"],
+        ["xpath=//td[contains(.,'lamila999')]", "xpath:innerText"]
+      ],
+      "value": "lamila999"
+    }, {
+      "id": "e650a007-c09c-4c12-b0f9-2fd835202903",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tbody th:nth-child(6)",
+      "targets": [
+        ["css=tbody th:nth-child(6)", "css:finder"],
+        ["xpath=//th[6]", "xpath:position"],
+        ["xpath=//th[contains(.,'Korisničko ime')]", "xpath:innerText"]
+      ],
+      "value": "Korisničko ime"
+    }, {
+      "id": "4c8f64dc-b196-4d9b-b0a7-c729b978a18b",
+      "comment": "",
+      "command": "click",
+      "target": "name=dugme",
+      "targets": [
+        ["name=dugme", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@name='dugme']", "xpath:attributes"],
+        ["xpath=//td[8]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Obriši')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "71e0dc4c-8991-4e51-b426-a78d6f65d42b",
+    "name": "uspesnoKreiranjeLicitacije_korisnik",
+    "commands": [{
+      "id": "93b293ac-8bdd-4a47-b1a5-69cae16eb5a7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7909cc91-8976-4842-8460-0eac97e9f33e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1054x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f833617-512a-4d3c-a228-b2a4dc2ff903",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de9dfe21-2f72-4712-a541-66213ec06994",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Jakna"
+    }, {
+      "id": "b7956c89-3fbb-462b-811a-a34048a8c784",
+      "comment": "",
+      "command": "click",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9a44ad5-4a7a-4b67-a6a7-283bb0fa3492",
+      "comment": "",
+      "command": "type",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "34420ac8-392e-464a-8719-948fb97f5578",
+      "comment": "",
+      "command": "click",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ac92ed3-195f-4ad1-8748-7dfdec839bf2",
+      "comment": "",
+      "command": "type",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Jakna crne boje, velicine s, dobro ocuvana"
+    }, {
+      "id": "6a2257d0-80a2-4706-b917-80d4b9f5f13c",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b63d31cc-aa5c-45e1-ab88-96cb5d19a78b",
+      "comment": "",
+      "command": "select",
+      "target": "name=fondacija",
+      "targets": [],
+      "value": "label=Budi human"
+    }, {
+      "id": "8aa6f76b-478c-47bc-8478-35b9265f9df4",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5781e655-00ca-41ff-9c16-9382b0c34ed3",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "853e1074-c979-404c-bdce-0872075fbd97",
+      "comment": "",
+      "command": "select",
+      "target": "name=kategorija",
+      "targets": [],
+      "value": "label=odeca"
+    }, {
+      "id": "b1e23253-2629-4a7e-9391-b6013b6942c7",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7658d6d2-0d24-433e-bcdd-b54453de0292",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23788774-3115-4902-a61b-802a81567993",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "96417fcb-6d49-4bb7-9033-7e3c665bf6db",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "94ef71cd-ea12-496f-a385-c99e9318ebf4",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\jakna.png"
+    }, {
+      "id": "d386bed8-e02f-4263-8553-619a26b49671",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd721afe-d6cd-4650-aa85-a2b9dbccd1c0",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Uspešno ste kreirali licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Uspešno ste kreirali licitaciju"
+    }]
+  }, {
+    "id": "a19f8b0b-cca3-47b1-85c6-8e5b553d5768",
+    "name": "neuspesnoKreiranjeLicitacije_nazivProizvoda",
+    "commands": [{
+      "id": "f4245a49-947a-425f-abb9-18373a35ded8",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd93d539-c06c-463c-87ce-54bfbf4d107a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1058x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09a8cce2-bc63-431c-9aaa-8fbde010703d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Kreiraj licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Kreiraj licitaciju"
+    }, {
+      "id": "d9002e05-2cb2-4a5f-9181-6ada9869eabe",
+      "comment": "",
+      "command": "click",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5228c1f0-d04b-4e64-8fb4-e745c0b526e0",
+      "comment": "",
+      "command": "type",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "fefba580-ecab-4767-bd95-b9aeb2982f3e",
+      "comment": "",
+      "command": "click",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d826052-038b-4f6a-8ff2-3163294eccbc",
+      "comment": "",
+      "command": "type",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Jakna crne boje, velicine s, dobro ocuvana"
+    }, {
+      "id": "80e2f1be-5180-4e64-bbd4-911ff7ef214d",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "62a172d7-513d-4620-8f39-fa16f6079ad4",
+      "comment": "",
+      "command": "select",
+      "target": "name=fondacija",
+      "targets": [],
+      "value": "label=Budi human"
+    }, {
+      "id": "1c7e023d-f24a-4d3d-a1f6-47a3e82f9b3f",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "37ac5702-ee6c-4d65-ba69-9eccc9ccab91",
+      "comment": "",
+      "command": "click",
+      "target": "css=tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(3)",
+      "targets": [
+        ["css=tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b1296cb-ec73-4d91-9043-ad0c5f9d630a",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a012bf9-693f-4e51-91c2-f1436f009c4f",
+      "comment": "",
+      "command": "select",
+      "target": "name=kategorija",
+      "targets": [],
+      "value": "label=odeca"
+    }, {
+      "id": "2616ffa0-b18d-44e3-9ebc-23c039ab076c",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "500bff7b-df2c-4da7-9c28-de6cbe26eb67",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de2b17ab-b335-4893-ba8a-856ed6e3726d",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "500"
+    }, {
+      "id": "9bd7a178-f956-4dda-8602-866123586f94",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a1c699d-10a6-471d-93fe-5f0e7d5d12e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\jakna.png"
+    }, {
+      "id": "99bb4644-c20b-40ff-a490-a53871e2a217",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b13a7d0b-1336-4e87-9d7f-9441f1ac0b07",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaLicitacija",
+      "targets": [
+        ["css=.greskaLicitacija", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije unet naziv proizvoda!')]", "xpath:innerText"]
+      ],
+      "value": "Nije unet naziv proizvoda!"
+    }]
+  }, {
+    "id": "995fa462-9be1-4b6e-9277-1a1c34aca775",
+    "name": "neuspesnoKreiranjeLicitacije_trajanje",
+    "commands": [{
+      "id": "c98503d2-f86f-4a18-99ca-72397e5eebc3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bc40adc-52ec-4698-95b6-5e05902505f3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "325789f7-175d-47c6-8ff9-34497cd76ab4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Kreiraj licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Kreiraj licitaciju"
+    }, {
+      "id": "a4b8d8e2-a831-4e8d-9cc0-0e5200e042b5",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0236c9f3-6b0f-49cd-8d0b-b8c9d5dca340",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Jakna"
+    }, {
+      "id": "bb10d062-972c-4c80-b52e-6c2cea45ea96",
+      "comment": "",
+      "command": "click",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95c56540-15fb-4afc-8ae0-88798287c7d4",
+      "comment": "",
+      "command": "type",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "JAKNA CRNE BOJE, DOBRO OCUVANA"
+    }, {
+      "id": "d7a8fef6-86c5-4dab-bc10-d9094ed84809",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "95a6383c-cc47-4a1f-acb6-f61c4c41f865",
+      "comment": "",
+      "command": "select",
+      "target": "name=fondacija",
+      "targets": [],
+      "value": "label=Budi human"
+    }, {
+      "id": "2de1aa7c-d218-487f-9c5f-95dfb657e8a9",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "212ac491-34d3-4fb6-885f-4b1913cdf1b2",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd8e7247-1c28-4753-8abe-faf0bafd57fe",
+      "comment": "",
+      "command": "select",
+      "target": "name=kategorija",
+      "targets": [],
+      "value": "label=odeca"
+    }, {
+      "id": "00563aa4-6a89-479f-8c84-cfece9ee1247",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a831c72f-6925-4645-9607-bbc0fe5a9204",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f83ebc3b-4071-49ae-a8a1-be2db51010b2",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "300"
+    }, {
+      "id": "b56994da-f7bb-400a-ac90-2bab6ef57660",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b65f8024-44e7-4789-9eba-39cbed3c9299",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\jakna.png"
+    }, {
+      "id": "a5c9db7a-4560-4121-b926-eac344ecb643",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e8ab569-38ac-4bf5-bd9d-5de9645d8fc7",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaLicitacija",
+      "targets": [
+        ["css=.greskaLicitacija", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije uneto trajanje licitacije!')]", "xpath:innerText"]
+      ],
+      "value": "Nije uneto trajanje licitacije!"
+    }]
+  }, {
+    "id": "f9b515d1-ab30-4af5-a5b0-b13397fbf173",
+    "name": "neuspesnoKreiranjeLicitacije_cena",
+    "commands": [{
+      "id": "e34ec241-0711-44a8-9c01-f2acc8100610",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f9988201-c231-438b-bf2d-5d074c36d832",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6fa7518c-3d39-4026-a7f9-5cbe0ccb2aeb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Kreiraj licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Kreiraj licitaciju"
+    }, {
+      "id": "901a9025-c612-4bff-88c8-5bb41076c637",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "14c1f1bc-3e77-48c4-aa95-f9ed2b9fa8cd",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Jakna"
+    }, {
+      "id": "da1cb503-2bb0-482b-8ad9-fc22b6dcda0a",
+      "comment": "",
+      "command": "click",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a7bda6fc-9aa7-45e1-9195-58ee43ea3eae",
+      "comment": "",
+      "command": "type",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "ee43c696-0110-475a-8e85-e67570cf1946",
+      "comment": "",
+      "command": "click",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f237b97b-f71d-49a3-8d2d-ded739f76dab",
+      "comment": "",
+      "command": "type",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Jkna crne boje, velicina s"
+    }, {
+      "id": "25ed3dc8-e511-486c-a2c1-b58dcfb1b0e0",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dac109ef-9896-472b-a1fe-347e5cad8753",
+      "comment": "",
+      "command": "select",
+      "target": "name=fondacija",
+      "targets": [],
+      "value": "label=Budi human"
+    }, {
+      "id": "03ce3978-2da7-4fb6-bc27-6f21660110a5",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f2d092f-da74-41e8-9be7-d22ab8efecf9",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "90f257a1-ee7d-483e-8ecc-8f75a3c8134b",
+      "comment": "",
+      "command": "select",
+      "target": "name=kategorija",
+      "targets": [],
+      "value": "label=odeca"
+    }, {
+      "id": "286ac821-99ef-44e4-b3cd-6b1c8dae2671",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "023380d5-dd61-4583-8ad0-7961852fdfc9",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "155be2fc-cd27-4214-80ee-c22d2984b9f3",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\jakna.png"
+    }, {
+      "id": "d49eea1a-afff-46e5-8f47-fd1b16359f9e",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30ebcc64-6322-479b-b960-9878a5dc1b8b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaLicitacija",
+      "targets": [
+        ["css=.greskaLicitacija", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije uneta pocetna cena proizvoda!')]", "xpath:innerText"]
+      ],
+      "value": "Nije uneta pocetna cena proizvoda!"
+    }]
+  }, {
+    "id": "d0eabba1-8b17-45c5-9491-177fab98c632",
+    "name": "neuspesnoKreiranjeLicitacije_opis",
+    "commands": [{
+      "id": "e60b873e-3625-4ec4-b3c1-27f734556e2a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3dee307b-d4b9-4cb0-941f-7f45fcc3fd85",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1054x808",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5cb86844-7932-4ef2-a6be-5336c85bfd35",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Kreiraj licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Kreiraj licitaciju"
+    }, {
+      "id": "42568e6c-ec93-4ec1-bacd-8f36ebf6afef",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b3d9c6d-a343-4950-b7ea-2296bd07d9a8",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Jakna"
+    }, {
+      "id": "ab54c45a-566c-4742-9b0e-e4b62d15c77e",
+      "comment": "",
+      "command": "click",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efa7136b-6183-486e-9142-0c6911a03f5c",
+      "comment": "",
+      "command": "type",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "39c9369c-0808-4209-b6ea-856d782079eb",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "912c8fe6-027d-4a93-8321-104dda62b199",
+      "comment": "",
+      "command": "select",
+      "target": "name=fondacija",
+      "targets": [],
+      "value": "label=Budi human"
+    }, {
+      "id": "8bcd235f-4526-450f-b18e-92b2af640021",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab17e0db-2cff-4c37-95c1-ed79dc74194c",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3bb2c06-74b3-404b-b4f6-b20ee59886ea",
+      "comment": "",
+      "command": "select",
+      "target": "name=kategorija",
+      "targets": [],
+      "value": "label=odeca"
+    }, {
+      "id": "fd3802bc-cf9f-42c7-8d96-01c1ebd932cc",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dea92c04-67a3-4ab0-8e19-c53dc0d7a096",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0430afb4-764b-4ac1-a5af-b7ffbe7b25bc",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "400"
+    }, {
+      "id": "90ec866c-50a1-43af-bf71-53e1a1a55e85",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c67285fe-8cbf-4028-b5b7-6463a2225cb8",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\jakna.png"
+    }, {
+      "id": "13e0d6ed-4255-4cd5-a30b-b8bab89bdcb7",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae6cf417-bbf8-4014-be77-8aab28499698",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaLicitacija",
+      "targets": [
+        ["css=.greskaLicitacija", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije unet opis proizvoda!')]", "xpath:innerText"]
+      ],
+      "value": "Nije unet opis proizvoda!"
+    }]
+  }, {
+    "id": "05c76fa9-8bc1-4fe5-b626-ace0ccb93f79",
+    "name": "neuspesnoKreiranjeLicitacije_fondacija",
+    "commands": [{
+      "id": "fd2151b6-2911-4008-af81-4e5046cc1ad1",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7250f2c4-aa83-4885-b998-8998028ece84",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "989d6b0b-ecc1-43cc-91ac-14d1335491bf",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Kreiraj licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Kreiraj licitaciju"
+    }, {
+      "id": "ac63cd6f-a8de-4eee-a123-f773d2143ebd",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60ab9fe8-1bc1-4090-b795-cf8ef07ff647",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Jakna"
+    }, {
+      "id": "eef5c3ae-9edf-4039-8ba6-c30000cf39c1",
+      "comment": "",
+      "command": "click",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6231e2d3-03f9-4dc4-9ed7-4f0c45f7b12a",
+      "comment": "",
+      "command": "type",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "4ae1d6c4-4ffb-4eee-a571-421d0c8a96e1",
+      "comment": "",
+      "command": "click",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d234c27-1d42-42a2-95c9-c85d452bd017",
+      "comment": "",
+      "command": "type",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Jakna crne boje velicine s"
+    }, {
+      "id": "2959bd12-b4ed-47f8-a8af-40832db1dd3e",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e83486fc-aa5b-4fd7-886f-53e3ca58041b",
+      "comment": "",
+      "command": "select",
+      "target": "name=kategorija",
+      "targets": [],
+      "value": "label=odeca"
+    }, {
+      "id": "b074b6f8-4878-492d-ada4-968be45e9d02",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3209b657-c3a1-4dee-8cc2-1a1200e39a12",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7401001-00c6-4a68-ac6b-95e8180fcae2",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "600"
+    }, {
+      "id": "36fe9786-5a86-412a-9d56-920ad5a05d19",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fa0f904-0cb8-46b5-a67d-ebbf2a99896c",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\jakna.png"
+    }, {
+      "id": "8d92a9e3-8c4e-4eba-be92-1aa479264012",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "77eded8d-95e6-4a49-967b-11e661b6a037",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaLicitacija",
+      "targets": [
+        ["css=.greskaLicitacija", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije izabrana fondacija!')]", "xpath:innerText"]
+      ],
+      "value": "Nije izabrana fondacija!"
+    }]
+  }, {
+    "id": "52c026c2-d061-49ea-83cc-029652df6435",
+    "name": "neuspesnoKreiranjeLicitacije_kategorija",
+    "commands": [{
+      "id": "54b1d909-ac75-4730-811a-7b1e66ec5ea4",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f81f6153-6968-4363-8169-04f5a9a44d40",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78c172c9-94a0-4dcb-8b8e-c20142c8c506",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=b",
+      "targets": [
+        ["css=b", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/h1/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Kreiraj licitaciju')]", "xpath:innerText"]
+      ],
+      "value": "Kreiraj licitaciju"
+    }, {
+      "id": "73977ef4-e8a5-483c-a83f-f257c280a525",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "adb92ba1-de0c-4991-9445-3db9c918c041",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Jakna"
+    }, {
+      "id": "660814ac-c120-4046-b7e6-39b29153245a",
+      "comment": "",
+      "command": "click",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "305d740d-bc48-4340-89b9-f5130d92870a",
+      "comment": "",
+      "command": "type",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "f1eab980-9ea1-466f-adcc-6eaf65a98d67",
+      "comment": "",
+      "command": "click",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4979bfe-94a2-4bc2-b54c-780814c515a1",
+      "comment": "",
+      "command": "type",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Jakna crne boje, velicina s"
+    }, {
+      "id": "cd2626eb-c709-4e5e-b7d0-81dbdbcf66fc",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "30ae70e7-bf2e-4618-85b5-1eb267364a66",
+      "comment": "",
+      "command": "select",
+      "target": "name=fondacija",
+      "targets": [],
+      "value": "label=Budi human"
+    }, {
+      "id": "659cd5b2-199d-43b9-96df-f949641caeaf",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fc4aa93-1c9c-4bf5-ae48-95c38c332e9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f2cd08a-2d80-4674-9605-250c8e04cfc7",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "250"
+    }, {
+      "id": "3890bd5c-531e-4a2d-8007-9b325a18e805",
+      "comment": "",
+      "command": "click",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6064904b-432b-446c-9d2f-534dc866aba3",
+      "comment": "",
+      "command": "type",
+      "target": "name=slika",
+      "targets": [
+        ["name=slika", "name"],
+        ["css=tr:nth-child(6) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='slika']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\jakna.png"
+    }, {
+      "id": "b1979cc1-2753-40b6-bfd7-8d62736db2ac",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7c73d03e-98fc-4d64-834e-b8dc884a5506",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaLicitacija",
+      "targets": [
+        ["css=.greskaLicitacija", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije izabrana kategorija!')]", "xpath:innerText"]
+      ],
+      "value": "Nije izabrana kategorija!"
+    }]
+  }, {
+    "id": "7b0ae82b-e223-4cbe-978d-9fa369132f2b",
+    "name": "neuspesnoKreiranjeLicitacije_slika",
+    "commands": [{
+      "id": "0e2f6b8a-4f2f-41b5-a080-7949f2154a8f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/Korisnik/kreiranje_licitacije",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67b957a3-fffc-4f49-b63e-d42ce2c86d30",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b199f96-5a58-4273-a523-b51b5ab37a84",
+      "comment": "",
+      "command": "click",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9d914b5-7d50-4eb9-b086-a0e6cdfa48cd",
+      "comment": "",
+      "command": "type",
+      "target": "name=nazivProizvoda",
+      "targets": [
+        ["name=nazivProizvoda", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='nazivProizvoda']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Jakna"
+    }, {
+      "id": "80283ac0-7e5a-4e41-94ae-e19a0910245a",
+      "comment": "",
+      "command": "click",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7e9c9c7-9d2c-4159-800a-fb511ed8f31b",
+      "comment": "",
+      "command": "type",
+      "target": "name=trajanje",
+      "targets": [
+        ["name=trajanje", "name"],
+        ["css=tr:nth-child(2) > td:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='trajanje']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[2]/td[2]/input", "xpath:idRelative"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "2021-06-11"
+    }, {
+      "id": "75fed63c-6867-4507-a022-ea11537d6c30",
+      "comment": "",
+      "command": "click",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d69cd00-ca58-42e8-8026-942075f24da6",
+      "comment": "",
+      "command": "type",
+      "target": "name=opis",
+      "targets": [
+        ["name=opis", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='opis']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Jakna crne boje, velicine s, dobro ocuvana"
+    }, {
+      "id": "162649eb-d1c5-4118-b0d1-ad1ffabde12e",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "be6bd368-c73a-4ded-a9d9-919d3cf8ea4d",
+      "comment": "",
+      "command": "select",
+      "target": "name=fondacija",
+      "targets": [],
+      "value": "label=Budi human"
+    }, {
+      "id": "0d7cf074-2a0d-40d8-a81f-2633bbf967eb",
+      "comment": "",
+      "command": "click",
+      "target": "name=fondacija",
+      "targets": [
+        ["name=fondacija", "name"],
+        ["css=td:nth-child(2) > select", "css:finder"],
+        ["xpath=//select[@name='fondacija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'Budi human')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb10951f-312d-4910-80c9-d913104b1211",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28ef9bcc-827d-4ca4-8512-0bea80e68ae8",
+      "comment": "",
+      "command": "select",
+      "target": "name=kategorija",
+      "targets": [],
+      "value": "label=odeca"
+    }, {
+      "id": "be6f4108-5b66-44ca-8520-52480bb3a405",
+      "comment": "",
+      "command": "click",
+      "target": "name=kategorija",
+      "targets": [
+        ["name=kategorija", "name"],
+        ["css=td:nth-child(3) > select", "css:finder"],
+        ["xpath=//select[@name='kategorija']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[4]/td[3]/select", "xpath:idRelative"],
+        ["xpath=//td[3]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "85d095ce-1bdf-4fa0-aeb9-ec557686fa98",
+      "comment": "",
+      "command": "click",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26712ec0-67db-4567-b808-4ebc9c51bbfc",
+      "comment": "",
+      "command": "type",
+      "target": "id=text",
+      "targets": [
+        ["id=text", "id"],
+        ["name=pocetnaCena", "name"],
+        ["css=#text", "css:finder"],
+        ["xpath=//input[@id='text']", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": "600"
+    }, {
+      "id": "a0fbc9c0-0fe6-4d0f-81ee-4e833d88489b",
+      "comment": "",
+      "command": "click",
+      "target": "css=td > .btn",
+      "targets": [
+        ["css=td > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/table/tbody/tr[7]/td/button", "xpath:idRelative"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Postavi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "602d2784-f1bd-4f34-be74-f58db71d4a50",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.greskaLicitacija",
+      "targets": [
+        ["css=.greskaLicitacija", "css:finder"],
+        ["xpath=//div[@id='kreiranjeLicit']/div/form/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"],
+        ["xpath=//span[contains(.,'Nije uneta slika proizvoda!')]", "xpath:innerText"]
+      ],
+      "value": "Nije uneta slika proizvoda!"
+    }]
+  }],
+  "suites": [{
+    "id": "1fa0e6bd-620e-4ce3-a2bc-f9a0c681a015",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["953ba26c-d029-4927-bd0a-4874def1dbd0"]
+  }],
+  "urls": ["http://localhost:8080/", "http://localhost:8080/Kompanija/index", "http://localhost:8080/Kompanija/profil?", "http://localhost:8080/Korisnik/profil", "http://localhost:8080/Admin/korisnici", "http://localhost:8080/Korisnik/kreiranje_licitacije"],
+  "plugins": []
+}

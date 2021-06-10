@@ -1,0 +1,849 @@
+Running 'neuspesnaIzmenaprofila_adresa_kompanija'
+21:21:33
+1.
+open on http://localhost:8080/Kompanija/profil? OK
+21:21:34
+2.
+setWindowSize on 1051x806 OK
+21:21:34
+3.
+assertText on css=h1:nth-child(1) with value Profil kompanije OK
+21:21:34
+4.
+click on linkText=Izmeni OK
+21:21:35
+5.
+assertElementPresent on name=adresa OK
+21:21:35
+6.
+click on name=telefon OK
+21:21:35
+7.
+type on name=telefon with value 0653345678 OK
+21:21:35
+8.
+click on css=td:nth-child(1) > .btn OK
+21:21:36
+9.
+assertText on css=.greskaprijava with value Adresa mora biti uneta. OK
+21:21:36
+'neuspesnaIzmenaprofila_adresa_kompanija' completed successfully
+21:21:36
+Running 'neuspesnaIzmenaprofila_adresa_korisnik'
+21:21:36
+1.
+open on http://localhost:8080/Korisnik/profil OK
+21:21:37
+2.
+setWindowSize on 1051x806 OK
+21:21:37
+3.
+assertText on css=h1:nth-child(1) with value Profil korisnika OK
+21:21:37
+4.
+click on linkText=Izmeni OK
+21:21:38
+5.
+assertElementPresent on name=grad OK
+21:21:38
+6.
+click on name=grad OK
+21:21:38
+7.
+type on name=grad with value Novi Sad OK
+21:21:38
+8.
+click on name=telefon OK
+21:21:39
+9.
+type on name=telefon with value 0675543234 OK
+21:21:39
+10.
+click on css=td:nth-child(1) > .btn OK
+21:21:39
+11.
+assertText on css=.greskaprijava with value Adresa mora biti uneta. OK
+21:21:39
+'neuspesnaIzmenaprofila_adresa_korisnik' completed successfully
+21:21:39
+Running 'neuspesnaIzmenaprofila_grad_korisnik'
+21:21:39
+1.
+open on http://localhost:8080/Korisnik/profil OK
+21:21:40
+2.
+setWindowSize on 1051x806 OK
+21:21:40
+3.
+assertText on css=h1:nth-child(1) with value Profil korisnika OK
+21:21:40
+4.
+click on linkText=Izmeni OK
+21:21:41
+5.
+assertElementPresent on name=grad OK
+21:21:41
+6.
+click on name=adresa OK
+21:21:41
+7.
+type on name=adresa with value Kragujevacka 11 OK
+21:21:42
+8.
+click on name=telefon OK
+21:21:42
+9.
+type on name=telefon with value 0645541287 OK
+21:21:42
+10.
+click on css=td:nth-child(1) > .btn OK
+21:21:42
+11.
+assertText on css=.greskaprijava with value Grad mora biti unet. OK
+21:21:42
+'neuspesnaIzmenaprofila_grad_korisnik' completed successfully
+21:21:43
+Running 'neuspesnaIzmenaprofila_telefonNeispravan_kompanija'
+21:21:43
+1.
+open on http://localhost:8080/Kompanija/profil OK
+21:21:43
+2.
+setWindowSize on 1051x806 OK
+21:21:43
+3.
+assertText on css=h1:nth-child(1) with value Profil kompanije OK
+21:21:43
+4.
+click on linkText=Izmeni OK
+21:21:44
+5.
+assertElementPresent on name=adresa OK
+21:21:44
+6.
+type on name=adresa with value Nemanjina 9 OK
+21:21:45
+7.
+click on name=telefon OK
+21:21:45
+8.
+type on name=telefon with value 06b7565432 OK
+21:21:45
+9.
+click on css=td:nth-child(1) > .btn OK
+21:21:45
+10.
+assertText on css=.greskaprijava with value Telefon mora da ima samo cifre . OK
+21:21:45
+'neuspesnaIzmenaprofila_telefonNeispravan_kompanija' completed successfully
+21:21:46
+Running 'neuspesnaIzmenaprofila_telefonNeispravan_korisnik'
+21:21:46
+1.
+open on http://localhost:8080/Korisnik/profil OK
+21:21:46
+2.
+setWindowSize on 1051x806 OK
+21:21:46
+3.
+assertText on css=h1:nth-child(1) with value Profil korisnika OK
+21:21:47
+4.
+click on linkText=Izmeni OK
+21:21:47
+5.
+assertElementPresent on name=grad OK
+21:21:47
+6.
+click on name=adresa OK
+21:21:48
+7.
+type on name=adresa with value Nemanjina 12 OK
+21:21:48
+8.
+click on name=grad OK
+21:21:48
+9.
+type on name=grad with value Beograd OK
+21:21:48
+10.
+click on name=telefon OK
+21:21:48
+11.
+type on name=telefon with value 06#4458976 OK
+21:21:48
+12.
+click on css=td:nth-child(1) > .btn OK
+21:21:49
+13.
+assertText on css=.greskaprijava with value Telefon mora da ima samo cifre . OK
+21:21:49
+'neuspesnaIzmenaprofila_telefonNeispravan_korisnik' completed successfully
+21:21:49
+Running 'neuspesnaIzmenaprofila_telefonNijeUnet_kompanija'
+21:21:49
+1.
+open on http://localhost:8080/Kompanija/profil? OK
+21:21:50
+2.
+setWindowSize on 1051x806 OK
+21:21:50
+3.
+assertText on css=h1:nth-child(1) with value Profil kompanije OK
+21:21:50
+4.
+click on linkText=Izmeni OK
+21:21:51
+5.
+click on name=adresa OK
+21:21:51
+6.
+assertElementPresent on name=adresa OK
+21:21:51
+7.
+type on name=adresa with value nemanjina 8 OK
+21:21:51
+8.
+click on css=td:nth-child(1) > .btn OK
+21:21:52
+9.
+assertText on css=.greskaprijava with value Telefon mora biti unet. OK
+21:21:52
+'neuspesnaIzmenaprofila_telefonNijeUnet_kompanija' completed successfully
+21:21:52
+Running 'neuspesnaIzmenaprofila_telefonNijeUnet_korisnik'
+21:21:52
+1.
+open on http://localhost:8080/Korisnik/profil OK
+21:21:53
+2.
+setWindowSize on 1051x806 OK
+21:21:53
+3.
+assertText on css=h1:nth-child(1) with value Profil korisnika OK
+21:21:53
+4.
+click on linkText=Izmeni OK
+21:21:54
+5.
+click on name=grad OK
+21:21:54
+6.
+assertElementPresent on name=grad OK
+21:21:54
+7.
+click on name=adresa OK
+21:21:54
+8.
+type on name=adresa with value Beogradska OK
+21:21:54
+9.
+click on name=grad OK
+21:21:55
+10.
+type on name=grad with value Beograd OK
+21:21:55
+11.
+click on css=td:nth-child(1) > .btn OK
+21:21:55
+12.
+assertText on css=.greskaprijava with value Telefon mora biti unet. OK
+21:21:55
+'neuspesnaIzmenaprofila_telefonNijeUnet_korisnik' completed successfully
+21:21:55
+Running 'neuspesnoKreiranjeLicitacije_cena'
+21:21:56
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:21:56
+2.
+setWindowSize on 1051x806 OK
+21:21:56
+3.
+assertText on css=b with value Kreiraj licitaciju OK
+21:21:56
+4.
+click on name=nazivProizvoda OK
+21:21:57
+5.
+type on name=nazivProizvoda with value Jakna OK
+21:21:57
+6.
+click on name=trajanje OK
+21:21:57
+7.
+type on name=trajanje with value 2021-06-11 OK
+21:21:57
+8.
+click on name=opis OK
+21:21:57
+9.
+type on name=opis with value Jkna crne boje, velicina s OK
+21:21:58
+10.
+click on name=fondacija OK
+21:21:58
+11.
+select on name=fondacija with value label=Budi human OK
+21:21:58
+12.
+click on name=fondacija OK
+21:21:58
+13.
+click on name=kategorija OK
+21:21:58
+14.
+select on name=kategorija with value label=odeca OK
+21:21:58
+15.
+click on name=kategorija OK
+21:21:58
+16.
+click on name=slika OK
+21:21:59
+17.
+type on name=slika with value C:\fakepath\jakna.png OK
+21:21:59
+18.
+click on css=td > .btn OK
+21:21:59
+19.
+assertText on css=.greskaLicitacija with value Nije uneta pocetna cena proizvoda! OK
+21:21:59
+'neuspesnoKreiranjeLicitacije_cena' completed successfully
+21:22:01
+Running 'neuspesnoKreiranjeLicitacije_fondacija'
+21:22:01
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:22:02
+2.
+setWindowSize on 1051x806 OK
+21:22:02
+3.
+assertText on css=b with value Kreiraj licitaciju OK
+21:22:02
+4.
+click on name=nazivProizvoda OK
+21:22:02
+5.
+type on name=nazivProizvoda with value Jakna OK
+21:22:03
+6.
+click on name=trajanje OK
+21:22:03
+7.
+type on name=trajanje with value 2021-06-11 OK
+21:22:03
+8.
+click on name=opis OK
+21:22:03
+9.
+type on name=opis with value Jakna crne boje velicine s OK
+21:22:03
+10.
+click on name=kategorija OK
+21:22:03
+11.
+select on name=kategorija with value label=odeca OK
+21:22:03
+12.
+click on name=kategorija OK
+21:22:04
+13.
+click on id=text OK
+21:22:04
+14.
+type on id=text with value 600 OK
+21:22:04
+15.
+click on name=slika OK
+21:22:04
+16.
+type on name=slika with value C:\fakepath\jakna.png OK
+21:22:04
+17.
+click on css=td > .btn OK
+21:22:04
+18.
+assertText on css=.greskaLicitacija with value Nije izabrana fondacija! OK
+21:22:05
+'neuspesnoKreiranjeLicitacije_fondacija' completed successfully
+21:22:06
+Running 'neuspesnoKreiranjeLicitacije_kategorija'
+21:22:06
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:22:07
+2.
+setWindowSize on 1051x806 OK
+21:22:07
+3.
+assertText on css=b with value Kreiraj licitaciju OK
+21:22:07
+4.
+click on name=nazivProizvoda OK
+21:22:08
+5.
+type on name=nazivProizvoda with value Jakna OK
+21:22:08
+6.
+click on name=trajanje OK
+21:22:08
+7.
+type on name=trajanje with value 2021-06-11 OK
+21:22:08
+8.
+click on name=opis OK
+21:22:08
+9.
+type on name=opis with value Jakna crne boje, velicina s OK
+21:22:09
+10.
+click on name=fondacija OK
+21:22:09
+11.
+select on name=fondacija with value label=Budi human OK
+21:22:09
+12.
+click on name=fondacija OK
+21:22:09
+13.
+click on id=text OK
+21:22:09
+14.
+type on id=text with value 250 OK
+21:22:09
+15.
+click on name=slika OK
+21:22:10
+16.
+type on name=slika with value C:\fakepath\jakna.png OK
+21:22:10
+17.
+click on css=td > .btn OK
+21:22:10
+18.
+assertText on css=.greskaLicitacija with value Nije izabrana kategorija! OK
+21:22:10
+'neuspesnoKreiranjeLicitacije_kategorija' completed successfully
+21:22:12
+Running 'neuspesnoKreiranjeLicitacije_nazivProizvoda'
+21:22:12
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:22:13
+2.
+setWindowSize on 1058x808 OK
+21:22:13
+3.
+assertText on css=b with value Kreiraj licitaciju OK
+21:22:13
+4.
+click on name=trajanje OK
+21:22:13
+5.
+type on name=trajanje with value 2021-06-11 OK
+21:22:13
+6.
+click on name=opis OK
+21:22:14
+7.
+type on name=opis with value Jakna crne boje, velicine s, dobro ocuvana OK
+21:22:14
+8.
+click on name=fondacija OK
+21:22:14
+9.
+select on name=fondacija with value label=Budi human OK
+21:22:14
+10.
+click on name=fondacija OK
+21:22:14
+11.
+click on css=tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(3) OK
+21:22:14
+12.
+click on name=kategorija OK
+21:22:15
+13.
+select on name=kategorija with value label=odeca OK
+21:22:15
+14.
+click on name=kategorija OK
+21:22:15
+15.
+click on id=text OK
+21:22:15
+16.
+type on id=text with value 500 OK
+21:22:15
+17.
+click on name=slika OK
+21:22:15
+18.
+type on name=slika with value C:\fakepath\jakna.png OK
+21:22:16
+19.
+click on css=td > .btn OK
+21:22:16
+20.
+assertText on css=.greskaLicitacija with value Nije unet naziv proizvoda! OK
+21:22:16
+'neuspesnoKreiranjeLicitacije_nazivProizvoda' completed successfully
+21:22:18
+Running 'neuspesnoKreiranjeLicitacije_opis'
+21:22:18
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:22:19
+2.
+setWindowSize on 1054x808 OK
+21:22:19
+3.
+assertText on css=b with value Kreiraj licitaciju OK
+21:22:19
+4.
+click on name=nazivProizvoda OK
+21:22:19
+5.
+type on name=nazivProizvoda with value Jakna OK
+21:22:19
+6.
+click on name=trajanje OK
+21:22:20
+7.
+type on name=trajanje with value 2021-06-11 OK
+21:22:20
+8.
+click on name=fondacija OK
+21:22:20
+9.
+select on name=fondacija with value label=Budi human OK
+21:22:20
+10.
+click on name=fondacija OK
+21:22:20
+11.
+click on name=kategorija OK
+21:22:20
+12.
+select on name=kategorija with value label=odeca OK
+21:22:20
+13.
+click on name=kategorija OK
+21:22:21
+14.
+click on id=text OK
+21:22:21
+15.
+type on id=text with value 400 OK
+21:22:21
+16.
+click on name=slika OK
+21:22:21
+17.
+type on name=slika with value C:\fakepath\jakna.png OK
+21:22:21
+18.
+click on css=td > .btn OK
+21:22:21
+19.
+assertText on css=.greskaLicitacija with value Nije unet opis proizvoda! OK
+21:22:22
+'neuspesnoKreiranjeLicitacije_opis' completed successfully
+21:22:23
+Running 'neuspesnoKreiranjeLicitacije_slika'
+21:22:24
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:22:24
+2.
+setWindowSize on 1051x806 OK
+21:22:24
+3.
+click on name=nazivProizvoda OK
+21:22:24
+4.
+type on name=nazivProizvoda with value Jakna OK
+21:22:25
+5.
+click on name=trajanje OK
+21:22:25
+6.
+type on name=trajanje with value 2021-06-11 OK
+21:22:25
+7.
+click on name=opis OK
+21:22:25
+8.
+type on name=opis with value Jakna crne boje, velicine s, dobro ocuvana OK
+21:22:26
+9.
+click on name=fondacija OK
+21:22:26
+10.
+select on name=fondacija with value label=Budi human OK
+21:22:26
+11.
+click on name=fondacija OK
+21:22:26
+12.
+click on name=kategorija OK
+21:22:26
+13.
+select on name=kategorija with value label=odeca OK
+21:22:26
+14.
+click on name=kategorija OK
+21:22:27
+15.
+click on id=text OK
+21:22:27
+16.
+type on id=text with value 600 OK
+21:22:27
+17.
+click on css=td > .btn OK
+21:22:27
+18.
+assertText on css=.greskaLicitacija with value Nije uneta slika proizvoda! OK
+21:22:27
+'neuspesnoKreiranjeLicitacije_slika' completed successfully
+21:22:30
+Running 'neuspesnoKreiranjeLicitacije_trajanje'
+21:22:30
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:22:30
+2.
+setWindowSize on 1051x806 OK
+21:22:30
+3.
+assertText on css=b with value Kreiraj licitaciju OK
+21:22:31
+4.
+click on name=nazivProizvoda OK
+21:22:31
+5.
+type on name=nazivProizvoda with value Jakna OK
+21:22:31
+6.
+click on name=opis OK
+21:22:31
+7.
+type on name=opis with value JAKNA CRNE BOJE, DOBRO OCUVANA OK
+21:22:32
+8.
+click on name=fondacija OK
+21:22:32
+9.
+select on name=fondacija with value label=Budi human OK
+21:22:32
+10.
+click on name=fondacija OK
+21:22:32
+11.
+click on name=kategorija OK
+21:22:32
+12.
+select on name=kategorija with value label=odeca OK
+21:22:32
+13.
+click on name=kategorija OK
+21:22:33
+14.
+click on id=text OK
+21:22:33
+15.
+type on id=text with value 300 OK
+21:22:33
+16.
+click on name=slika OK
+21:22:33
+17.
+type on name=slika with value C:\fakepath\jakna.png OK
+21:22:33
+18.
+click on css=td > .btn OK
+21:22:33
+19.
+assertText on css=.greskaLicitacija with value Nije uneto trajanje licitacije! OK
+21:22:34
+'neuspesnoKreiranjeLicitacije_trajanje' completed successfully
+21:22:35
+Running 'uspesanPregledProfila_kompanija'
+21:22:35
+1.
+open on http://localhost:8080/Kompanija/index OK
+21:22:36
+2.
+setWindowSize on 792x824 OK
+21:22:36
+3.
+assertText on css=.cardtext with value Kompanija OK
+21:22:36
+4.
+click on css=form > .btn OK
+21:22:37
+5.
+assertText on css=h1:nth-child(1) with value Profil kompanije OK
+21:22:37
+6.
+click on linkText=Nazad OK
+21:22:38
+7.
+assertText on css=.cardtext with value Kompanija OK
+21:22:38
+'uspesanPregledProfila_kompanija' completed successfully
+21:22:38
+Running 'uspesanPregledProfila_korisnik'
+21:22:38
+1.
+open on /Korisnik/index OK
+21:22:39
+2.
+setWindowSize on 1552x840 OK
+21:22:39
+3.
+assertText on css=.cardtext with value Korisnik OK
+21:22:39
+4.
+click on css=form > .btn OK
+21:22:40
+5.
+assertText on css=h1:nth-child(1) with value Profil korisnika OK
+21:22:40
+6.
+click on linkText=Nazad OK
+21:22:41
+7.
+assertText on css=.cardtext with value Korisnik OK
+21:22:41
+'uspesanPregledProfila_korisnik' completed successfully
+21:22:41
+Running 'uspesnaIzmenaProfila_kompanija'
+21:22:41
+1.
+open on http://localhost:8080/Kompanija/profil OK
+21:22:42
+2.
+setWindowSize on 796x825 OK
+21:22:42
+3.
+assertText on css=h1:nth-child(1) with value Profil kompanije OK
+21:22:42
+4.
+assertElementPresent on css=td:nth-child(1) > .btn OK
+21:22:43
+5.
+click on linkText=Izmeni OK
+21:22:43
+6.
+assertElementPresent on name=adresa OK
+21:22:43
+7.
+click on name=adresa OK
+21:22:44
+8.
+type on name=adresa with value Nemanjina 8 OK
+21:22:44
+9.
+click on name=telefon OK
+21:22:44
+10.
+type on name=telefon with value 0653347896 OK
+21:22:44
+11.
+click on css=td:nth-child(1) > .btn OK
+21:22:44
+12.
+assertElementPresent on linkText=Izmeni OK
+21:22:45
+'uspesnaIzmenaProfila_kompanija' completed successfully
+21:22:45
+Running 'uspesnoBrisanjeKorisnika_admin'
+21:22:45
+1.
+open on http://localhost:8080/Admin/korisnici OK
+21:22:46
+2.
+setWindowSize on 1054x808 OK
+21:22:46
+3.
+assertText on css=tbody th:nth-child(6) with value Korisničko ime OK
+21:22:46
+4.
+assertElementPresent on css=tbody:nth-child(1) td:nth-child(6) with value lamila999 OK
+21:22:47
+5.
+assertText on css=tbody th:nth-child(6) with value Korisničko ime OK
+21:22:47
+6.
+click on name=dugme OK
+21:22:47
+'uspesnoBrisanjeKorisnika_admin' completed successfully
+21:22:47
+Running 'uspesnoKreiranjeLicitacije_korisnik'
+21:22:47
+1.
+open on http://localhost:8080/Korisnik/kreiranje_licitacije OK
+21:22:48
+2.
+setWindowSize on 1054x808 OK
+21:22:48
+3.
+click on name=nazivProizvoda OK
+21:22:48
+4.
+type on name=nazivProizvoda with value Jakna OK
+21:22:49
+5.
+click on name=trajanje OK
+21:22:49
+6.
+type on name=trajanje with value 2021-06-11 OK
+21:22:49
+7.
+click on name=opis OK
+21:22:49
+8.
+type on name=opis with value Jakna crne boje, velicine s, dobro ocuvana OK
+21:22:49
+9.
+click on name=fondacija OK
+21:22:49
+10.
+select on name=fondacija with value label=Budi human OK
+21:22:50
+11.
+click on name=fondacija OK
+21:22:50
+12.
+click on name=kategorija OK
+21:22:50
+13.
+select on name=kategorija with value label=odeca OK
+21:22:50
+14.
+click on name=kategorija OK
+21:22:50
+15.
+click on id=text OK
+21:22:50
+16.
+type on id=text with value 500 OK
+21:22:51
+17.
+click on name=slika OK
+21:22:51
+18.
+type on name=slika with value C:\fakepath\jakna.png OK
+21:22:51
+19.
+click on css=td > .btn OK
+21:22:51
+20.
+assertText on css=h1:nth-child(1) with value Uspešno ste kreirali licitaciju OK
+21:22:51
+'uspesnoKreiranjeLicitacije_korisnik' completed successfully
