@@ -2,7 +2,7 @@
   "id": "bbf7c9bb-d288-4ee2-985e-d19f76b6a618",
   "version": "2.0",
   "name": "masa_testovi",
-  "url": "http://localhost:8080/Kompanija",
+  "url": "http://localhost:8080/Korisnik",
   "tests": [{
     "id": "4cb1e27b-e89a-479b-b6b6-6264b637b1b7",
     "name": "TP1 - Recenzija",
@@ -73,7 +73,7 @@
         ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
         ["xpath=//td/input", "xpath:position"]
       ],
-      "value": "mila"
+      "value": "masahn"
     }, {
       "id": "9113eca8-63d8-4c3a-943a-98406ff66a62",
       "comment": "",
@@ -344,7 +344,7 @@
         ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
         ["xpath=//td/input", "xpath:position"]
       ],
-      "value": "mila"
+      "value": "masahn"
     }, {
       "id": "12fe38f5-2d6f-40da-8c9a-7f3da2cbce6c",
       "comment": "",
@@ -474,7 +474,7 @@
         ["xpath=//div[@id='recenzija']/div/form/table/tbody/tr[2]/td/input", "xpath:idRelative"],
         ["xpath=//td/input", "xpath:position"]
       ],
-      "value": "mila"
+      "value": "masahn"
     }, {
       "id": "890f8387-ede1-4895-8e50-8b05e6aa4769",
       "comment": "",
@@ -1154,16 +1154,6 @@
         ["xpath=//h1[contains(.,'Uspešno ste dodali fondaciju')]", "xpath:innerText"]
       ],
       "value": "Uspešno ste dodali fondaciju"
-    }, {
-      "id": "57176acd-36ab-4ea5-8b1f-3377ff2ff370",
-      "comment": "",
-      "command": "assertText",
-      "target": "css=ul:nth-child(1) > li:nth-child(4)",
-      "targets": [
-        ["css=ul:nth-child(1) > li:nth-child(4)", "css:finder"],
-        ["xpath=//li[4]", "xpath:position"]
-      ],
-      "value": "Krov nad glavom"
     }]
   }, {
     "id": "6ddebbb5-afea-4794-a658-daa071371f2f",
