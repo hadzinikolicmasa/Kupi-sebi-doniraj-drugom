@@ -1,0 +1,1738 @@
+Running 'neuspesna_prijava__kompanije_lozinka_nije_odgovarajuca'
+22:31:03
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:31:03
+2.
+setWindowSize on 1052x662 OK
+22:31:03
+3.
+click on name=korisnickoime OK
+22:31:03
+4.
+type on name=korisnickoime with value Delta Holding OK
+22:31:04
+5.
+click on name=lozinkaprijava OK
+22:31:04
+6.
+type on name=lozinkaprijava with value delta OK
+22:31:04
+7.
+click on css=b OK
+22:31:04
+8.
+assertText on css=b with value Prijava OK
+22:31:04
+9.
+click on css=.btn OK
+22:31:05
+10.
+assertText on css=.greskaprijava with value Nije dobra lozinka. OK
+22:31:05
+'neuspesna_prijava__kompanije_lozinka_nije_odgovarajuca' completed successfully
+Running 'neuspesna_prijava_kompanija_ne_postoji_u_bazi'
+22:31:28
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:31:29
+2.
+setWindowSize on 1052x662 OK
+22:31:29
+3.
+click on name=korisnickoime OK
+22:31:29
+4.
+type on name=korisnickoime with value Telenor OK
+22:31:29
+5.
+click on name=lozinkaprijava OK
+22:31:29
+6.
+type on name=lozinkaprijava with value fjksfj OK
+22:31:30
+7.
+assertText on css=b with value Prijava OK
+22:31:30
+8.
+click on css=.btn OK
+22:31:30
+9.
+assertText on css=.greskaprijava with value Ne postojite u bazi. OK
+22:31:30
+'neuspesna_prijava_kompanija_ne_postoji_u_bazi' completed successfully
+Running 'neuspesna_prijava_kompanije_lozinka_nije_uneta'
+22:31:59
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:32:00
+2.
+setWindowSize on 1052x662 OK
+22:32:00
+3.
+click on name=korisnickoime OK
+22:32:00
+4.
+type on name=korisnickoime with value Delta Holding OK
+22:32:00
+5.
+assertText on css=b with value Prijava OK
+22:32:01
+6.
+click on css=.btn OK
+22:32:01
+7.
+assertText on css=.greskaprijava with value Lozinka nije uneta OK
+22:32:01
+'neuspesna_prijava_kompanije_lozinka_nije_uneta' completed successfully
+Running 'neuspesna_prijava_korisnicko_ime_ne_postoji_u_bazi'
+22:33:04
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:33:04
+2.
+setWindowSize on 1052x662 OK
+22:33:04
+3.
+click on name=korisnickoime OK
+22:33:04
+4.
+type on name=korisnickoime with value masahadzinikolic OK
+22:33:05
+5.
+click on name=lozinkaprijava OK
+22:33:05
+6.
+type on name=lozinkaprijava with value Masa123 OK
+22:33:05
+7.
+click on css=.btn OK
+22:33:05
+8.
+assertText on css=.greskaprijava with value Ne postojite u bazi. OK
+22:33:05
+'neuspesna_prijava_korisnicko_ime_ne_postoji_u_bazi' completed successfully
+Running 'neuspesna_prijava_korisnicko_ime_nije_uneto'
+22:33:28
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:33:29
+2.
+setWindowSize on 1052x662 OK
+22:33:29
+3.
+click on name=lozinkaprijava OK
+22:33:29
+4.
+type on name=lozinkaprijava with value Nina123 OK
+22:33:29
+5.
+click on css=.btn OK
+22:33:30
+6.
+assertText on css=.greskaprijava with value Korisničko ime nije uneto OK
+22:33:30
+'neuspesna_prijava_korisnicko_ime_nije_uneto' completed successfully
+Running 'neuspesna_prijava_korisnika_lozinka_nije_odgovarajuca'
+22:34:02
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:34:02
+2.
+setWindowSize on 1052x662 OK
+22:34:02
+3.
+click on name=korisnickoime OK
+22:34:02
+4.
+type on name=korisnickoime with value ninasavkic OK
+22:34:03
+5.
+click on name=lozinkaprijava OK
+22:34:03
+6.
+type on name=lozinkaprijava with value lsfjlsd OK
+22:34:03
+7.
+click on css=.btn OK
+22:34:03
+8.
+assertText on css=.greskaprijava with value Nije dobra lozinka. OK
+22:34:03
+'neuspesna_prijava_korisnika_lozinka_nije_odgovarajuca' completed successfully
+Running 'neuspesna_prijava_korisnika_lozinka_nije_uneta'
+22:34:22
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:34:22
+2.
+setWindowSize on 1052x662 OK
+22:34:22
+3.
+click on name=korisnickoime OK
+22:34:22
+4.
+type on name=korisnickoime with value ninasavkic OK
+22:34:23
+5.
+click on css=.btn OK
+22:34:23
+6.
+assertText on css=.greskaprijava with value Lozinka nije uneta OK
+22:34:23
+'neuspesna_prijava_korisnika_lozinka_nije_uneta' completed successfully
+Running 'neuspesna_prijava_naziv_kompanije_nije_unet'
+22:34:43
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:34:44
+2.
+setWindowSize on 1052x662 OK
+22:34:44
+3.
+assertText on css=b with value Prijava OK
+22:34:44
+4.
+click on name=lozinkaprijava OK
+22:34:44
+5.
+type on name=lozinkaprijava with value Delta123 OK
+22:34:44
+6.
+click on css=.btn OK
+22:34:45
+7.
+assertText on css=.greskaprijava with value Korisničko ime nije uneto OK
+22:34:45
+'neuspesna_prijava_naziv_kompanije_nije_unet' completed successfully
+Running 'neuspesna_registracija_nije_dobar_izgled_lozinke_kompanije'
+22:35:13
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:35:14
+2.
+setWindowSize on 1052x662 OK
+22:35:14
+3.
+assertText on css=b with value Registracija: OK
+22:35:14
+4.
+click on name=Tip OK
+22:35:14
+5.
+click on css=.btn OK
+22:35:14
+6.
+click on name=nazivKomp OK
+22:35:14
+7.
+type on name=nazivKomp with value Delta Generali OK
+22:35:15
+8.
+click on name=adresa OK
+22:35:15
+9.
+type on name=adresa with value Brankova 2 OK
+22:35:15
+10.
+click on name=pib OK
+22:35:15
+11.
+type on name=pib with value 999900223 OK
+22:35:15
+12.
+type on name=pib with value 999900111 OK
+22:35:15
+13.
+click on name=telefon OK
+22:35:16
+14.
+type on name=telefon with value 0113326785 OK
+22:35:16
+15.
+click on name=regBr OK
+22:35:16
+16.
+type on name=regBr with value 999888000 OK
+22:35:16
+17.
+type on name=regBr with value 999888111 OK
+22:35:16
+18.
+click on name=lozinka OK
+22:35:16
+19.
+type on name=lozinka with value delta1234 OK
+22:35:16
+20.
+click on css=.btn OK
+22:35:17
+21.
+assertText on css=.greskaprijava with value Lozinka mora sadržati barem jedno veliko slovo i barem jednu cifru OK
+22:35:17
+'neuspesna_registracija_nije_dobar_izgled_lozinke_kompanije' completed successfully
+Running 'neuspesna_registracija_nije_dobar_izgled_lozinke_korisnika'
+22:35:35
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:35:36
+2.
+setWindowSize on 1052x662 OK
+22:35:36
+3.
+assertText on css=b with value Registracija: OK
+22:35:36
+4.
+click on css=tr:nth-child(3) input OK
+22:35:36
+5.
+click on css=.btn OK
+22:35:37
+6.
+assertText on css=b with value Registracija korisnika OK
+22:35:37
+7.
+click on css=input:nth-child(2) OK
+22:35:37
+8.
+click on name=ime OK
+22:35:37
+9.
+type on name=ime with value Jelisaveta OK
+22:35:37
+10.
+click on name=prez OK
+22:35:38
+11.
+type on name=prez with value Todorov OK
+22:35:38
+12.
+click on name=adr OK
+22:35:38
+13.
+type on name=adr with value Hadzi Melentijeva 90 OK
+22:35:38
+14.
+click on name=fon OK
+22:35:38
+15.
+type on name=fon with value 0635693336 OK
+22:35:38
+16.
+type on name=fon with value 0635694455 OK
+22:35:38
+17.
+click on name=grad OK
+22:35:39
+18.
+type on name=grad with value Beograd OK
+22:35:39
+19.
+click on name=korime OK
+22:35:39
+20.
+type on name=korime with value todorovjelisaveta OK
+22:35:39
+21.
+click on name=lozinkareg OK
+22:35:39
+22.
+type on name=lozinkareg with value jeja123 OK
+22:35:39
+23.
+click on css=.btn OK
+22:35:40
+24.
+click on css=.greskaprijava OK
+22:35:40
+25.
+assertText on css=.greskaprijava with value Lozinka mora sadržati barem jedno veliko slovo i barem jednu cifru OK
+22:35:41
+'neuspesna_registracija_nije_dobar_izgled_lozinke_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_dobro_uneto_prezime_korisnika'
+22:36:09
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:36:10
+2.
+setWindowSize on 1052x662 OK
+22:36:10
+3.
+click on css=b OK
+22:36:10
+4.
+assertText on css=b with value Registracija: OK
+22:36:10
+5.
+click on css=tr:nth-child(3) input OK
+22:36:10
+6.
+click on css=.btn OK
+22:36:10
+7.
+click on css=b OK
+22:36:10
+8.
+assertText on css=b with value Registracija korisnika OK
+22:36:11
+9.
+click on css=input:nth-child(2) OK
+22:36:11
+10.
+click on name=ime OK
+22:36:11
+11.
+type on name=ime with value Masa OK
+22:36:11
+12.
+click on name=prez OK
+22:36:11
+13.
+type on name=prez with value Hadzi-Nikolic OK
+22:36:12
+14.
+click on name=adr OK
+22:36:12
+15.
+type on name=adr with value Kralja Milana 15 OK
+22:36:12
+16.
+click on name=fon OK
+22:36:12
+17.
+type on name=fon with value 0605002153 OK
+22:36:12
+18.
+click on name=korime OK
+22:36:12
+19.
+type on name=korime with value masaa OK
+22:36:13
+20.
+click on name=lozinkareg OK
+22:36:13
+21.
+type on name=lozinkareg with value masa123 OK
+22:36:13
+22.
+click on css=.btn OK
+22:36:13
+23.
+assertText on css=.greskaprijava with value Prezime sadrzi samo slova i razmake OK
+22:36:13
+'neuspesna_registracija_nije_dobro_uneto_prezime_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_izabran_tip'
+22:36:36
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:36:37
+2.
+setWindowSize on 1052x662 OK
+22:36:37
+3.
+assertText on css=b with value Registracija: OK
+22:36:37
+4.
+click on css=.btn OK
+22:36:37
+5.
+verifyText on css=.greskaprijava with value Niste izabrali tip korisnika! OK
+22:36:38
+'neuspesna_registracija_nije_izabran_tip' completed successfully
+Running 'neuspesna_registracija_nije_unet_grad_korisnika'
+22:36:57
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:36:57
+2.
+setWindowSize on 1052x662 OK
+22:36:58
+3.
+assertText on css=b with value Registracija: OK
+22:36:58
+4.
+click on css=tr:nth-child(3) input OK
+22:36:58
+5.
+click on css=.btn OK
+22:36:58
+6.
+click on css=input:nth-child(2) OK
+22:36:58
+7.
+click on name=ime OK
+22:36:59
+8.
+type on name=ime with value Nadja OK
+22:36:59
+9.
+click on name=prez OK
+22:36:59
+10.
+type on name=prez with value Milojkovic OK
+22:36:59
+11.
+click on name=adr OK
+22:36:59
+12.
+type on name=adr with value Licka 1a OK
+22:37:00
+13.
+click on name=fon OK
+22:37:00
+14.
+type on name=fon with value 0605693330 OK
+22:37:00
+15.
+click on name=korime OK
+22:37:00
+16.
+type on name=korime with value nadjaa OK
+22:37:00
+17.
+click on name=lozinkareg OK
+22:37:00
+18.
+type on name=lozinkareg with value Nadja123 OK
+22:37:00
+19.
+click on css=.btn OK
+22:37:01
+20.
+assertText on css=.greskaprijava with value Morate uneti grad OK
+22:37:01
+'neuspesna_registracija_nije_unet_grad_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_unet_naziv_kompanije'
+22:37:23
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:37:24
+2.
+setWindowSize on 1052x662 OK
+22:37:24
+3.
+click on css=b OK
+22:37:24
+4.
+assertText on css=b with value Registracija: OK
+22:37:25
+5.
+click on name=Tip OK
+22:37:25
+6.
+click on css=.btn OK
+22:37:25
+7.
+click on css=b OK
+22:37:25
+8.
+assertText on css=b with value Registracija kompanije OK
+22:37:25
+9.
+click on name=adresa OK
+22:37:26
+10.
+type on name=adresa with value Bulevar umetnosti 50 OK
+22:37:26
+11.
+click on name=pib OK
+22:37:26
+12.
+type on name=pib with value 999900087 OK
+22:37:26
+13.
+click on name=telefon OK
+22:37:26
+14.
+type on name=telefon with value 0112233445 OK
+22:37:26
+15.
+click on name=regBr OK
+22:37:27
+16.
+type on name=regBr with value 898989 OK
+22:37:27
+17.
+click on name=lozinka OK
+22:37:27
+18.
+type on name=lozinka with value Telekom123 OK
+22:37:27
+19.
+click on css=.btn OK
+22:37:27
+20.
+click on css=.greskaprijava OK
+22:37:27
+21.
+assertText on css=.greskaprijava with value Morate uneti naziv kompanije OK
+22:37:28
+'neuspesna_registracija_nije_unet_naziv_kompanije' completed successfully
+Running 'neuspesna_registracija_nije_unet_pib_kompanije'
+22:37:52
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:37:53
+2.
+setWindowSize on 1052x662 OK
+22:37:53
+3.
+click on css=b OK
+22:37:53
+4.
+assertText on css=b with value Registracija: OK
+22:37:53
+5.
+click on name=Tip OK
+22:37:53
+6.
+click on css=.btn OK
+22:37:54
+7.
+click on name=nazivKomp OK
+22:37:54
+8.
+type on name=nazivKomp with value Nordeus OK
+22:37:54
+9.
+click on name=adresa OK
+22:37:54
+10.
+type on name=adresa with value Bulevar Milutina Milankovica 455 OK
+22:37:54
+11.
+click on name=telefon OK
+22:37:55
+12.
+type on name=telefon with value 0112233445 OK
+22:37:55
+13.
+click on name=regBr OK
+22:37:55
+14.
+type on name=regBr with value 999888990 OK
+22:37:55
+15.
+click on name=lozinka OK
+22:37:55
+16.
+type on name=lozinka with value Nordeus123 OK
+22:37:55
+17.
+click on css=.btn OK
+22:37:55
+18.
+click on css=.greskaprijava OK
+22:37:56
+19.
+assertText on css=.greskaprijava with value Morate uneti PIB OK
+22:37:56
+'neuspesna_registracija_nije_unet_pib_kompanije' completed successfully
+Running 'neuspesna_registracija_nije_unet_pol_korisnika'
+22:38:18
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:38:18
+2.
+setWindowSize on 1052x662 OK
+22:38:18
+3.
+assertText on css=b with value Registracija: OK
+22:38:18
+4.
+click on css=tr:nth-child(3) input OK
+22:38:19
+5.
+click on css=.btn OK
+22:38:19
+6.
+click on name=ime OK
+22:38:19
+7.
+type on name=ime with value Stefan OK
+22:38:19
+8.
+click on name=prez OK
+22:38:20
+9.
+type on name=prez with value Tosic OK
+22:38:20
+10.
+click on name=adr OK
+22:38:20
+11.
+type on name=adr with value Brace Jerkovic 129 OK
+22:38:20
+12.
+click on name=fon OK
+22:38:20
+13.
+type on name=fon with value 0646156445 OK
+22:38:20
+14.
+click on name=grad OK
+22:38:20
+15.
+type on name=grad with value Beograd OK
+22:38:21
+16.
+click on name=korime OK
+22:38:21
+17.
+type on name=korime with value stefant OK
+22:38:21
+18.
+click on name=lozinkareg OK
+22:38:21
+19.
+type on name=lozinkareg with value Stefan123 OK
+22:38:21
+20.
+click on css=.btn OK
+22:38:21
+21.
+assertText on css=.greskaprijava with value Morate izabrati pol OK
+22:38:21
+'neuspesna_registracija_nije_unet_pol_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_unet_reg_broj_kompanije'
+22:38:47
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:38:48
+2.
+setWindowSize on 1052x662 OK
+22:38:48
+3.
+assertText on css=b with value Registracija: OK
+22:38:48
+4.
+click on name=Tip OK
+22:38:48
+5.
+click on css=.btn OK
+22:38:49
+6.
+assertText on css=b with value Registracija kompanije OK
+22:38:49
+7.
+click on name=nazivKomp OK
+22:38:49
+8.
+type on name=nazivKomp with value ComTrade OK
+22:38:49
+9.
+click on name=adresa OK
+22:38:50
+10.
+type on name=adresa with value Bulevar oslobodjenja 120 OK
+22:38:50
+11.
+click on name=pib OK
+22:38:50
+12.
+type on name=pib with value 999900088 OK
+22:38:50
+13.
+type on name=pib with value 999900011 OK
+22:38:50
+14.
+click on name=telefon OK
+22:38:50
+15.
+type on name=telefon with value 0112233445 OK
+22:38:51
+16.
+click on name=lozinka OK
+22:38:51
+17.
+type on name=lozinka with value Comtrade123 OK
+22:38:51
+18.
+click on css=.btn OK
+22:38:51
+19.
+assertText on css=.greskaprijava with value Morate uneti registarski broj OK
+22:38:51
+'neuspesna_registracija_nije_unet_reg_broj_kompanije' completed successfully
+Running 'neuspesna_registracija_nije_unet_telefon_kompanije'
+22:39:15
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:39:16
+2.
+setWindowSize on 1052x662 OK
+22:39:16
+3.
+assertText on css=b with value Registracija: OK
+22:39:16
+4.
+click on name=Tip OK
+22:39:16
+5.
+click on css=.btn OK
+22:39:16
+6.
+assertText on css=b with value Registracija kompanije OK
+22:39:17
+7.
+click on name=nazivKomp OK
+22:39:17
+8.
+type on name=nazivKomp with value Mozzart OK
+22:39:17
+9.
+click on name=adresa OK
+22:39:17
+10.
+click on name=adresa OK
+22:39:18
+11.
+type on name=adresa with value Takovska 30 OK
+22:39:18
+12.
+click on name=pib OK
+22:39:18
+13.
+type on name=pib with value 999900080 OK
+22:39:18
+14.
+click on name=pib OK
+22:39:18
+15.
+type on name=pib with value 889900080 OK
+22:39:18
+16.
+click on name=regBr OK
+22:39:19
+17.
+type on name=regBr with value 999888933 OK
+22:39:19
+18.
+type on name=regBr with value 999888955 OK
+22:39:19
+19.
+click on name=lozinka OK
+22:39:19
+20.
+type on name=lozinka with value Mozzart123 OK
+22:39:19
+21.
+click on css=.btn OK
+22:39:19
+22.
+assertText on css=.greskaprijava with value Morate uneti broj telefona OK
+22:39:19
+'neuspesna_registracija_nije_unet_telefon_kompanije' completed successfully
+Running 'neuspesna_registracija_nije_unet_telefon_korisnika'
+22:39:44
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:39:44
+2.
+setWindowSize on 1052x662 OK
+22:39:45
+3.
+assertText on css=b with value Registracija: OK
+22:39:45
+4.
+click on css=tr:nth-child(3) input OK
+22:39:45
+5.
+click on css=.btn OK
+22:39:45
+6.
+click on name=pol OK
+22:39:45
+7.
+click on name=ime OK
+22:39:46
+8.
+type on name=ime with value Dorijan OK
+22:39:46
+9.
+click on name=prez OK
+22:39:46
+10.
+type on name=prez with value Draskovic OK
+22:39:46
+11.
+click on name=adr OK
+22:39:46
+12.
+type on name=adr with value Ruzveltova 135 OK
+22:39:46
+13.
+click on name=grad OK
+22:39:47
+14.
+type on name=grad with value Beograd OK
+22:39:47
+15.
+click on name=korime OK
+22:39:47
+16.
+type on name=korime with value dokidraskovic OK
+22:39:47
+17.
+click on name=lozinkareg OK
+22:39:47
+18.
+type on name=lozinkareg with value Dorijan123 OK
+22:39:47
+19.
+click on css=.btn OK
+22:39:48
+20.
+assertText on css=.greskaprijava with value Morate uneti broj telefona OK
+22:39:48
+'neuspesna_registracija_nije_unet_telefon_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_uneta_adresa_kompanije'
+22:40:35
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:40:36
+2.
+setWindowSize on 1052x662 OK
+22:40:36
+3.
+assertText on css=b with value Registracija: OK
+22:40:36
+4.
+click on name=Tip OK
+22:40:36
+5.
+click on css=.btn OK
+22:40:36
+6.
+click on name=nazivKomp OK
+22:40:37
+7.
+type on name=nazivKomp with value Intesa OK
+22:40:37
+8.
+click on name=pib OK
+22:40:37
+9.
+type on name=pib with value 999900087 OK
+22:40:37
+10.
+type on name=pib with value 999900077 OK
+22:40:38
+11.
+click on name=regBr OK
+22:40:38
+12.
+type on name=regBr with value 999888955 OK
+22:40:38
+13.
+type on name=regBr with value 999888123 OK
+22:40:38
+14.
+click on name=telefon OK
+22:40:38
+15.
+type on name=telefon with value 0112960296 OK
+22:40:38
+16.
+click on name=lozinka OK
+22:40:38
+17.
+type on name=lozinka with value Intesa123 OK
+22:40:39
+18.
+click on css=.btn OK
+22:40:39
+19.
+assertText on css=.greskaprijava with value Morate uneti adresu OK
+22:40:39
+'neuspesna_registracija_nije_uneta_adresa_kompanije' completed successfully
+Running 'neuspesna_registracija_nije_uneta_adresa_korisnika'
+22:41:02
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:41:02
+2.
+setWindowSize on 1052x662 OK
+22:41:02
+3.
+assertText on css=b with value Registracija: OK
+22:41:02
+4.
+click on css=tr:nth-child(3) input OK
+22:41:03
+5.
+click on css=.btn OK
+22:41:03
+6.
+click on name=pol OK
+22:41:03
+7.
+click on name=ime OK
+22:41:03
+8.
+type on name=ime with value Lazar OK
+22:41:04
+9.
+click on name=prez OK
+22:41:04
+10.
+type on name=prez with value Trbovic OK
+22:41:04
+11.
+click on name=fon OK
+22:41:04
+12.
+type on name=fon with value 0601127676 OK
+22:41:04
+13.
+click on name=grad OK
+22:41:04
+14.
+type on name=grad with value Novi Sad OK
+22:41:04
+15.
+click on name=korime OK
+22:41:05
+16.
+type on name=korime with value lazatrbovic OK
+22:41:05
+17.
+click on name=lozinkareg OK
+22:41:05
+18.
+type on name=lozinkareg with value lazar123 OK
+22:41:05
+19.
+click on css=.btn OK
+22:41:05
+20.
+assertText on css=.greskaprijava with value Morate uneti adresu OK
+22:41:05
+'neuspesna_registracija_nije_uneta_adresa_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_uneta_lozinka_kompanije'
+22:41:37
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:41:38
+2.
+setWindowSize on 1052x662 OK
+22:41:38
+3.
+assertText on css=b with value Registracija: OK
+22:41:38
+4.
+click on name=Tip OK
+22:41:38
+5.
+click on css=.btn OK
+22:41:39
+6.
+click on name=nazivKomp OK
+22:41:39
+7.
+type on name=nazivKomp with value Telenor OK
+22:41:39
+8.
+click on name=adresa OK
+22:41:39
+9.
+type on name=adresa with value Omladinskih brigada 50 OK
+22:41:39
+10.
+click on name=pib OK
+22:41:40
+11.
+type on name=pib with value 999900088 OK
+22:41:40
+12.
+type on name=pib with value 999900223 OK
+22:41:40
+13.
+click on name=telefon OK
+22:41:40
+14.
+type on name=telefon with value 0112233445 OK
+22:41:40
+15.
+click on name=regBr OK
+22:41:40
+16.
+type on name=regBr with value 999888123 OK
+22:41:41
+17.
+type on name=regBr with value 999888000 OK
+22:41:41
+18.
+click on css=.btn OK
+22:41:41
+19.
+assertText on css=.greskaprijava with value Morate uneti lozinku OK
+22:41:41
+'neuspesna_registracija_nije_uneta_lozinka_kompanije' completed successfully
+Running 'neuspesna_registracija_nije_uneta_lozinka_korisnika'
+22:42:10
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:42:10
+2.
+setWindowSize on 1052x662 OK
+22:42:10
+3.
+assertText on css=b with value Registracija: OK
+22:42:10
+4.
+click on css=tr:nth-child(3) input OK
+22:42:11
+5.
+click on css=.btn OK
+22:42:11
+6.
+assertText on css=b with value Registracija korisnika OK
+22:42:11
+7.
+click on css=input:nth-child(2) OK
+22:42:12
+8.
+click on name=ime OK
+22:42:12
+9.
+type on name=ime with value Nina OK
+22:42:12
+10.
+click on name=prez OK
+22:42:12
+11.
+type on name=prez with value Savkic OK
+22:42:12
+12.
+click on name=adr OK
+22:42:12
+13.
+type on name=adr with value Ratnih vojnih invalida 35 OK
+22:42:13
+14.
+click on name=grad OK
+22:42:13
+15.
+type on name=grad with value Beograd OK
+22:42:13
+16.
+click on name=fon OK
+22:42:13
+17.
+type on name=fon with value 0605693338 OK
+22:42:13
+18.
+click on name=korime OK
+22:42:13
+19.
+type on name=korime with value ninaasavkic OK
+22:42:14
+20.
+click on css=.btn OK
+22:42:14
+21.
+click on css=.greskaprijava OK
+22:42:14
+22.
+assertText on css=.greskaprijava with value Morate uneti lozinku OK
+22:42:15
+'neuspesna_registracija_nije_uneta_lozinka_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_uneto_ime_korisnika'
+22:42:37
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:42:37
+2.
+setWindowSize on 1052x662 OK
+22:42:37
+3.
+assertText on css=b with value Registracija: OK
+22:42:37
+4.
+click on css=tr:nth-child(3) input OK
+22:42:38
+5.
+click on css=.btn OK
+22:42:38
+6.
+click on css=input:nth-child(2) OK
+22:42:38
+7.
+click on name=prez OK
+22:42:39
+8.
+type on name=prez with value Mijatovic OK
+22:42:39
+9.
+click on name=adr OK
+22:42:39
+10.
+type on name=adr with value Bulevar kralja Aleksandra 56 OK
+22:42:39
+11.
+click on name=fon OK
+22:42:39
+12.
+type on name=fon with value 0635693336 OK
+22:42:39
+13.
+click on name=grad OK
+22:42:39
+14.
+type on name=grad with value Beograd OK
+22:42:40
+15.
+click on name=korime OK
+22:42:40
+16.
+type on name=korime with value teaamijatovic OK
+22:42:40
+17.
+click on name=lozinkareg OK
+22:42:40
+18.
+type on name=lozinkareg with value Tea123 OK
+22:42:40
+19.
+click on css=.btn OK
+22:42:40
+20.
+assertText on css=.greskaprijava with value Morate uneti ime OK
+22:42:40
+'neuspesna_registracija_nije_uneto_ime_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_uneto_korisnicko_ime_korisnika'
+22:43:03
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:43:04
+2.
+setWindowSize on 1052x662 OK
+22:43:04
+3.
+assertText on css=b with value Registracija: OK
+22:43:04
+4.
+click on css=tr:nth-child(3) input OK
+22:43:04
+5.
+click on css=.btn OK
+22:43:05
+6.
+assertText on css=b with value Registracija korisnika OK
+22:43:05
+7.
+click on name=pol OK
+22:43:05
+8.
+click on name=ime OK
+22:43:05
+9.
+type on name=ime with value Mladen OK
+22:43:06
+10.
+click on name=prez OK
+22:43:06
+11.
+type on name=prez with value Perisic OK
+22:43:06
+12.
+click on name=adr OK
+22:43:06
+13.
+type on name=adr with value Julije Delere 120 OK
+22:43:06
+14.
+click on name=fon OK
+22:43:06
+15.
+type on name=fon with value 0635693336 OK
+22:43:06
+16.
+type on name=fon with value 0635693344 OK
+22:43:07
+17.
+click on name=grad OK
+22:43:07
+18.
+type on name=grad with value Novi Sad OK
+22:43:07
+19.
+click on name=lozinkareg OK
+22:43:07
+20.
+type on name=lozinkareg with value Mladen123 OK
+22:43:07
+21.
+click on css=.btn OK
+22:43:07
+22.
+assertText on css=.greskaprijava with value Morate uneti korisničko ime OK
+22:43:07
+'neuspesna_registracija_nije_uneto_korisnicko_ime_korisnika' completed successfully
+Running 'neuspesna_registracija_nije_uneto_prezime_korisnika'
+22:43:29
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:43:30
+2.
+setWindowSize on 1052x662 OK
+22:43:30
+3.
+assertText on css=b with value Registracija: OK
+22:43:30
+4.
+click on css=tr:nth-child(3) input OK
+22:43:30
+5.
+click on css=.btn OK
+22:43:31
+6.
+assertText on css=b with value Registracija korisnika OK
+22:43:31
+7.
+click on name=pol OK
+22:43:31
+8.
+click on name=ime OK
+22:43:31
+9.
+type on name=ime with value Aleksandar OK
+22:43:32
+10.
+click on name=adr OK
+22:43:32
+11.
+type on name=adr with value Maksima Gorkog 81 OK
+22:43:32
+12.
+click on name=grad OK
+22:43:32
+13.
+type on name=grad with value Lazarevac OK
+22:43:32
+14.
+click on name=fon OK
+22:43:32
+15.
+type on name=fon with value 0614567770 OK
+22:43:32
+16.
+click on name=korime OK
+22:43:33
+17.
+type on name=korime with value salenikolic OK
+22:43:33
+18.
+click on name=lozinkareg OK
+22:43:33
+19.
+type on name=lozinkareg with value Sale123 OK
+22:43:33
+20.
+click on css=.btn OK
+22:43:33
+21.
+assertText on css=.greskaprijava with value Morate uneti prezime OK
+22:43:33
+'neuspesna_registracija_nije_uneto_prezime_korisnika' completed successfully
+22:48:14
+Running 'neuspesna_registracija_pib_kompanije_vec_postoji'
+22:48:19
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:48:19
+2.
+setWindowSize on 1052x662 OK
+22:48:19
+3.
+assertText on css=b with value Registracija: OK
+22:48:19
+4.
+click on name=Tip OK
+22:48:20
+5.
+click on css=.btn OK
+22:48:20
+6.
+assertText on css=b with value Registracija kompanije OK
+22:48:20
+7.
+click on name=nazivKomp OK
+22:48:21
+8.
+type on name=nazivKomp with value Microsoft OK
+22:48:21
+9.
+click on name=adresa OK
+22:48:21
+10.
+type on name=adresa with value Bulevar Zorana Djindjica 130 OK
+22:48:21
+11.
+click on name=pib OK
+22:48:21
+12.
+type on name=pib with value 999900088 OK
+22:48:21
+13.
+click on name=telefon OK
+22:48:22
+14.
+type on name=telefon with value 0112299211 OK
+22:48:22
+15.
+click on name=lozinka OK
+22:48:22
+16.
+type on name=lozinka with value Mirosoft123 OK
+22:48:22
+17.
+click on css=.btn OK
+22:48:22
+18.
+assertText on css=.greskaprijava with value PIB već postoji OK
+22:48:22
+'neuspesna_registracija_pib_kompanije_vec_postoji' completed successfully
+Running 'pregled_proizvoda_gost'
+22:48:58
+1.
+open on http://localhost:8080/Gost/index OK
+22:48:58
+2.
+setWindowSize on 1052x662 OK
+22:48:58
+3.
+click on css=.btn OK
+22:48:58
+4.
+assertText on css=h1:nth-child(1) with value Kupite i donirajte OK
+22:48:59
+5.
+click on linkText=Iphone 12 Pro Max OK
+22:48:59
+6.
+assertText on css=.proizvodi > span with value Morate se prijaviti prvo. OK
+22:49:00
+'pregled_proizvoda_gost' completed successfully
+Running 'pregled_proizvoda_gost_promena_kategorije'
+22:49:27
+1.
+open on http://localhost:8080/Gost/index OK
+22:49:28
+2.
+setWindowSize on 1052x662 OK
+22:49:28
+3.
+click on css=.btn OK
+22:49:28
+4.
+click on css=h1:nth-child(1) OK
+22:49:28
+5.
+assertText on css=h1:nth-child(1) with value Kupite i donirajte OK
+22:49:29
+6.
+assertText on css=b with value Kategorije OK
+22:49:29
+7.
+click on css=.btn OK
+22:49:29
+8.
+click on linkText=Tehnika OK
+22:49:29
+9.
+assertText on css=h1:nth-child(1) with value Tehnika OK
+22:49:29
+'pregled_proizvoda_gost_promena_kategorije' completed successfully
+Running 'pregled_proizvoda_gost_promena_kategorije_nema_proizvoda_u_kategoriji'
+22:49:50
+1.
+open on http://localhost:8080/Gost/index OK
+22:49:50
+2.
+setWindowSize on 1052x662 OK
+22:49:50
+3.
+click on css=.btn OK
+22:49:50
+4.
+assertText on css=h1:nth-child(1) with value Kupite i donirajte OK
+22:49:51
+5.
+click on css=.btn OK
+22:49:51
+6.
+click on linkText=Odeca OK
+22:49:51
+7.
+assertText on css=h1:nth-child(1) with value Odeca OK
+22:49:52
+8.
+assertText on css=table:nth-child(1) > tbody:nth-child(1) td with value Nažalost nemamo proizvode iz ove kategorije. OK
+22:49:52
+'pregled_proizvoda_gost_promena_kategorije_nema_proizvoda_u_kategoriji' completed successfully
+Running 'pregled_proizvoda_korisnik'
+22:50:13
+1.
+open on http://localhost:8080/Korisnik OK
+22:50:15
+2.
+setWindowSize on 1296x696 OK
+22:50:15
+3.
+assertText on css=h1:nth-child(1) with value Kupi i doniraj OK
+22:50:15
+4.
+click on linkText=Iphone 12 Pro Max OK
+22:50:16
+5.
+mouseDownAt on css=table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(1) with value 38.67706298828125,9 OK
+22:50:17
+6.
+mouseMoveAt on css=table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(1) with value 38.67706298828125,9 OK
+22:50:18
+7.
+mouseUpAt on css=table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(1) with value 38.67706298828125,9 OK
+22:50:19
+8.
+click on css=table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(1) OK
+22:50:20
+9.
+assertText on css=table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(1) with value Preostalo vreme: OK
+22:50:21
+'pregled_proizvoda_korisnik' completed successfully
+Running 'pregled_proizvoda_korisnik_promena_kategorije'
+22:50:46
+1.
+open on http://localhost:8080/Korisnik OK
+22:50:47
+2.
+setWindowSize on 1052x662 OK
+22:50:47
+3.
+assertText on css=h1:nth-child(1) with value Kupi i doniraj OK
+22:50:47
+4.
+assertText on css=b with value Kategorije OK
+22:50:47
+5.
+click on css=.dropdown-toggle OK
+22:50:47
+6.
+click on linkText=Odeca OK
+22:50:47
+7.
+assertText on css=h1:nth-child(1) with value Odeca OK
+22:50:48
+8.
+assertText on css=.proizvodi_korisnik td with value Nažalost nemamo proizvode iz ove kategorije. OK
+22:50:48
+'pregled_proizvoda_korisnik_promena_kategorije' completed successfully
+Running 'uspesna_prijava_korisnika'
+22:52:40
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:52:41
+2.
+setWindowSize on 1052x662 OK
+22:52:41
+3.
+assertText on css=b with value Prijava OK
+22:52:41
+4.
+click on css=table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td OK
+22:52:41
+5.
+assertElementPresent on name=korisnickoime OK
+22:52:41
+6.
+type on name=korisnickoime with value ninasavkic OK
+22:52:41
+7.
+click on name=lozinkaprijava OK
+22:52:42
+8.
+type on name=lozinkaprijava with value Nina123 OK
+22:52:42
+9.
+click on css=.btn OK
+22:52:42
+10.
+assertText on css=.cardtext with value Korisnik OK
+22:52:42
+'uspesna_prijava_korisnika' completed successfully
+Running 'uspesna_registracija_korisnika'
+22:53:31
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:53:31
+2.
+setWindowSize on 1052x662 OK
+22:53:31
+3.
+assertText on css=b with value Registracija: OK
+22:53:32
+4.
+click on css=tr:nth-child(3) input OK
+22:53:32
+5.
+click on css=.btn OK
+22:53:32
+6.
+assertText on css=b with value Registracija korisnika OK
+22:53:32
+7.
+click on css=input:nth-child(2) OK
+22:53:33
+8.
+click on name=prez OK
+22:53:33
+9.
+type on name=prez with value Milanka OK
+22:53:33
+10.
+click on name=ime OK
+22:53:33
+11.
+click on name=prez OK
+22:53:33
+12.
+type on name=prez with value Labovic OK
+22:53:33
+13.
+click on name=ime OK
+22:53:34
+14.
+type on name=ime with value Milanka OK
+22:53:34
+15.
+click on name=adr OK
+22:53:34
+16.
+type on name=adr with value Ustanicka 130 OK
+22:53:34
+17.
+click on name=grad OK
+22:53:34
+18.
+type on name=grad with value Beograd OK
+22:53:34
+19.
+click on name=fon OK
+22:53:34
+20.
+type on name=fon with value 0605002153 OK
+22:53:35
+21.
+click on name=korime OK
+22:53:35
+22.
+type on name=korime with value lamila OK
+22:53:35
+23.
+click on name=lozinkareg OK
+22:53:35
+24.
+type on name=lozinkareg with value Milanka123 OK
+22:53:35
+25.
+click on css=.btn OK
+22:53:35
+26.
+assertText on css=h1:nth-child(1) with value Uspešno ste se registrovali OK
+22:53:36
+'uspesna_registracija_korisnika' completed successfully
+Running 'uspesna_registracija_kompanije'
+22:55:56
+1.
+open on http://localhost:8080/Gost/registracija OK
+22:55:57
+2.
+setWindowSize on 1052x662 OK
+22:55:57
+3.
+assertText on css=b with value Registracija: OK
+22:55:57
+4.
+click on name=Tip OK
+22:55:58
+5.
+click on css=.btn OK
+22:55:58
+6.
+click on name=nazivKomp OK
+22:55:58
+7.
+type on name=nazivKomp with value Telekom OK
+22:55:59
+8.
+click on name=adresa OK
+22:55:59
+9.
+type on name=adresa with value Bulevar Milutina Milankovica 455 OK
+22:56:00
+10.
+click on name=pib OK
+22:56:00
+11.
+type on name=pib with value 999900088 OK
+22:56:00
+12.
+click on name=telefon OK
+22:56:01
+13.
+type on name=telefon with value 0112299200 OK
+22:56:01
+14.
+click on css=b OK
+22:56:01
+15.
+assertText on css=b with value Registracija kompanije OK
+22:56:01
+16.
+click on name=regBr OK
+22:56:02
+17.
+type on name=regBr with value 999888933 OK
+22:56:02
+18.
+click on name=lozinka OK
+22:56:02
+19.
+type on name=lozinka with value Telekom123 OK
+22:56:03
+20.
+click on css=.btn OK
+22:56:03
+21.
+assertText on css=h1:nth-child(1) with value Uspešno ste se registrovali OK
+22:56:03
+'uspesna_registracija_kompanije' completed successfully
+Running 'uspesna_prijava_kompanije'
+22:57:30
+1.
+open on http://localhost:8080/Gost/prijava OK
+22:57:30
+2.
+setWindowSize on 1052x662 OK
+22:57:31
+3.
+click on name=korisnickoime OK
+22:57:32
+4.
+type on name=korisnickoime with value Delta Holding OK
+22:57:33
+5.
+click on name=lozinkaprijava OK
+22:57:34
+6.
+type on name=lozinkaprijava with value Delta123 OK
+22:57:34
+7.
+click on css=.btn OK
+22:57:35
+8.
+assertText on css=.cardtext with value Kompanija OK
+22:57:36
+'uspesna_prijava_kompanije' completed successfully
